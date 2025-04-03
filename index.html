@@ -1,0 +1,2227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIA Institute of Knowledge</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #2e7d32;
+            /* Green */
+            --primary-light: #60ad5e;
+            --primary-dark: #005005;
+            --secondary: #f8f8f8;
+            /* Light grey background */
+            --accent: #ffb300;
+            /* Yellow/Gold accent */
+            --text-dark: #333;
+            --text-light: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--secondary);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            /* Needed for page transition */
+        }
+
+        body.rtl {
+            direction: rtl;
+            text-align: right;
+        }
+
+        body.rtl .about-text {
+            padding-right: 0;
+            padding-left: 2rem;
+        }
+
+        body.rtl .principal {
+            grid-template-columns: 2fr 1fr;
+        }
+
+        body.rtl .principal-info {
+            order: -1;
+        }
+
+        body.rtl .admission-content {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        /* Adjust if needed */
+        body.rtl .admission-text {
+            padding-left: 0;
+            padding-right: 2rem;
+        }
+
+        body.rtl .admission-list li {
+            /* Ensure icon stays left/right correctly */
+        }
+
+        body.rtl .footer-col h3::after {
+            left: auto;
+            right: 0;
+        }
+
+        body.rtl .footer-links a:hover {
+            padding-left: 0;
+            padding-right: 0.5rem;
+        }
+
+        body.rtl .contact-info-footer li {
+            /* Adjust icon position if needed */
+        }
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+            overflow: hidden;
+            /* Prevent horizontal scroll from animations */
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.6rem;
+            background-color: var(--primary);
+            color: var(--text-light);
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--text-light);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--text-dark);
+        }
+
+        .btn-accent:hover {
+            background-color: #e0a000;
+            /* Darker accent */
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            /* Increased margin */
+            color: var(--primary);
+            position: relative;
+            animation: fadeInUp 1s;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            /* Adjusted position */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            /* Accent color for underline */
+            border-radius: 2px;
+        }
+
+        /* Header Styles */
+        .top-bar {
+            background-color: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .quick-donate span {
+            opacity: 0.8;
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .language-btn {
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--text-light);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .language-btn:hover,
+        .language-btn.active {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        header {
+            background-color: var(--primary);
+            color: var(--text-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            border-radius: 50%;
+            /* Rounded logo */
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            /* Default spacing */
+        }
+
+        body.rtl .nav-links {
+            gap: 1.2rem;
+        }
+
+        /* Adjust spacing for AR if needed */
+
+        .nav-link {
+            color: var(--text-light);
+            font-weight: 600;
+            position: relative;
+            transition: all 0.3s ease;
+            padding-bottom: 8px;
+            /* Space for underline */
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            /* Thicker underline */
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+            border-radius: 1.5px;
+        }
+
+        body.rtl .nav-link::after {
+            left: auto;
+            right: 0;
+        }
+
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent);
+            /* Highlight active/hovered link */
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .donate-btn {
+            background-color: var(--accent);
+            color: var(--text-dark);
+            font-weight: 700;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .donate-btn:hover {
+            background-color: #e0a000;
+            transform: translateY(-3px) scale(1.05);
+            /* Add scale effect */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.8rem;
+            /* Larger icon */
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            /* Use a subtle pattern or a relevant image */
+            background: linear-gradient(rgba(46, 125, 50, 0.5), rgba(0, 80, 5, 0.5)), url('mia.jpg') center/cover no-repeat fixed;
+            /* Fixed background for parallax effect */
+            color: var(--text-light);
+            min-height: 85vh;
+            /* Slightly taller */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Center content vertically and horizontally */
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+            /* Above particles */
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            /* Larger title */
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            /* Bolder */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            /* Larger subtitle */
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease-out 0.3s;
+            animation-fill-mode: backwards;
+            /* Start animation from beginning */
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            animation: fadeInUp 1s ease-out 0.6s;
+            animation-fill-mode: backwards;
+        }
+
+        .hero .btn {
+            padding: 1rem 2rem;
+            /* Larger buttons */
+            font-size: 1rem;
+        }
+
+        .hero .btn-outline {
+            border-color: var(--text-light);
+            color: var(--text-light);
+        }
+
+        .hero .btn-outline:hover {
+            background-color: var(--text-light);
+            color: var(--primary);
+        }
+
+        /* Announcements Section */
+        .announcements {
+            background-color: var(--primary-light);
+            /* Lighter green */
+            color: var(--text-light);
+            padding: 4rem 0;
+            /* More padding */
+        }
+
+        .announcements-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--text-light);
+            font-size: 2.2rem;
+            /* Slightly smaller than section title */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .announcements-list {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            /* Use grid for better alignment */
+            gap: 1.5rem;
+        }
+
+        .announcement-item {
+            background-color: rgba(255, 255, 255, 0.15);
+            /* Slightly more visible */
+            border-radius: 10px;
+            padding: 1.8rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            /* Bouncy transition */
+            border-left: 5px solid var(--accent);
+            /* Accent border */
+        }
+
+        body.rtl .announcement-item {
+            border-left: none;
+            border-right: 5px solid var(--accent);
+        }
+
+
+        .announcement-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            /* More pronounced hover */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .announcement-item p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--secondary);
+            position: relative;
+        }
+
+        .about::before {
+            /* Subtle background pattern */
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"%3E%3Cg fill-rule="evenodd"%3E%3Cg fill="%232e7d32" fill-opacity="0.05"%3E%3Cpath d="M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            /* More gap */
+            align-items: center;
+            position: relative;
+            /* To be above the ::before */
+            z-index: 1;
+        }
+
+        .about-text {
+            padding-right: 2rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            /* Spacing between paragraphs */
+            font-size: 1.05rem;
+            color: #555;
+            /* Slightly darker grey for readability */
+        }
+
+        .about-image {
+            border-radius: 15px;
+            /* More rounded corners */
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 80, 5, 0.2);
+            /* Softer, colored shadow */
+            transition: all 0.4s ease;
+        }
+
+        .about-image img {
+            display: block;
+            /* Remove bottom space */
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            /* Smooth scale */
+        }
+
+        .about-image:hover {
+            box-shadow: 0 20px 45px rgba(0, 80, 5, 0.25);
+            transform: translateY(-5px);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.08);
+            /* Slightly larger scale */
+        }
+
+        /* Vision and Mission */
+        .vision-mission {
+            background-color: #e8f5e9;
+            /* Very light green */
+            padding: 5rem 0;
+        }
+
+        .vm-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            /* Responsive columns */
+            gap: 2.5rem;
+        }
+
+        .vm-card {
+            background-color: var(--text-light);
+            border-radius: 15px;
+            padding: 2.5rem;
+            /* More padding */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+            transition: all 0.4s ease;
+            height: 100%;
+            border-top: 5px solid var(--primary-light);
+            /* Top border accent */
+            display: flex;
+            flex-direction: column;
+            /* Align content vertically */
+        }
+
+        .vm-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 18px 40px rgba(0, 80, 5, 0.15);
+            /* More prominent shadow on hover */
+            border-top-color: var(--primary);
+            /* Darken border on hover */
+        }
+
+        .vm-card h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            /* More space below heading */
+            position: relative;
+            padding-bottom: 0.8rem;
+            font-size: 1.6rem;
+        }
+
+        .vm-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent);
+            /* Accent underline */
+            border-radius: 2px;
+        }
+
+        body.rtl .vm-card h3::after {
+            left: auto;
+            right: 0;
+        }
+
+
+        .vm-card p,
+        .vm-card li {
+            /* font-style: italic; */
+            /* Removed italic */
+            font-size: 1.1rem;
+            color: #555;
+            flex-grow: 1;
+            /* Make content fill space */
+        }
+
+        .vm-card ul {
+            margin-top: 1rem;
+        }
+
+        .vm-card li {
+            margin-bottom: 0.7rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .vm-card li::before {
+            content: "\f00c";
+            /* Font Awesome check icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: var(--primary);
+        }
+
+        body.rtl .vm-card li {
+            padding-left: 0;
+            padding-right: 1.5rem;
+        }
+
+        body.rtl .vm-card li::before {
+            left: auto;
+            right: 0;
+        }
+
+
+        /* People Section */
+        .people {
+            background-color: var(--secondary);
+        }
+
+        .principal {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            /* Fixed image width */
+            gap: 3rem;
+            margin-bottom: 5rem;
+            /* More space below principal */
+            align-items: flex-start;
+            /* Align top */
+            background: var(--text-light);
+            /* White background for this block */
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .principal-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            align-self: center;
+            /* Center image vertically within its column */
+        }
+
+        .principal-img img {
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .principal-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .principal-info h3 {
+            /* Subtitle like "Principal" */
+            color: var(--primary-dark);
+            margin-bottom: 0.2rem;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .principal-info h4 {
+            /* Name */
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+
+        .principal-info .title {
+            /* Degrees */
+            font-size: 1rem;
+            /* Smaller */
+            font-weight: 500;
+            /* Lighter */
+            color: var(--primary-light);
+            /* Lighter green */
+            margin-bottom: 1.5rem;
+            /* More space */
+            display: block;
+            /* Ensure it's on its own line */
+        }
+
+        .principal-info p {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .board,
+        .committee {
+            margin-top: 4rem;
+            /* Space between sections */
+        }
+
+        .board h3,
+        .committee h3 {
+            color: var(--primary);
+            margin-bottom: 2rem;
+            /* More space */
+            text-align: center;
+            /* Center titles */
+            font-size: 1.8rem;
+        }
+
+        .board-list,
+        .committee-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            /* Responsive grid */
+            gap: 1.5rem;
+        }
+
+        .board-item,
+        .committee-item {
+            background-color: var(--text-light);
+            padding: 1.5rem 1.2rem;
+            /* More padding */
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            text-align: center;
+            /* Center text */
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .board-item:hover,
+        .committee-item:hover {
+            transform: translateY(-6px) scale(1.03);
+            /* Lift and scale effect */
+            box-shadow: 0 10px 25px rgba(0, 80, 5, 0.12);
+            /* Greener shadow */
+            color: var(--primary);
+            /* Highlight text */
+        }
+
+        .contact-info {
+            margin-top: 4rem;
+            /* More space */
+            padding: 2.5rem;
+            background-color: #e8f5e9;
+            /* Light green background */
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: inset 0 0 15px rgba(46, 125, 50, 0.1);
+            /* Inner shadow */
+        }
+
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            color: #444;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .contact-info a {
+            color: var(--primary-dark);
+            font-weight: 600;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(0, 80, 5, 0.85), rgba(46, 125, 50, 0.85)), url('/api/placeholder/1600/500/abstract,green/ffffff?text=Support+Us') center/cover no-repeat fixed;
+            color: var(--text-light);
+            text-align: center;
+            padding: 6rem 1rem;
+            /* More padding */
+        }
+
+        .cta h2 {
+            margin-bottom: 2.5rem;
+            font-size: 2.8rem;
+            /* Larger heading */
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .cta .btn-accent {
+            padding: 1rem 2.5rem;
+            /* Larger button */
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.8);
+            /* Slightly transparent white */
+            padding: 5rem 0 2rem;
+            /* More top padding */
+            position: relative;
+        }
+
+        /* Optional subtle pattern for footer */
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="52" height="26" viewBox="0 0 52 26"%3E%3Cg fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.04"%3E%3Cpath d="M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z" /%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            z-index: 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            /* More gap */
+            margin-bottom: 3rem;
+            /* More space before copyright */
+            position: relative;
+            /* Above ::before */
+            z-index: 1;
+        }
+
+        .footer-col h3 {
+            color: var(--text-light);
+            /* Brighter white for headings */
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            /* Longer underline */
+            height: 3px;
+            background-color: var(--accent);
+            border-radius: 1.5px;
+        }
+
+
+        .footer-col p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+            /* More spacing */
+        }
+
+        .footer-links a {
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .footer-links a::before {
+            content: "\f101";
+            /* FontAwesome Angle Right */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            opacity: 0;
+            transition: all 0.3s ease;
+            color: var(--accent);
+        }
+
+        body.rtl .footer-links a {
+            padding-left: 0;
+            padding-right: 15px;
+        }
+
+        body.rtl .footer-links a::before {
+            content: "\f100";
+            /* Angle Left */
+            left: auto;
+            right: 0;
+        }
+
+
+        .footer-links a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+            /* Slight move on hover */
+        }
+
+        body.rtl .footer-links a:hover {
+            transform: translateX(-5px);
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+        }
+
+        .contact-info-footer li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            /* More gap */
+            margin-bottom: 1rem;
+        }
+
+        .contact-info-footer i {
+            color: var(--accent);
+            width: 20px;
+            /* Align icons */
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            /* More space */
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            /* Larger icons */
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            color: var(--text-light);
+            /* Ensure icon color */
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            color: var(--primary-dark);
+            /* Darker icon color on hover */
+            transform: translateY(-5px) rotate(360deg);
+            /* Rotate effect */
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            /* Slightly more visible border */
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            position: relative;
+            /* Above ::before */
+            z-index: 1;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.03);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        /* Staggered animation delay */
+        .animate-on-scroll:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+
+        .animate-on-scroll:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+
+        /* Add more if needed */
+
+        .animate-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating Animation for Icons */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+            /* Less float distance */
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Slower float */
+
+        /* Particle Animation */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            /* Dimmer particles */
+            animation: particle-animation 15s linear infinite;
+        }
+
+        @keyframes particle-animation {
+            from {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(-10vh) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* Page Structure & Transitions */
+        .page {
+            display: none;
+            /* Hide pages by default */
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        .page.active {
+            display: block;
+            /* Show active page */
+        }
+
+        /* Second page specific styling */
+        .page-header {
+            background: linear-gradient(rgba(0, 80, 5, 0.8), rgba(46, 125, 50, 0.8)), url('/api/placeholder/1600/400/islamic,pattern/ffffff?text=Admissions') center/cover no-repeat;
+            min-height: 45vh;
+            /* Taller header */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .page-header .particles {
+            z-index: 1;
+        }
+
+        /* Particles for page header too */
+
+        .page-title {
+            font-size: 3.5rem;
+            /* Larger title */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 2;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        /* Admission section */
+        .admission {
+            background-color: #f0f8f0;
+            /* Light green */
+            padding: 5rem 0;
+        }
+
+        .admission-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .admission-img {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 80, 5, 0.15);
+            transition: all 0.4s ease;
+        }
+
+        .admission-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(0, 80, 5, 0.2);
+        }
+
+        .admission-img img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .admission-text {
+            padding-left: 2rem;
+        }
+
+        .admission-text h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .admission-text p {
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .admission-list {
+            margin-top: 2rem;
+        }
+
+        .admission-list li {
+            margin-bottom: 1.2rem;
+            /* More spacing */
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            color: #444;
+            font-size: 1.05rem;
+        }
+
+        .admission-list i {
+            color: var(--primary);
+            margin-top: 0.3rem;
+            font-size: 1.2rem;
+            /* Larger icon */
+            width: 20px;
+            text-align: center;
+            flex-shrink: 0;
+            /* Prevent icon shrinking */
+        }
+
+        .admission-cta {
+            margin-top: 3rem;
+            /* More space */
+            text-align: center;
+        }
+
+        .admission-cta .btn {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        }
+
+        /* Features section (Example for Admissions Page) */
+        .features {
+            padding: 5rem 0;
+            background-color: var(--secondary);
+            /* Match homepage background */
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            background-color: var(--text-light);
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-align: center;
+            border-bottom: 5px solid var(--primary-light);
+            /* Bottom border */
+        }
+
+        .feature-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 18px 40px rgba(0, 80, 5, 0.15);
+            border-bottom-color: var(--primary);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            /* Larger icon */
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            /* Center icon */
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: rotateY(360deg);
+            /* Spin icon on hover */
+        }
+
+
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .feature-card p {
+            color: #555;
+        }
+
+
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.7s ease, visibility 0.7s ease;
+            /* Slower fade */
+        }
+
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 6px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--text-light);
+            animation: spin 1.2s linear infinite;
+            /* Slightly slower spin */
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+
+            .about-content,
+            .principal,
+            .admission-content {
+                grid-template-columns: 1fr;
+                /* Stack on medium screens */
+            }
+
+            body.rtl .principal {
+                grid-template-columns: 1fr;
+            }
+
+            /* Stack RTL */
+            body.rtl .admission-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image,
+            .principal-img,
+            .admission-img {
+                max-width: 450px;
+                /* Limit image width when stacked */
+                margin: 0 auto 2rem auto;
+                /* Center image */
+            }
+
+            .about-text,
+            .principal-info,
+            .admission-text {
+                padding: 0;
+                /* Remove padding */
+            }
+
+            body.rtl .about-text,
+            body.rtl .admission-text {
+                padding: 0;
+            }
+
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .page-title {
+                font-size: 2.8rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            /* Reduce nav gap */
+        }
+
+        @media (max-width: 768px) {
+            .top-bar-content {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            .quick-donate {
+                margin-bottom: 0.5rem;
+            }
+
+            .header-content {
+                padding: 0.8rem 0;
+            }
+
+            /* Reduce header padding */
+            .nav-links {
+                display: none;
+                /* Hide desktop nav */
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-dark);
+                /* Darker background for mobile */
+                padding: 1rem 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                max-height: 0;
+                /* Start hidden */
+                overflow: hidden;
+                transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+            }
+
+            .nav-links.active {
+                display: flex;
+                /* Show when active */
+                max-height: 500px;
+                /* Allow it to expand */
+                padding: 1rem 0;
+            }
+
+            .nav-link {
+                padding: 0.8rem 1rem;
+                /* Adjust padding */
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-link:last-child {
+                border-bottom: none;
+            }
+
+            .nav-link::after {
+                display: none;
+            }
+
+            /* Remove underline on mobile */
+            .donate-btn {
+                display: block;
+                /* Full width donate button */
+                margin: 1rem auto 0 auto;
+                width: fit-content;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            /* Show hamburger */
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .vm-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .principal {
+                padding: 1.5rem;
+                gap: 1.5rem;
+            }
+
+            .principal-img {
+                max-width: 250px;
+            }
+
+            .board-list,
+            .committee-list {
+                grid-template-columns: 1fr;
+            }
+
+            /* Stack board members */
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-col h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            body.rtl .footer-col h3::after {
+                left: 50%;
+                right: auto;
+                transform: translateX(-50%);
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .contact-info-footer li {
+                justify-content: center;
+            }
+
+            .footer-links a {
+                padding-left: 0;
+                text-align: center;
+            }
+
+            .footer-links a::before {
+                display: none;
+            }
+
+            /* Hide arrows */
+            body.rtl .footer-links a {
+                padding-right: 0;
+            }
+
+            .page-title {
+                font-size: 2.2rem;
+            }
+
+            .admission-content {
+                gap: 2rem;
+            }
+
+            .admission-text {
+                padding: 0 1rem;
+            }
+
+            /* Add padding for stacked text */
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="quick-donate" data-en="Follow us & Quick Donate Links"
+                data-fr="Suivez-nous & Liens Dons Rapides" data-ar="تابعنا وروابط التبرع السريع">
+                <span>Follow us & Quick Donate Links</span>
+                
+            </div>
+            <div class="language-selector">
+                <button class="language-btn" data-lang="en">EN</button>
+                <button class="language-btn" data-lang="fr">FR</button>
+                <button class="language-btn" data-lang="ar">AR</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container header-content">
+            <a href="#home" class="logo page-link" data-page="home-page">
+                <img src="logo.jpeg" alt="MIA Logo">
+                <span data-en="MIA Institute of Knowledge" data-fr="Institut MIA de la Connaissance"
+                    data-ar="معهد MIA للمعرفة">MIA Institute of Knowledge</span>
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-links">
+                <!-- Use page-link class and data-page for switching pages -->
+                <a href="#home" class="nav-link page-link active" data-page="home-page" data-en="Home" data-fr="Accueil"
+                    data-ar="الرئيسية">Home</a>
+                <a href="#about" class="nav-link scroll-link" data-en="About" data-fr="À Propos" data-ar="حول">About</a>
+                <a href="#admissions" class="nav-link page-link" data-page="admissions-page" data-en="Admissions"
+                    data-fr="Admissions" data-ar="القبول">Admissions</a>
+                <!-- Add other relevant nav links here, deciding if they scroll or switch page -->
+                <a href="#team" class="nav-link scroll-link" data-en="Team" data-fr="Équipe" data-ar="الفريق">Team</a>
+                <a href="#contact-footer" class="nav-link scroll-link" data-en="Contact" data-fr="Contact"
+                    data-ar="اتصل بنا">Contact</a>
+                <a href="#donate-cta" class="donate-btn scroll-link" data-en="Donate" data-fr="Faire un Don"
+                    data-ar="تبرع">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Page Content -->
+        <div id="home-page" class="page active">
+            <section class="hero">
+                <div class="particles"></div>
+                <div class="hero-content">
+                    <h1 data-en="MIA Institute of Knowledge" data-fr="Institut MIA de la Connaissance"
+                        data-ar="معهد MIA للمعرفة">MIA Institute of Knowledge</h1>
+                    <p data-en="Quality education based on Islamic values and developing leaders of tomorrow."
+                        data-fr="Une éducation de qualité basée sur les valeurs islamiques et le développement des leaders de demain."
+                        data-ar="تعليم جودة قائم على القيم الإسلامية وتطوير قادة الغد.">
+                        Quality education based on Islamic values and developing leaders of tomorrow.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="#about" class="btn scroll-link" data-en="LEARN MORE" data-fr="EN SAVOIR PLUS"
+                            data-ar="اعرف المزيد">LEARN MORE</a>
+                        <a href="#admissions" class="btn btn-outline page-link" data-page="admissions-page"
+                            data-en="Admissions Info" data-fr="Infos Admissions" data-ar="معلومات القبول">Admissions
+                            Info</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="announcements">
+                <div class="container">
+                    <h2 class="announcements-title" data-en="Announcements" data-fr="Annonces" data-ar="إعلانات">
+                        Announcements</h2>
+                    <div class="announcements-list">
+                        <div class="announcement-item animate-on-scroll">
+                            <p data-en="Registrations from KG to Grade 6 for the MIA Institute of Knowledge are now open! For more information regarding fees, admissions and/or a copy of the registration form, please email MIASchool@miaonline.org."
+                                data-fr="Les inscriptions de la maternelle à la 6e année pour l'Institut MIA de la Connaissance sont maintenant ouvertes ! Pour plus d'informations concernant les frais, les admissions et/ou une copie du formulaire d'inscription, veuillez envoyer un courriel à MIASchool@miaonline.org."
+                                data-ar="التسجيلات من الروضة إلى الصف السادس لمعهد MIA للمعرفة مفتوحة الآن! لمزيد من المعلومات حول الرسوم والقبول و/أو نسخة من نموذج التسجيل، يرجى مراسلتنا عبر البريد الإلكتروني MIASchool@miaonline.org.">
+                                Registrations from KG to Grade 6 for the MIA Institute of Knowledge are now open! For
+                                more information regarding fees, admissions and/or a copy of the registration form,
+                                please email MIASchool@miaonline.org.
+                            </p>
+                        </div>
+                        <div class="announcement-item animate-on-scroll">
+                            <p data-en="The growth of the MIA Institute of Knowledge depends on your support. Please donate generously! Your donations are eligible for a tax receipt."
+                                data-fr="La croissance de l'Institut MIA de la Connaissance dépend de votre soutien. Veuillez faire un don généreusement ! Vos dons sont éligibles à un reçu fiscal."
+                                data-ar="يعتمد نمو معهد MIA للمعرفة على دعمكم. يرجى التبرع بسخاء! تبرعاتك مؤهلة للحصول على إيصال ضريبي.">
+                                The growth of the MIA Institute of Knowledge depends on your support. Please donate
+                                generously! Your donations are eligible for a tax receipt.
+                            </p>
+                        </div>
+                        <div class="announcement-item animate-on-scroll">
+                            <p data-en="Follow us on Facebook for the latest updates and community events."
+                                data-fr="Suivez-nous sur Facebook pour les dernières mises à jour et les événements communautaires."
+                                data-ar="تابعونا على الفيسبوك للحصول على آخر التحديثات والفعاليات المجتمعية.">
+                                Follow us on Facebook for the latest updates and community events.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about section" id="about">
+                <div class="container">
+                    <h2 class="section-title" data-en="About Us" data-fr="À Propos de Nous" data-ar="عن المعهد">About Us
+                    </h2>
+                    <div class="about-content">
+                        <div class="about-text animate-on-scroll">
+                            <p data-en="Over the past few years, the Muslim community has grown significantly. There has been an influx of Muslims from all over the world and we look forward to supporting our community with an Islamic community school based on the recommendations of our community."
+                                data-fr="Au cours des dernières années, la communauté musulmane a considérablement grandi. Il y a eu un afflux de musulmans du monde entier et nous nous réjouissons de soutenir notre communauté avec une école communautaire islamique basée sur les recommandations de notre communauté."
+                                data-ar="على مدار السنوات القليلة الماضية، نمت الجالية المسلمة بشكل كبير. كان هناك تدفق للمسلمين من جميع أنحاء العالم ونتطلع إلى دعم مجتمعنا بمدرسة مجتمعية إسلامية بناءً على توصيات مجتمعنا.">
+                                Over the past few years, the Muslim community has grown significantly. There has been an
+                                influx of Muslims from all over the world and we look forward to supporting our
+                                community with an Islamic community school based on the recommendations of our
+                                community.
+                            </p>
+                            <p data-en="MIA Institute of Knowledge aims to provide an Islamic-centered education for students starting in Kindergarten through Grades 6. We believe that Allah (SWT) is the source of knowledge and all the streams of knowledge guide us to oneness of Allah (SWT). The MIA Institute of Knowledge strives to provide quality education based around Islamic values, by embedding Islamic concepts through the subjects being taught. In our classroom, we will focus on developing moral values alongside a strong academic curriculum. Our goal is for children to want Islam, love Islam and live Islam."
+                                data-fr="L'Institut MIA de la Connaissance vise à fournir une éducation centrée sur l'Islam pour les élèves de la maternelle à la 6e année. Nous croyons qu'Allah (SWT) est la source de la connaissance et que tous les flux de connaissance nous guident vers l'unicité d'Allah (SWT). L'Institut MIA de la Connaissance s'efforce de fournir une éducation de qualité basée sur les valeurs islamiques, en intégrant les concepts islamiques dans les matières enseignées. Dans notre classe, nous nous concentrerons sur le développement des valeurs morales aux côtés d'un programme académique solide. Notre objectif est que les enfants veuillent l'Islam, aiment l'Islam et vivent l'Islam."
+                                data-ar="يهدف معهد MIA للمعرفة إلى توفير تعليم متمحور حول الإسلام للطلاب بدءًا من رياض الأطفال وحتى الصف السادس. نعتقد أن الله سبحانه وتعالى هو مصدر المعرفة وجميع تيارات المعرفة ترشدنا إلى وحدانية الله سبحانه وتعالى. يسعى معهد MIA للمعرفة إلى توفير تعليم جيد يستند إلى القيم الإسلامية، من خلال دمج المفاهيم الإسلامية من خلال المواد التي يتم تدريسها. في فصلنا الدراسي، سنركز على تطوير القيم الأخلاقية إلى جانب منهج أكاديمي قوي. هدفنا هو أن يرغب الأطفال في الإسلام، ويحبوا الإسلام ويعيشوا الإسلام.">
+                                MIA Institute of Knowledge aims to provide an Islamic-centered education for students
+                                starting in Kindergarten through Grades 6. We believe that Allah (SWT) is the source of
+                                knowledge and all the streams of knowledge guide us to oneness of Allah (SWT). The MIA
+                                Institute of Knowledge strives to provide quality education based around Islamic values,
+                                by embedding Islamic concepts through the subjects being taught. In our classroom, we
+                                will focus on developing moral values alongside a strong academic curriculum. Our goal
+                                is for children to want Islam, love Islam and live Islam.
+                            </p>
+                        </div>
+                        <div class="about-image animate-on-scroll">
+                            <img src="student.avif"
+                                alt="Students learning in a classroom">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="vision-mission section">
+                <div class="container">
+                    <h2 class="section-title" data-en="Vision, Mission & Objectives"
+                        data-fr="Vision, Mission & Objectifs" data-ar="الرؤية والرسالة والأهداف">Vision, Mission &
+                        Objectives</h2>
+                    <div class="vm-cards">
+                        <div class="vm-card animate-on-scroll">
+                            <h3 data-en="Vision" data-fr="Vision" data-ar="الرؤية">Vision</h3>
+                            <p data-en="To provide a safe space for students to learn and grow as proud Muslim Canadian citizens."
+                                data-fr="Offrir un espace sûr aux élèves pour apprendre et grandir en tant que fiers citoyens musulmans canadiens."
+                                data-ar="توفير مساحة آمنة للطلاب ليتعلموا وينموا كمواطنين كنديين مسلمين فخورين.">
+                                To provide a safe space for students to learn and grow as proud Muslim Canadian
+                                citizens.
+                            </p>
+                        </div>
+                        <div class="vm-card animate-on-scroll">
+                            <h3 data-en="Mission" data-fr="Mission" data-ar="الرسالة">Mission</h3>
+                            <p data-en="To provide quality education based on Islamic values and develop leaders of tomorrow."
+                                data-fr="Fournir une éducation de qualité basée sur les valeurs islamiques et développer les leaders de demain."
+                                data-ar="توفير تعليم جيد يستند إلى القيم الإسلامية وتطوير قادة الغد.">
+                                To provide quality education based on Islamic values and develop leaders of tomorrow.
+                            </p>
+                        </div>
+                        <div class="vm-card animate-on-scroll">
+                            <h3 data-en="Objectives" data-fr="Objectifs" data-ar="الأهداف">Objectives</h3>
+                            <ul>
+                                <li data-en="To empower students to meet challenges and pursue goals."
+                                    data-fr="Donner aux étudiants les moyens de relever les défis et de poursuivre leurs objectifs."
+                                    data-ar="تمكين الطلاب من مواجهة التحديات والسعي لتحقيق الأهداف.">To empower students
+                                    to meet challenges and pursue goals.</li>
+                                <li data-en="To impart knowledge to prepare Muslim leaders."
+                                    data-fr="Transmettre des connaissances pour préparer les futurs leaders musulmans."
+                                    data-ar="نقل المعرفة لإعداد قادة مسلمين.">To impart knowledge to prepare Muslim
+                                    leaders.</li>
+                                <li data-en="To encourage development of social responsibility."
+                                    data-fr="Encourager le développement de la responsabilité sociale."
+                                    data-ar="تشجيع تطوير المسؤولية الاجتماعية.">To encourage development of social
+                                    responsibility.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="people section" id="team">
+                <div class="container">
+                    <h2 class="section-title" data-en="Our Dedicated Team" data-fr="Notre Équipe Dévouée"
+                        data-ar="فريقنا المتفاني">Our Dedicated Team</h2>
+                    <div class="principal animate-on-scroll">
+                        <div class="principal-img">
+                            <img src="cheikh.jpeg"
+                                alt="Dr. Cheikh Ould Moulaye">
+                        </div>
+                        <div class="principal-info">
+                            <h3 data-en="Principal" data-fr="Directeur" data-ar="المدير">Principal</h3>
+                            <h4 data-en="Dr. Cheikh Ould Moulaye" data-fr="Dr. Cheikh Ould Moulaye"
+                                data-ar="الدكتور الشيخ ولد مولاي">Dr. Cheikh Ould Moulaye</h4>
+                            <span class="title"
+                                data-en="Ph. D., B.Ed., Post-Baccalaureate Certificate in Instructional Design"
+                                data-fr="Ph. D., B.Ed., Certificat Post-Baccalauréat en Conception Pédagogique"
+                                data-ar="دكتوراه، بكالوريوس تربية، شهادة ما بعد البكالوريا في التصميم التعليمي">
+                                Ph. D., B.Ed., Post-Baccalaureate Certificate in Instructional Design
+                            </span>
+                            <p data-en="Dr. Moulaye has been an educator since 1998 in France and Canada, with extensive experience in K-12 and higher education, including distance and online learning management and instructional design research."
+                                data-fr="Dr Moulaye est éducateur depuis 1998 en France et au Canada, avec une vaste expérience dans l'enseignement primaire, secondaire et supérieur, y compris la gestion de l'apprentissage à distance et en ligne et la recherche en conception pédagogique."
+                                data-ar="الدكتور مولاي معلم منذ عام 1998 في فرنسا وكندا، ولديه خبرة واسعة في التعليم K-12 والتعليم العالي، بما في ذلك إدارة التعلم عن بعد وعبر الإنترنت وبحوث التصميم التعليمي.">
+                                Dr. Moulaye has been an educator since 1998 in France and Canada, with extensive
+                                experience in K-12 and higher education, including distance and online learning
+                                management and instructional design research.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="board animate-on-scroll">
+                        <h3 data-en="Board Members" data-fr="Membres du Conseil" data-ar="أعضاء مجلس الإدارة">Board
+                            Members</h3>
+                        <ul class="board-list">
+                            <li class="board-item" data-en="Aadila Adam-Omer, Director at Large"
+                                data-fr="Aadila Adam-Omer, Directrice générale" data-ar="عادلة آدم عمر، مديرة عامة">
+                                Aadila Adam-Omer, Director at Large</li>
+                            <li class="board-item" data-en="Ali Rana, Director at Large"
+                                data-fr="Ali Rana, Directeur général" data-ar="علي رانا، مدير عام">Ali Rana, Director at
+                                Large</li>
+                            <li class="board-item" data-en="Ashraf El-bakri, Vice-Chair & Treasurer"
+                                data-fr="Ashraf El-bakri, Vice-président & Trésorier"
+                                data-ar="أشرف البكري، نائب الرئيس وأمين الصندوق">Ashraf El-bakri, Vice-Chair & Treasurer
+                            </li>
+                            <li class="board-item" data-en="Delvinder Zamir, Chair" data-fr="Delvinder Zamir, Président"
+                                data-ar="ديلفيندر زامير، رئيس">Delvinder Zamir, Chair</li>
+                            <li class="board-item" data-en="Ismael Mukhtar, Director at Large"
+                                data-fr="Ismael Mukhtar, Directeur général" data-ar="إسماعيل مختار، مدير عام">Ismael
+                                Mukhtar, Director at Large</li>
+                            <li class="board-item" data-en="Raza Hameed, Director at Large"
+                                data-fr="Raza Hameed, Directeur général" data-ar="رضا حميد، مدير عام">Raza Hameed,
+                                Director at Large</li>
+                            <li class="board-item" data-en="Safa Mian, Secretary" data-fr="Safa Mian, Secrétaire"
+                                data-ar="صفا ميان، أمين السر">Safa Mian, Secretary</li>
+                        </ul>
+                    </div>
+
+                    <div class="committee animate-on-scroll">
+                        <h3 data-en="Committee Members" data-fr="Membres du Comité" data-ar="أعضاء اللجنة">Committee
+                            Members</h3>
+                        <p style="text-align:center; margin-bottom: 2rem; color: #555;"
+                            data-en="Valuable community members supporting the board."
+                            data-fr="Membres précieux de la communauté soutenant le conseil."
+                            data-ar="أعضاء مجتمع قيمون يدعمون المجلس.">Valuable community members supporting the board.
+                        </p>
+                        <ul class="committee-list">
+                            <li class="committee-item" data-en="Sahar Elmahallawy" data-fr="Sahar Elmahallawy"
+                                data-ar="سحر المحلاوي">Sahar Elmahallawy</li>
+                            <li class="committee-item" data-en="Salman Qureshi" data-fr="Salman Qureshi"
+                                data-ar="سلمان قريشي">Salman Qureshi</li>
+                            <li class="committee-item" data-en="Aslam Mohamed" data-fr="Aslam Mohamed"
+                                data-ar="أسلم محمد">Aslam Mohamed</li>
+                        </ul>
+                    </div>
+
+                    <div class="contact-info animate-on-scroll">
+                        <h3 data-en="Get in Touch" data-fr="Contactez-Nous" data-ar="تواصل معنا">Get in Touch</h3>
+                        <p data-en="To contact the board, email <a href='mailto:MIASchoolBoard@miaonline.org'>MIASchoolBoard@miaonline.org</a>."
+                            data-fr="Pour contacter le conseil, envoyez un courriel à <a href='mailto:MIASchoolBoard@miaonline.org'>MIASchoolBoard@miaonline.org</a>."
+                            data-ar="للتواصل مع المجلس، أرسل بريدًا إلكترونيًا إلى <a href='mailto:MIASchoolBoard@miaonline.org'>MIASchoolBoard@miaonline.org</a>.">
+                            To contact the board, email <a
+                                href='mailto:MIASchoolBoard@miaonline.org'>MIASchoolBoard@miaonline.org</a>.
+                        </p>
+                        <p data-en="To reach the Principal, School Office or Board, please email us at <a href='mailto:MIASchool@miaonline.org'>MIASchool@miaonline.org</a>. We aim to respond within 48 business hours."
+                            data-fr="Pour joindre le Directeur, le Bureau de l'école ou le Conseil, veuillez nous envoyer un courriel à <a href='mailto:MIASchool@miaonline.org'>MIASchool@miaonline.org</a>. Nous visons à répondre dans les 48 heures ouvrables."
+                            data-ar="للتواصل مع المدير أو مكتب المدرسة أو المجلس، يرجى مراسلتنا عبر البريد الإلكتروني على <a href='mailto:MIASchool@miaonline.org'>MIASchool@miaonline.org</a>. نهدف للرد خلال 48 ساعة عمل.">
+                            To reach the Principal, School Office or Board, please email us at <a
+                                href='mailto:MIASchool@miaonline.org'>MIASchool@miaonline.org</a>. We aim to respond
+                            within 48 business hours.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta section" id="donate-cta">
+                <div class="container">
+                    <h2 data-en="Support Our Mission: Donate Today"
+                        data-fr="Soutenez Notre Mission : Faites un Don Aujourd'hui" data-ar="ادعم مهمتنا: تبرع اليوم">
+                        Support Our Mission: Donate Today</h2>
+                    <a href="#donate" class="btn btn-accent btn-lg scroll-link" data-en="Donate Now"
+                        data-fr="Faire un Don" data-ar="تبرع الآن">Donate Now</a>
+                </div>
+            </section>
+
+        </div> <!-- End Home Page -->
+
+        <!-- Admissions Page Content -->
+        <div id="admissions-page" class="page">
+            <section class="page-header">
+                <div class="particles"></div>
+                <div class="container">
+                    <h1 class="page-title" data-en="Admissions" data-fr="Admissions" data-ar="القبول والتسجيل">
+                        Admissions</h1>
+                </div>
+            </section>
+
+            <section class="admission section">
+                <div class="container">
+                    <h2 class="section-title" data-en="Join Our Community" data-fr="Rejoignez Notre Communauté"
+                        data-ar="انضم إلى مجتمعنا">Join Our Community</h2>
+                    <div class="admission-content">
+                        <div class="admission-img animate-on-scroll">
+                            <img src="/api/placeholder/600/450/school,kids,happy/ffffff?text=Welcome+Students"
+                                alt="Happy students at school">
+                        </div>
+                        <div class="admission-text animate-on-scroll">
+                            <h3 data-en="Registration Information" data-fr="Informations d'Inscription"
+                                data-ar="معلومات التسجيل">Registration Information</h3>
+                            <p data-en="We are excited to welcome new students from Kindergarten to Grade 6. Our admission process is designed to be straightforward and supportive for families."
+                                data-fr="Nous sommes ravis d'accueillir de nouveaux élèves de la maternelle à la 6e année. Notre processus d'admission est conçu pour être simple et favorable aux familles."
+                                data-ar="يسرنا أن نرحب بالطلاب الجدد من مرحلة رياض الأطفال حتى الصف السادس. تم تصميم عملية القبول لدينا لتكون واضحة وداعمة للعائلات.">
+                                We are excited to welcome new students from Kindergarten to Grade 6. Our admission
+                                process is designed to be straightforward and supportive for families.
+                            </p>
+                            <p data-en="Learn about our Islamic-centered curriculum, dedicated teachers, and nurturing environment that helps students thrive academically and spiritually."
+                                data-fr="Découvrez notre programme axé sur l'islam, nos enseignants dévoués et notre environnement stimulant qui aide les élèves à s'épanouir académiquement et spirituellement."
+                                data-ar="تعرف على منهجنا المتمحور حول الإسلام، ومعلمينا المتفانين، وبيئتنا الراعية التي تساعد الطلاب على الازدهار أكاديميًا وروحيًا.">
+                                Learn about our Islamic-centered curriculum, dedicated teachers, and nurturing
+                                environment that helps students thrive academically and spiritually.
+                            </p>
+                            <ul class="admission-list">
+                                <li><i class="fas fa-check-circle"></i> <span data-en="KG to Grade 6 Programs"
+                                        data-fr="Programmes de la Maternelle à la 6e Année"
+                                        data-ar="برامج من الروضة إلى الصف السادس">KG to Grade 6 Programs</span></li>
+                                <li><i class="fas fa-book-open"></i> <span
+                                        data-en="Islamic Values Integrated Curriculum"
+                                        data-fr="Programme Intégré aux Valeurs Islamiques"
+                                        data-ar="منهج متكامل مع القيم الإسلامية">Islamic Values Integrated
+                                        Curriculum</span></li>
+                                <li><i class="fas fa-users"></i> <span data-en="Experienced & Caring Staff"
+                                        data-fr="Personnel Expérimenté et Attentionné"
+                                        data-ar="طاقم عمل خبير ومهتم">Experienced & Caring Staff</span></li>
+                                <li><i class="fas fa-mosque"></i> <span data-en="Focus on Moral Development"
+                                        data-fr="Accent sur le Développement Moral"
+                                        data-ar="التركيز على التنمية الأخلاقية">Focus on Moral Development</span></li>
+                            </ul>
+                            <div class="admission-cta">
+                                <a href="mailto:MIASchool@miaonline.org" class="btn btn-primary"
+                                    data-en="Request Registration Form" data-fr="Demander le Formulaire d'Inscription"
+                                    data-ar="طلب نموذج التسجيل">Request Registration Form</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features section">
+                <div class="container">
+                    <h2 class="section-title" data-en="Why Choose MIA Institute?"
+                        data-fr="Pourquoi Choisir l'Institut MIA ?" data-ar="لماذا تختار معهد MIA؟">Why Choose MIA
+                        Institute?</h2>
+                    <div class="features-grid">
+                        <div class="feature-card animate-on-scroll">
+                            <div class="feature-icon floating"><i class="fas fa-quran"></i></div>
+                            <h3 data-en="Faith-Based Education" data-fr="Éducation Basée sur la Foi"
+                                data-ar="تعليم قائم على الإيمان">Faith-Based Education</h3>
+                            <p data-en="Integrating Islamic teachings and values into daily learning."
+                                data-fr="Intégration des enseignements et des valeurs islamiques dans l'apprentissage quotidien."
+                                data-ar="دمج التعاليم والقيم الإسلامية في التعلم اليومي.">Integrating Islamic teachings
+                                and values into daily learning.</p>
+                        </div>
+                        <div class="feature-card animate-on-scroll">
+                            <div class="feature-icon floating"><i class="fas fa-graduation-cap"></i></div>
+                            <h3 data-en="Academic Excellence" data-fr="Excellence Académique"
+                                data-ar="التفوق الأكاديمي">Academic Excellence</h3>
+                            <p data-en="Striving for high academic standards alongside character development."
+                                data-fr="Viser des normes académiques élevées parallèlement au développement du caractère."
+                                data-ar="السعي لتحقيق معايير أكاديمية عالية إلى جانب تنمية الشخصية.">Striving for high
+                                academic standards alongside character development.</p>
+                        </div>
+                        <div class="feature-card animate-on-scroll">
+                            <div class="feature-icon floating"><i class="fas fa-shield-alt"></i></div>
+                            <h3 data-en="Safe & Nurturing Environment" data-fr="Environnement Sûr et Stimulant"
+                                data-ar="بيئة آمنة ورعاية">Safe & Nurturing Environment</h3>
+                            <p data-en="A supportive community where students feel safe and valued."
+                                data-fr="Une communauté de soutien où les élèves se sentent en sécurité et valorisés."
+                                data-ar="مجتمع داعم يشعر فيه الطلاب بالأمان والتقدير.">A supportive community where
+                                students feel safe and valued.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </div> <!-- End Admissions Page -->
+
+    </main>
+
+    <footer id="contact-footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3 data-en="About MIA Institute" data-fr="À Propos de l'Institut MIA" data-ar="حول معهد MIA">About MIA
+                    Institute</h3>
+                <p data-en="Dedicated to fostering knowledge, faith, and strong character in young Muslims within a supportive Canadian context."
+                    data-fr="Dédié à encourager la connaissance, la foi et un caractère fort chez les jeunes musulmans dans un contexte canadien favorable."
+                    data-ar="مكرسون لتعزيز المعرفة والإيمان والشخصية القوية لدى الشباب المسلم في سياق كندي داعم.">
+                    Dedicated to fostering knowledge, faith, and strong character in young Muslims within a supportive
+                    Canadian context.
+                </p>
+                <div class="social-links">
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3 data-en="Quick Links" data-fr="Liens Rapides" data-ar="روابط سريعة">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home" class="page-link" data-page="home-page" data-en="Home" data-fr="Accueil"
+                            data-ar="الرئيسية">Home</a></li>
+                    <li><a href="#about" class="scroll-link" data-en="About Us" data-fr="À Propos"
+                            data-ar="عن المعهد">About Us</a></li>
+                    <li><a href="#admissions" class="page-link" data-page="admissions-page" data-en="Admissions"
+                            data-fr="Admissions" data-ar="القبول">Admissions</a></li>
+                    <li><a href="#team" class="scroll-link" data-en="Our Team" data-fr="Notre Équipe"
+                            data-ar="فريقنا">Our Team</a></li>
+                    <li><a href="#donate-cta" class="scroll-link" data-en="Donate" data-fr="Faire un Don"
+                            data-ar="تبرع">Donate</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 data-en="Contact Us" data-fr="Nous Contacter" data-ar="اتصل بنا">Contact Us</h3>
+                <ul class="contact-info-footer">
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:MIASchool@miaonline.org"
+                            data-en="School Office/Principal" data-fr="Bureau/Directeur"
+                            data-ar="مكتب المدرسة/المدير">School Office/Principal: MIASchool@miaonline.org</a></li>
+                    <li><i class="fas fa-envelope-open-text"></i> <a href="mailto:MIASchoolBoard@miaonline.org"
+                            data-en="School Board" data-fr="Conseil d'École" data-ar="مجلس الإدارة">School Board:
+                            MIASchoolBoard@miaonline.org</a></li>
+                    <!-- Add Address and Phone if available -->
+                    <li><i class="fas fa-map-marker-alt"></i> <span data-en="School Address"
+                            data-fr=" Adresse d'École" data-ar="عنوان"> School Address</span>
+                    </li>
+                    <li><i class="fas fa-phone"></i> <span data-en="Phone Number"
+                            data-fr="Numéro de Téléphone" data-ar="رقم هاتف"> Phone Number</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            © <span id="current-year"></span> Manitoba Islamic Association. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const languageButtons = document.querySelectorAll('.language-btn');
+            const translatableElements = document.querySelectorAll('[data-en], [data-fr], [data-ar]');
+            const body = document.body;
+            const navLinksContainer = document.querySelector('.nav-links');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const pageLinks = document.querySelectorAll('.page-link');
+            const scrollLinks = document.querySelectorAll('.scroll-link');
+            const pages = document.querySelectorAll('.page');
+            const preloader = document.querySelector('.preloader');
+            const header = document.querySelector('header');
+            const currentYearSpan = document.getElementById('current-year');
+
+            // --- Preloader ---
+            window.addEventListener('load', () => {
+                preloader.classList.add('hidden');
+            });
+
+            // --- Current Year ---
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+
+
+            // --- Language Switching ---
+            function setLanguage(lang) {
+                if (!['en', 'fr', 'ar'].includes(lang)) lang = 'en'; // Fallback to English
+
+                localStorage.setItem('language', lang);
+                document.documentElement.lang = lang; // Set HTML lang attribute
+
+                languageButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+                });
+
+                translatableElements.forEach(element => {
+                    const translation = element.getAttribute(`data-${lang}`);
+                    // Preserve child elements like <a> inside <p>
+                    if (translation) {
+                        // Find and preserve links or other important children if necessary
+                        const links = element.querySelectorAll('a');
+                        if (links.length > 0) {
+                            // Basic replacement, might need more complex logic
+                            // if structure varies significantly between languages
+                            element.innerHTML = translation;
+                        } else {
+                            element.textContent = translation;
+                        }
+                    }
+                });
+
+                body.classList.toggle('rtl', lang === 'ar');
+
+                // Re-apply active class to nav link for the current page after lang switch
+                const activePageId = document.querySelector('.page.active')?.id;
+                if (activePageId) {
+                    setActiveNavLink(activePageId);
+                }
+            }
+
+            languageButtons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const lang = this.getAttribute('data-lang');
+                    setLanguage(lang);
+                });
+            });
+
+            // Load stored language or default to English
+            const storedLanguage = localStorage.getItem('language');
+            setLanguage(storedLanguage || 'en');
+
+            // --- Mobile Menu ---
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinksContainer.classList.toggle('active');
+                mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
+                mobileMenuBtn.querySelector('i').classList.toggle('fa-times'); // Toggle icon
+            });
+
+            // Close mobile menu when a link is clicked
+            navLinksContainer.addEventListener('click', (e) => {
+                if (e.target.matches('.nav-link') || e.target.matches('.donate-btn')) {
+                    navLinksContainer.classList.remove('active');
+                    mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                    mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                }
+            });
+
+            // --- Page Navigation ---
+            function setActiveNavLink(targetPageId) {
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.classList.contains('page-link') && link.dataset.page === targetPageId) {
+                        link.classList.add('active');
+                    }
+                    // Handle highlighting scroll links based on section visibility (more complex, needs IntersectionObserver)
+                });
+            }
+
+            pageLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetPageId = link.dataset.page;
+                    if (!targetPageId) return;
+
+                    const targetPage = document.getElementById(targetPageId);
+                    if (targetPage && !targetPage.classList.contains('active')) {
+                        // Hide all pages
+                        pages.forEach(page => page.classList.remove('active'));
+                        // Show target page
+                        targetPage.classList.add('active');
+                        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top of new page
+                        setActiveNavLink(targetPageId); // Update active nav link
+                        // Re-run animations for the new page if needed (using observer logic)
+                        observeElements(targetPage);
+                    } else if (targetPage && targetPage.classList.contains('active')) {
+                        // If clicking the link for the already active page, scroll to top
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // --- Smooth Scrolling for Anchor Links ---
+            scrollLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href'); // e.g., #about
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        // Check if the target element is on a different page
+                        const targetPage = targetElement.closest('.page');
+                        if (targetPage && !targetPage.classList.contains('active')) {
+                            // Switch to the target page first
+                            pages.forEach(page => page.classList.remove('active'));
+                            targetPage.classList.add('active');
+                            setActiveNavLink(targetPage.id);
+                            observeElements(targetPage);
+
+                            // Wait a moment for the page to switch before scrolling
+                            setTimeout(() => {
+                                smoothScrollToElement(targetElement);
+                            }, 100); // Adjust delay if needed
+                        } else {
+                            // Target is on the current page, just scroll
+                            smoothScrollToElement(targetElement);
+                        }
+                    }
+                });
+            });
+
+            function smoothScrollToElement(element) {
+                const headerOffset = header.offsetHeight + 20; // Adjust offset as needed
+                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+
+
+            // --- Animate on Scroll ---
+            const observerOptions = {
+                root: null, // relative to viewport
+                rootMargin: '0px',
+                threshold: 0.15 // Trigger when 15% of the element is visible
+            };
+
+            const animationObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Optional: unobserve after animation to prevent re-triggering
+                        // observer.unobserve(entry.target);
+                    } else {
+                        // Optional: remove class to re-animate when scrolling back up
+                        // entry.target.classList.remove('active');
+                    }
+                });
+            }, observerOptions);
+
+            function observeElements(container) {
+                const elementsToAnimate = container.querySelectorAll('.animate-on-scroll');
+                elementsToAnimate.forEach(el => animationObserver.observe(el));
+            }
+
+            // Initial observation for the default active page
+            const initialActivePage = document.querySelector('.page.active');
+            if (initialActivePage) {
+                observeElements(initialActivePage);
+            }
+
+
+            // --- Particle Animation ---
+            function createParticles(container, count = 30, color = 'rgba(255, 255, 255, 0.2)') {
+                if (!container) return;
+                for (let i = 0; i < count; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    const size = Math.random() * 6 + 2; // Particle size between 2px and 8px
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    particle.style.left = `${Math.random() * 100}%`; // Use % for responsiveness
+                    // Start particles from bottom and animate upwards
+                    particle.style.bottom = `${Math.random() * -50 - 10}vh`; // Start below screen
+                    particle.style.animationDuration = `${Math.random() * 10 + 10}s`; // Duration 10-20s
+                    particle.style.animationDelay = `${Math.random() * 5}s`;
+                    particle.style.backgroundColor = color;
+                    container.appendChild(particle);
+                }
+            }
+            createParticles(document.querySelector('.hero .particles'));
+            createParticles(document.querySelector('.page-header .particles'));
+
+        }); // End DOMContentLoaded
+    </script>
+
+</body>
+
+</html>
