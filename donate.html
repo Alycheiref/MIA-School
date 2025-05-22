@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Manitoba Islamic Association (MIA)</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="quick-contact">
+                <span><i class="fas fa-phone"></i> +1 (204) 944-1560</span>
+                <span><i class="fas fa-envelope"></i> info@miaonline.org</span>
+            </div>
+            <div class="language-selector">
+                <button class="language-btn" data-lang="en">EN</button>
+                <button class="language-btn" data-lang="fr">FR</button>
+                <button class="language-btn" data-lang="ar">AR</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header-nav">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <img src="logo.jpeg" alt="MIA Logo">
+                <span>MIA</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link" data-translate-key="home">Home</a>
+                <a href="about.html" class="nav-link" data-translate-key="about">About</a>
+                <a href="services.html" class="nav-link" data-translate-key="services">Services</a>
+                <a href="religion.html" class="nav-link" data-translate-key="religion">Religion</a>
+                <a href="education.html" class="nav-link" data-translate-key="education">Education</a>
+            </nav>
+            <a href="donate.html" class="donate-btn-header active" data-translate-key="donate">Donate</a>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+        <!-- Mobile Nav Structure -->
+        <nav class="mobile-nav">
+             <a href="index.html" class="nav-link" data-translate-key="home">Home</a>
+             <a href="about.html" class="nav-link" data-translate-key="about">About</a>
+             <a href="services.html" class="nav-link" data-translate-key="services">Services</a>
+             <a href="religion.html" class="nav-link" data-translate-key="religion">Religion</a>
+             <a href="education.html" class="nav-link" data-translate-key="education">Education</a>
+             <a href="donate.html" class="donate-btn-header active" data-translate-key="donate">Donate</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header" style="background-image: linear-gradient(rgba(0, 80, 5, 0.7), rgba(46, 125, 50, 0.7)), url("mia.jpg"); background-position: center;">
+            <div class="container">
+                <h1 class="page-title animate__animated animate__fadeInDown" data-translate-key="donatePageTitle">Support MIA</h1>
+            </div>
+        </section>
+
+        <section class="section donation-page-content">
+            <div class="container">
+                <p class="lead" style="text-align: center; max-width: 800px; margin: 0 auto 3rem auto; font-size: 1.1rem; color: #555;" data-translate-key="donateIntro">Your contributions are vital to sustaining the activities and services provided by the Manitoba Islamic Association. Help us continue our work in serving the community, providing education, supporting those in need, and maintaining our facilities. All donations are greatly appreciated and used responsibly.</p>
+
+                <section class="section donation-methods" id="donation-methods">
+                    <h2 class="section-title" data-translate-key="donationOptionsTitle">Donation Options</h2>
+                    <div class="donation-options">
+                        <div class="donation-box animate-on-scroll">
+                            <h3><i class="fas fa-hand-holding-heart"></i> <span data-translate-key="oneTimeDonationTitle">One-Time Donation</span></h3>
+                            <p data-translate-key="oneTimeDonationDesc">Make a single contribution to support MIA's general operations or specific projects.</p>
+                            <button class="btn btn-accent" data-translate-key="donateNowOneTime">Donate Now (One-Time)</button>
+                            <p><small><em data-translate-key="paymentGatewayPlaceholder">Placeholder: Links to secure payment gateway.</em></small></p>
+                        </div>
+                        <div class="donation-box animate-on-scroll">
+                            <h3><i class="fas fa-calendar-alt"></i> <span data-translate-key="monthlyDonationTitle">Monthly Donation</span></h3>
+                            <p data-translate-key="monthlyDonationDesc">Set up a recurring monthly donation to provide ongoing support for MIA's programs and services.</p>
+                            <button class="btn btn-accent" data-translate-key="donateMonthly">Donate Monthly</button>
+                             <p><small><em data-translate-key="paymentGatewayPlaceholder">Placeholder: Links to secure payment gateway.</em></small></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section zakat-info bg-light" id="zakat-info" style="padding: 4rem 0; margin-top: 4rem; border-radius: 10px;">
+                    <div class="container text-center">
+                        <h2 class="section-title" style="margin-bottom: 2rem;" data-translate-key="zakatDonationsTitle">Zakat Donations</h2>
+                        <p style="max-width: 700px; margin: 0 auto 1.5rem auto;" data-translate-key="zakatDonationsDesc">You can fulfill your Zakat obligation through MIA. We ensure that Zakat funds are collected and distributed according to Islamic principles to eligible recipients within the local community.</p>
+                        <p>
+                            <a href="#" class="btn btn-outline" data-translate-key="donateZakatHere">Donate Zakat Here</a>
+                            <a href="#" class="btn btn-outline" data-translate-key="zakatCalculator">Zakat Calculator</a>
+                            <a href="#" class="btn btn-outline" data-translate-key="distributionPolicy">Distribution Policy</a>
+                        </p>
+                        <p style="margin-top: 1rem;"><small data-translate-key="specifyZakatNote">Please specify 'Zakat' when making your donation if applicable.</small></p>
+                    </div>
+                </section>
+
+                <section class="section other-ways" id="other-ways" style="margin-top: 4rem;">
+                     <h2 class="section-title" data-translate-key="otherWaysTitle">Other Ways to Give</h2>
+                     <div class="card-grid">
+                         <div class="card animate-on-scroll">
+                             <h3><i class="fas fa-seedling"></i> <span data-translate-key="sadaqahJariyahTitle">Sadaqah Jariyah</span></h3>
+                             <p data-translate-key="sadaqahJariyahDesc">Contribute to ongoing charity projects that provide continuous benefit, such as supporting infrastructure or educational programs.</p>
+                             <a href="#" class="btn btn-sm btn-outline" data-translate-key="learnMore">Learn More</a>
+                         </div>
+                         <div class="card animate-on-scroll">
+                             <h3><i class="fas fa-project-diagram"></i> <span data-translate-key="specificProjectsTitle">Specific Projects</span></h3>
+                             <p data-translate-key="specificProjectsDesc">Support specific initiatives like mosque expansion, school development, or community outreach programs.</p>
+                             <a href="#" class="btn btn-sm btn-outline" data-translate-key="viewProjects">View Projects</a>
+                         </div>
+                         <div class="card animate-on-scroll">
+                             <h3><i class="fas fa-hands"></i> <span data-translate-key="inKindDonationsTitle">In-Kind Donations</span></h3>
+                             <p data-translate-key="inKindDonationsDesc">Contribute goods or services that can benefit MIA's operations or programs. Please contact us for details.</p>
+                             <a href="#" class="btn btn-sm btn-outline" data-translate-key="contactUs">Contact Us</a>
+                         </div>
+                          <div class="card animate-on-scroll">
+                             <h3><i class="fas fa-layer-group"></i> <span data-translate-key="miaWakfTitle">MIA Wakf Foundation</span></h3>
+                             <p data-translate-key="miaWakfDesc">Support the long-term sustainability of MIA through contributions to the MIA Wakf Foundation endowment fund.</p>
+                             <a href="#" class="btn btn-sm btn-outline" data-translate-key="wakfFoundation">Wakf Foundation</a>
+                         </div>
+                     </div>
+                </section>
+
+                <section class="section tax-receipts text-center" id="tax-receipts" style="margin-top: 4rem;">
+                    <h3><i class="fas fa-receipt"></i> <span data-translate-key="taxReceiptsTitle">Tax Receipts</span></h3>
+                    <p data-translate-key="taxReceiptsDesc">MIA is a registered charity (Charity Registration Number: [Placeholder]). Tax receipts will be issued for eligible donations according to CRA guidelines. Please ensure you provide accurate contact information when donating.</p>
+                </section>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 data-translate-key="about">About MIA</h3>
+                    <p data-translate-key="aboutMIAFooter">The Manitoba Islamic Association (MIA) is dedicated to serving the diverse Muslim community in Manitoba through religious guidance, education, social services, and community building.</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3 data-translate-key="quickLinksFooter">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html" data-translate-key="about">About Us</a></li>
+                        <li><a href="services.html" data-translate-key="services">Services</a></li>
+                        <li><a href="religion.html" data-translate-key="prayerTimingsTitle">Prayer Timings</a></li>
+                        <li><a href="education.html" data-translate-key="qlMiaInstitute">MIA School</a></li>
+                        <li><a href="#" data-translate-key="qlEvents">Events</a></li>
+                        <li><a href="donate.html" data-translate-key="donate">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-translate-key="contactUsFooter">Contact Us</h3>
+                    <ul class="contact-info-footer">
+                        <li><i class="fas fa-map-marker-alt"></i> 2445 Waverley St, Winnipeg, MB R3Y 1S3</li>
+                        <li><i class="fas fa-phone"></i> +1 (204) 944-1560</li>
+                        <li><i class="fas fa-envelope"></i> info@miaonline.org</li>
+                        <li data-translate-key="officeHours">Office Hours: Mon-Fri, 9am - 5pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright" data-translate-key="copyrightFooter">
+                Copyright &copy; 2024 Manitoba Islamic Association. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="lang_switcher.js"></script>
+
+</body>
+</html>

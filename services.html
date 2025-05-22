@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Manitoba Islamic Association (MIA)</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="quick-contact">
+                <span><i class="fas fa-phone"></i> +1 (204) 944-1560</span>
+                <span><i class="fas fa-envelope"></i> info@miaonline.org</span>
+            </div>
+            <div class="language-selector">
+                <button class="language-btn" data-lang="en">EN</button>
+                <button class="language-btn" data-lang="fr">FR</button>
+                <button class="language-btn" data-lang="ar">AR</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header-nav">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <img src="logo.jpeg" alt="MIA Logo">
+                <span>MIA</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link" data-translate-key="home">Home</a>
+                <a href="about.html" class="nav-link" data-translate-key="about">About</a>
+                <a href="services.html" class="nav-link active" data-translate-key="services">Services</a>
+                <a href="religion.html" class="nav-link" data-translate-key="religion">Religion</a>
+                <a href="education.html" class="nav-link" data-translate-key="education">Education</a>
+            </nav>
+            <a href="donate.html" class="donate-btn-header" data-translate-key="donate">Donate</a>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+        <!-- Mobile Nav Structure -->
+        <nav class="mobile-nav">
+             <a href="index.html" class="nav-link" data-translate-key="home">Home</a>
+             <a href="about.html" class="nav-link" data-translate-key="about">About</a>
+             <a href="services.html" class="nav-link active" data-translate-key="services">Services</a>
+             <a href="religion.html" class="nav-link" data-translate-key="religion">Religion</a>
+             <a href="education.html" class="nav-link" data-translate-key="education">Education</a>
+             <a href="donate.html" class="donate-btn-header" data-translate-key="donate">Donate</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header" style="background-image: linear-gradient(rgba(0, 80, 5, 0.7), rgba(46, 125, 50, 0.7)), url("mia.jpg"); background-position: center;">
+            <div class="container">
+                <h1 class="page-title animate__animated animate__fadeInDown" data-translate-key="servicesPageTitle">Community Services</h1>
+            </div>
+        </section>
+
+        <section class="section services-overview">
+            <div class="container">
+                 <p class="lead" style="text-align: center; max-width: 800px; margin: 0 auto 3rem auto; font-size: 1.1rem; color: #555;" data-translate-key="servicesIntro">MIA is committed to providing a wide range of services to support the diverse needs of the Muslim community in Manitoba, fostering well-being and mutual support.</p>
+
+                <div class="card-grid">
+                    <div class="card animate-on-scroll" id="janazah">
+                        <h3><i class="fas fa-person-praying"></i> <span data-translate-key="janazahTitle">Funeral Services (Janazah)</span></h3>
+                        <p data-translate-key="janazahDesc">We provide support and guidance for funeral arrangements according to Islamic traditions. Our team assists families during their time of need with compassion and care.</p>
+                        <a href="#" class="btn btn-sm btn-outline" data-translate-key="learnMore">Learn More</a>
+                    </div>
+
+                    <div class="card animate-on-scroll" id="marriage">
+                        <h3><i class="fas fa-ring"></i> <span data-translate-key="marriageTitle">Marriage Services</span></h3>
+                        <p data-translate-key="marriageDesc">MIA offers services related to Islamic marriage contracts (Nikah), including officiating ceremonies and providing pre-marital counseling.</p>
+                        <a href="#" class="btn btn-sm btn-outline" data-translate-key="detailsBooking">Details & Booking</a>
+                    </div>
+
+                    <div class="card animate-on-scroll" id="mental-health">
+                        <h3><i class="fas fa-brain"></i> <span data-translate-key="mentalHealthTitle">Mental Health & Wellness</span></h3>
+                        <p data-translate-key="mentalHealthDesc">Confidential counselling services and resources to support individuals and families facing challenges, provided with cultural sensitivity.</p>
+                        <a href="#" class="btn btn-sm btn-outline" data-translate-key="resourcesContact">Resources & Contact</a>
+                    </div>
+
+                    <div class="card animate-on-scroll" id="takaful">
+                        <h3><i class="fas fa-hands-helping"></i> <span data-translate-key="takafulTitle">Financial Assistance (Takaful)</span></h3>
+                        <p data-translate-key="takafulDesc">Through our Takaful program, we provide financial assistance to community members facing hardship, based on mutual support and Islamic charity.</p>
+                        <a href="#" class="btn btn-sm btn-outline" data-translate-key="applyCriteria">Apply / Criteria</a>
+                    </div>
+
+                    <div class="card animate-on-scroll" id="new-muslims">
+                        <h3><i class="fas fa-user-plus"></i> <span data-translate-key="newMuslimsTitle">New Muslim Support</span></h3>
+                        <p data-translate-key="newMuslimsDesc">Dedicated support and resources for individuals new to Islam, helping them integrate into the community and learn about their faith.</p>
+                        <a href="#" class="btn btn-sm btn-outline" data-translate-key="getSupport">Get Support</a>
+                    </div>
+
+                    <div class="card animate-on-scroll" id="outreach">
+                        <h3><i class="fas fa-bullhorn"></i> <span data-translate-key="outreachTitle">Outreach Programs</span></h3>
+                        <p data-translate-key="outreachDesc">MIA actively engages in outreach programs to build bridges with the wider community, promote interfaith dialogue, and share information about Islam.</p>
+                        <a href="#" class="btn btn-sm btn-outline" data-translate-key="ourPrograms">Our Programs</a>
+                    </div>
+
+                    <div class="card animate-on-scroll" id="zakat-sadaqah">
+                        <h3><i class="fas fa-hand-holding-heart"></i> <span data-translate-key="zakatSadaqahTitle">Zakat & Sadaqah</span></h3>
+                        <p data-translate-key="zakatSadaqahDesc">We facilitate the collection and distribution of Zakat and Sadaqah according to Islamic guidelines, ensuring contributions reach those in need.</p>
+                        <a href="donate.html#zakat-info" class="btn btn-sm btn-outline" data-translate-key="donateInfo">Donate / Info</a>
+                    </div>
+
+                    <div class="card animate-on-scroll" id="facility-rental">
+                        <h3><i class="fas fa-building"></i> <span data-translate-key="facilityRentalTitle">Facility Rental</span></h3>
+                        <p data-translate-key="facilityRentalDesc">Our facilities, including halls and meeting rooms, are available for rent for community events and functions.</p>
+                        <a href="#" class="btn btn-sm btn-outline" data-translate-key="bookingInfo">Booking Information</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 data-translate-key="about">About MIA</h3>
+                    <p data-translate-key="aboutMIAFooter">The Manitoba Islamic Association (MIA) is dedicated to serving the diverse Muslim community in Manitoba through religious guidance, education, social services, and community building.</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3 data-translate-key="quickLinksFooter">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html" data-translate-key="about">About Us</a></li>
+                        <li><a href="services.html" data-translate-key="services">Services</a></li>
+                        <li><a href="religion.html" data-translate-key="prayerTimingsTitle">Prayer Timings</a></li>
+                        <li><a href="education.html" data-translate-key="qlMiaInstitute">MIA School</a></li>
+                        <li><a href="#" data-translate-key="qlEvents">Events</a></li>
+                        <li><a href="donate.html" data-translate-key="donate">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-translate-key="contactUsFooter">Contact Us</h3>
+                    <ul class="contact-info-footer">
+                        <li><i class="fas fa-map-marker-alt"></i> 2445 Waverley St, Winnipeg, MB R3Y 1S3</li>
+                        <li><i class="fas fa-phone"></i> +1 (204) 944-1560</li>
+                        <li><i class="fas fa-envelope"></i> info@miaonline.org</li>
+                        <li data-translate-key="officeHours">Office Hours: Mon-Fri, 9am - 5pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright" data-translate-key="copyrightFooter">
+                Copyright &copy; 2024 Manitoba Islamic Association. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="lang_switcher.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Religion - Manitoba Islamic Association (MIA)</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="quick-contact">
+                <span><i class="fas fa-phone"></i> +1 (204) 944-1560</span>
+                <span><i class="fas fa-envelope"></i> info@miaonline.org</span>
+            </div>
+            <div class="language-selector">
+                <button class="language-btn" data-lang="en">EN</button>
+                <button class="language-btn" data-lang="fr">FR</button>
+                <button class="language-btn" data-lang="ar">AR</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header-nav">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <img src="logo.jpeg" alt="MIA Logo">
+                <span>MIA</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link" data-translate-key="home">Home</a>
+                <a href="about.html" class="nav-link" data-translate-key="about">About</a>
+                <a href="services.html" class="nav-link" data-translate-key="services">Services</a>
+                <a href="religion.html" class="nav-link active" data-translate-key="religion">Religion</a>
+                <a href="education.html" class="nav-link" data-translate-key="education">Education</a>
+            </nav>
+            <a href="donate.html" class="donate-btn-header" data-translate-key="donate">Donate</a>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+        <!-- Mobile Nav Structure -->
+        <nav class="mobile-nav">
+             <a href="index.html" class="nav-link" data-translate-key="home">Home</a>
+             <a href="about.html" class="nav-link" data-translate-key="about">About</a>
+             <a href="services.html" class="nav-link" data-translate-key="services">Services</a>
+             <a href="religion.html" class="nav-link active" data-translate-key="religion">Religion</a>
+             <a href="education.html" class="nav-link" data-translate-key="education">Education</a>
+             <a href="donate.html" class="donate-btn-header" data-translate-key="donate">Donate</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header" style="background-image: linear-gradient(rgba(0, 80, 5, 0.7), rgba(46, 125, 50, 0.7)), url("mia.jpg"); background-position: center;">
+            <div class="container">
+                <h1 class="page-title animate__animated animate__fadeInDown" data-translate-key="religionPageTitle">Religious Services & Information</h1>
+            </div>
+        </section>
+
+        <section class="section prayer-times-detailed" id="prayer-timings">
+            <div class="container">
+                <h2 class="section-title" data-translate-key="prayerTimingsTitle">Prayer Timings</h2>
+                <p class="lead" style="text-align: center; max-width: 800px; margin: -2rem auto 3rem auto; font-size: 1.1rem; color: #555;" data-translate-key="prayerTimingsIntro">Accurate prayer timings are crucial for daily worship. Find today's timings below and access the full monthly calendar.</p>
+                <div class="prayer-times animate-on-scroll">
+                     <p style="text-align: center; margin-bottom: 1rem; font-weight: 500;" data-translate-key="prayerDate">May 4, 2025 / 6 Dhū al-Qaʻda 1446</p>
+                     <table>
+                         <thead><tr><th data-translate-key="prayer">Prayer</th><th data-translate-key="athan">Athan</th><th data-translate-key="iqamah">Iqamah</th></tr></thead>
+                         <tbody>
+                             <tr><td data-translate-key="fajr">Fajr</td><td>4:05 am</td><td>5:00 am</td></tr>
+                             <tr><td data-translate-key="sunrise">Sunrise</td><td>5:59 am</td><td>-</td></tr>
+                             <tr class="current-prayer"><td data-translate-key="zuhr">Zuhr</td><td>1:26 pm</td><td>2:00 pm</td></tr>
+                             <tr><td data-translate-key="asr">Asr</td><td>5:30 pm</td><td>6:00 pm</td></tr>
+                             <tr><td data-translate-key="maghrib">Maghrib</td><td>8:55 pm</td><td>9:05 pm</td></tr>
+                             <tr><td data-translate-key="isha">Isha</td><td>10:47 pm</td><td>10:52 pm</td></tr>
+                         </tbody>
+                     </table>
+                     <p style="text-align: center; margin-top: 1rem;" data-translate-key="jumuahTimings"><strong>Jumuah Timings:</strong> 1:45 pm | 3:45 pm</p>
+                     <p style="text-align: center; margin-top: 1rem;">
+                         <a href="#" class="btn btn-outline" data-translate-key="viewMonthlyCalendar">View Monthly Calendar</a>
+                         <a href="#" class="btn btn-outline" data-translate-key="fcnaCalendarInfo">FCNA Calendar Info</a>
+                     </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section religious-info bg-light">
+            <div class="container">
+                <div class="card-grid">
+                    <div class="card animate-on-scroll" id="friday-prayer">
+                        <h3><i class="fas fa-mosque"></i> <span data-translate-key="jumuahTitle">Friday Prayer (Jumuah)</span></h3>
+                        <p data-translate-key="jumuahDesc">Join us for the congregational Friday prayers. Sermons (Khutbahs) are delivered by knowledgeable speakers at multiple locations.</p>
+                        <a href="#" class="btn btn-sm btn-outline" data-translate-key="khutbahSchedule">Khutbah Schedule</a>
+                    </div>
+
+                    <div class="card animate-on-scroll" id="ramadan">
+                        <h3><i class="fas fa-moon"></i> <span data-translate-key="ramadanTitle">Ramadan Information</span></h3>
+                        <p data-translate-key="ramadanDesc">During the blessed month of Ramadan, MIA organizes special prayers (Taraweeh), community Iftars, and other programs. Find relevant schedules and information here.</p>
+                        <a href="#" class="btn btn-sm btn-outline" data-translate-key="ramadanPrograms">Ramadan Programs</a>
+                    </div>
+
+                    <div class="card animate-on-scroll" id="fiqh-committee">
+                        <h3><i class="fas fa-gavel"></i> <span data-translate-key="fiqhCommitteeTitle">MIA Fiqh Committee</span></h3>
+                        <p data-translate-key="fiqhCommitteeDesc">The MIA Fiqh Committee provides guidance on matters of Islamic jurisprudence relevant to the local community. Access rulings or submit inquiries.</p>
+                        <a href="#" class="btn btn-sm btn-outline" data-translate-key="learnMoreContact">Learn More / Contact</a>
+                    </div>
+
+                    <div class="card animate-on-scroll" id="ask-imam">
+                        <h3><i class="fas fa-question-circle"></i> <span data-translate-key="askImamTitle">Ask an Imam</span></h3>
+                        <p data-translate-key="askImamDesc">Have a question about religious matters? Our qualified Imams are available to provide guidance and clarification based on Islamic teachings.</p>
+                        <a href="#" class="btn btn-sm btn-outline" data-translate-key="submitQuestion">Submit Question</a>
+                    </div>
+
+                    <div class="card animate-on-scroll" id="zakat">
+                        <h3><i class="fas fa-hand-holding-usd"></i> <span data-translate-key="zakatInfoTitle">Zakat Information</span></h3>
+                        <p data-translate-key="zakatInfoDesc">Learn about the obligation of Zakat and how MIA facilitates its collection and distribution to eligible recipients within the community.</p>
+                        <a href="donate.html#zakat-info" class="btn btn-sm btn-outline" data-translate-key="zakatDetails">Zakat Details</a>
+                    </div>
+
+                    <div class="card animate-on-scroll" id="mosques">
+                        <h3><i class="fas fa-kaaba"></i> <span data-translate-key="affiliatedMosquesTitle">Affiliated Mosques</span></h3>
+                        <p data-translate-key="affiliatedMosquesDesc">Find information about mosques affiliated with or supported by MIA, including locations and contact details.</p>
+                        <a href="#" class="btn btn-sm btn-outline" data-translate-key="mosqueDirectory">Mosque Directory</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 data-translate-key="about">About MIA</h3>
+                    <p data-translate-key="aboutMIAFooter">The Manitoba Islamic Association (MIA) is dedicated to serving the diverse Muslim community in Manitoba through religious guidance, education, social services, and community building.</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3 data-translate-key="quickLinksFooter">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html" data-translate-key="about">About Us</a></li>
+                        <li><a href="services.html" data-translate-key="services">Services</a></li>
+                        <li><a href="religion.html" data-translate-key="prayerTimingsTitle">Prayer Timings</a></li>
+                        <li><a href="education.html" data-translate-key="qlMiaInstitute">MIA School</a></li>
+                        <li><a href="#" data-translate-key="qlEvents">Events</a></li>
+                        <li><a href="donate.html" data-translate-key="donate">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-translate-key="contactUsFooter">Contact Us</h3>
+                    <ul class="contact-info-footer">
+                        <li><i class="fas fa-map-marker-alt"></i> 2445 Waverley St, Winnipeg, MB R3Y 1S3</li>
+                        <li><i class="fas fa-phone"></i> +1 (204) 944-1560</li>
+                        <li><i class="fas fa-envelope"></i> info@miaonline.org</li>
+                        <li data-translate-key="officeHours">Office Hours: Mon-Fri, 9am - 5pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright" data-translate-key="copyrightFooter">
+                Copyright &copy; 2024 Manitoba Islamic Association. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="lang_switcher.js"></script>
+
+</body>
+</html>

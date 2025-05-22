@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Manitoba Islamic Association (MIA)</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="quick-contact">
+                <span><i class="fas fa-phone"></i> +1 (204) 944-1560</span>
+                <span><i class="fas fa-envelope"></i> info@miaonline.org</span>
+            </div>
+            <div class="language-selector">
+                <button class="language-btn" data-lang="en">EN</button>
+                <button class="language-btn" data-lang="fr">FR</button>
+                <button class="language-btn" data-lang="ar">AR</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header-nav">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <img src="logo.jpeg" alt="MIA Logo">
+                <span>MIA</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link" data-translate-key="home">Home</a>
+                <a href="about.html" class="nav-link" data-translate-key="about">About</a>
+                <a href="services.html" class="nav-link" data-translate-key="services">Services</a>
+                <a href="religion.html" class="nav-link" data-translate-key="religion">Religion</a>
+                <a href="education.html" class="nav-link active" data-translate-key="education">Education</a>
+            </nav>
+            <a href="donate.html" class="donate-btn-header" data-translate-key="donate">Donate</a>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+        <!-- Mobile Nav Structure -->
+        <nav class="mobile-nav">
+             <a href="index.html" class="nav-link" data-translate-key="home">Home</a>
+             <a href="about.html" class="nav-link" data-translate-key="about">About</a>
+             <a href="services.html" class="nav-link" data-translate-key="services">Services</a>
+             <a href="religion.html" class="nav-link" data-translate-key="religion">Religion</a>
+             <a href="education.html" class="nav-link active" data-translate-key="education">Education</a>
+             <a href="donate.html" class="donate-btn-header" data-translate-key="donate">Donate</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header" style="background-image: linear-gradient(rgba(0, 80, 5, 0.7), rgba(46, 125, 50, 0.7)), url("student.avif"); background-position: center;">
+            <div class="container">
+                <h1 class="page-title animate__animated animate__fadeInDown" data-translate-key="educationPageTitle">Education Programs & Resources</h1>
+            </div>
+        </section>
+
+        <section class="section mia-school-section" id="mia-school">
+            <div class="container">
+                 <h2 class="section-title" data-translate-key="miaInstituteTitle">MIA Institute of Knowledge</h2>
+                 <div class="about-content grid-layout" style="align-items: flex-start;">
+                     <div class="about-text animate-on-scroll">
+                         <p class="lead" style="font-size: 1.1rem; color: #555; margin-bottom: 1.5rem;" data-translate-key="miaInstituteIntro">The MIA Institute of Knowledge is our dedicated educational institution providing quality Islamic and academic education from Kindergarten to Grade 9.</p>
+                         <p data-translate-key="miaInstituteDesc">We strive to nurture well-rounded individuals grounded in faith and equipped for success. Learn more about our school, its programs, curriculum, admissions process, and dedicated staff.</p>
+                         <div style="margin-top: 2rem;">
+                             <a href="#" class="btn" data-translate-key="schoolWebsite">School Website</a>
+                             <a href="#" class="btn btn-outline" data-translate-key="admissionsInfo">Admissions Info</a>
+                         </div>
+                     </div>
+                     <div class="about-image animate-on-scroll">
+                         <img src="student.avif" alt="Students at MIA Institute" style="border-radius: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                     </div>
+                 </div>
+            </div>
+        </section>
+
+        <section class="section education-programs bg-light">
+            <div class="container">
+                <h2 class="section-title" data-translate-key="otherProgramsTitle">Other Educational Programs</h2>
+                <div class="card-grid">
+                    <div class="card animate-on-scroll" id="regular-programs">
+                        <h3><i class="fas fa-calendar-week"></i> <span data-translate-key="regularProgramsTitle">Regular Programs</span></h3>
+                        <p data-translate-key="regularProgramsDesc">Beyond the full-time school, MIA offers various regular educational programs including weekend classes, evening lectures, and workshops on Islamic studies, Quranic learning, and Arabic language.</p>
+                        <a href="#" class="btn btn-sm btn-outline" data-translate-key="viewSchedule">View Schedule</a>
+                    </div>
+
+                    <div class="card animate-on-scroll" id="islamic-studies">
+                        <h3><i class="fas fa-quran"></i> <span data-translate-key="islamicStudiesTitle">Islamic Studies Program</span></h3>
+                        <p data-translate-key="islamicStudiesDesc">Specific Islamic studies programs catering to adults and youth seeking deeper knowledge of their faith, covering topics like Tafsir, Hadith, Fiqh, and Seerah.</p>
+                        <a href="#" class="btn btn-sm btn-outline" data-translate-key="programDetails">Program Details</a>
+                    </div>
+
+                    <div class="card animate-on-scroll" id="library">
+                        <h3><i class="fas fa-book-reader"></i> <span data-translate-key="libraryTitle">Kids Library & Resources</span></h3>
+                        <p data-translate-key="libraryDesc">Encouraging reading and learning among children with our Kids Library and access to resources like Muslim Kids TV. We also facilitate requests for Islamic books for libraries.</p>
+                        <a href="#" class="btn btn-sm btn-outline" data-translate-key="libraryInfo">Library Info</a>
+                    </div>
+
+                    <div class="card animate-on-scroll" id="dawah">
+                        <h3><i class="fas fa-share-alt"></i> <span data-translate-key="dawahTitle">Sharing Knowledge (Dawah)</span></h3>
+                        <p data-translate-key="dawahDesc">Resources and initiatives aimed at sharing the message of Islam, including materials like "Share the Prophet’s Message" and the "Manitoba Muslims" book.</p>
+                        <a href="#" class="btn btn-sm btn-outline" data-translate-key="orderResources">Order Resources</a>
+                    </div>
+
+                     <div class="card animate-on-scroll" id="islamophobia">
+                        <h3><i class="fas fa-shield-alt"></i> <span data-translate-key="islamophobiaTitle">Addressing Islamophobia</span></h3>
+                        <p data-translate-key="islamophobiaDesc">MIA provides resources and support related to understanding and addressing Islamophobia, promoting awareness and positive dialogue.</p>
+                        <a href="#" class="btn btn-sm btn-outline" data-translate-key="islamophobiaResources">Resources & Reporting</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 data-translate-key="about">About MIA</h3>
+                    <p data-translate-key="aboutMIAFooter">The Manitoba Islamic Association (MIA) is dedicated to serving the diverse Muslim community in Manitoba through religious guidance, education, social services, and community building.</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3 data-translate-key="quickLinksFooter">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html" data-translate-key="about">About Us</a></li>
+                        <li><a href="services.html" data-translate-key="services">Services</a></li>
+                        <li><a href="religion.html" data-translate-key="prayerTimingsTitle">Prayer Timings</a></li>
+                        <li><a href="education.html" data-translate-key="qlMiaInstitute">MIA School</a></li>
+                        <li><a href="#" data-translate-key="qlEvents">Events</a></li>
+                        <li><a href="donate.html" data-translate-key="donate">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-translate-key="contactUsFooter">Contact Us</h3>
+                    <ul class="contact-info-footer">
+                        <li><i class="fas fa-map-marker-alt"></i> 2445 Waverley St, Winnipeg, MB R3Y 1S3</li>
+                        <li><i class="fas fa-phone"></i> +1 (204) 944-1560</li>
+                        <li><i class="fas fa-envelope"></i> info@miaonline.org</li>
+                        <li data-translate-key="officeHours">Office Hours: Mon-Fri, 9am - 5pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright" data-translate-key="copyrightFooter">
+                Copyright &copy; 2024 Manitoba Islamic Association. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="lang_switcher.js"></script>
+
+</body>
+</html>
