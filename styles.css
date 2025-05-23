@@ -1,0 +1,2124 @@
+/* Base Styles */
+:root {
+    --primary: #2e7d32; /* Green */
+    --primary-light: #60ad5e;
+    --primary-dark: #005005;
+    --secondary: #f8f8f8; /* Light grey background */
+    --accent: #ffb300; /* Yellow/Gold accent */
+    --text-dark: #333;
+    --text-light: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--secondary);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.section {
+    padding: 5rem 0;
+    overflow: hidden;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    background-color: var(--primary);
+    color: var(--text-light);
+    border-radius: 50px;
+    border: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: var(--text-light);
+}
+
+.btn-accent {
+    background-color: var(--accent);
+    color: var(--text-dark);
+}
+
+.btn-accent:hover {
+    background-color: #e0a000; /* Darker accent */
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--primary);
+    position: relative;
+    animation: fadeInUp 1s;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent);
+    border-radius: 2px;
+}
+
+/* Header Styles */
+.top-bar {
+    background-color: var(--primary-dark);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info {
+    display: flex;
+    gap: 1rem;
+}
+
+.contact-info span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.language-selector {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.language-btn {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--text-light);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.language-btn:hover,
+.language-btn.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+header {
+    background-color: var(--primary);
+    color: var(--text-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    border-radius: 50%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--text-light);
+    font-weight: 600;
+    position: relative;
+    transition: all 0.3s ease;
+    padding-bottom: 8px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+    border-radius: 1.5px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.donate-btn {
+    background-color: var(--accent);
+    color: var(--text-dark);
+    font-weight: 700;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.donate-btn:hover {
+    background-color: #e0a000;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+    z-index: 999;
+    padding: 2rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-nav.active {
+    transform: translateX(0);
+    display: block;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.mobile-nav-link {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav-link.active,
+.mobile-nav-link:hover {
+    color: var(--accent);
+}
+
+.mobile-nav-link.donate {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(46, 125, 50, 0.5), rgba(0, 80, 5, 0.5)), url('assets/mia.jpg') center/cover no-repeat fixed;
+    color: var(--text-light);
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-out 0.3s;
+    animation-fill-mode: backwards;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    animation: fadeInUp 1s ease-out 0.6s;
+    animation-fill-mode: backwards;
+}
+
+.hero .btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+}
+
+.hero .btn-outline {
+    border-color: var(--text-light);
+    color: var(--text-light);
+}
+
+.hero .btn-outline:hover {
+    background-color: var(--text-light);
+    color: var(--primary);
+}
+
+/* Announcements Section */
+.announcements {
+    background-color: var(--primary-light);
+    color: var(--text-light);
+    padding: 4rem 0;
+}
+
+.announcements-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: var(--text-light);
+    font-size: 2.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.announcements-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.announcement-item {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 1.8rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-left: 5px solid var(--accent);
+}
+
+.announcement-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.announcement-item p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* About Section */
+.about {
+    background-color: var(--secondary);
+    position: relative;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.about-text {
+    padding-right: 2rem;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    color: #555;
+}
+
+.about-image {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 80, 5, 0.2);
+    transition: all 0.4s ease;
+}
+
+.about-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.about-image:hover {
+    box-shadow: 0 20px 45px rgba(0, 80, 5, 0.25);
+    transform: translateY(-5px);
+}
+
+.about-image:hover img {
+    transform: scale(1.08);
+}
+
+/* Mission and Vision Section */
+.mission-vision {
+    background-color: var(--secondary);
+    padding: 5rem 0;
+}
+
+.mission-vision-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.mission-card, .vision-card {
+    background-color: var(--text-light);
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+.mission-card:hover, .vision-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 80, 5, 0.15);
+}
+
+.mission-icon, .vision-icon {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.mission-card h2, .vision-card h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+.mission-card p, .vision-card p {
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Core Values Section */
+.core-values {
+    background-color: #e8f5e9;
+    padding: 5rem 0;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.value-card {
+    background-color: var(--text-light);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 80, 5, 0.15);
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.value-card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.value-card p {
+    color: #555;
+}
+
+/* Principal Section */
+.principal {
+    background-color: var(--secondary);
+    padding: 5rem 0;
+}
+
+.principal-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.principal-image {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 80, 5, 0.2);
+}
+
+.principal-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.principal-info h3 {
+    color: var(--primary-dark);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.principal-info p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    color: #555;
+}
+
+.principal-message {
+    background-color: var(--text-light);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    position: relative;
+}
+
+.principal-message::before {
+    content: '\201C';
+    font-size: 5rem;
+    color: var(--primary-light);
+    opacity: 0.3;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-family: Georgia, serif;
+}
+
+.principal-message p {
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+/* Faculty Section */
+.faculty {
+    background-color: #e8f5e9;
+    padding: 5rem 0;
+}
+
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.faculty-card {
+    background-color: var(--text-light);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    transition: all 0.4s ease;
+}
+
+.faculty-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 80, 5, 0.15);
+}
+
+.faculty-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.faculty-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.faculty-card:hover .faculty-image img {
+    transform: scale(1.1);
+}
+
+.faculty-info {
+    padding: 1.5rem;
+}
+
+.faculty-info h3 {
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+}
+
+.faculty-info h4 {
+    color: #777;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.faculty-info p {
+    color: #555;
+}
+
+/* Programs Section */
+.programs {
+    background-color: var(--secondary);
+    padding: 5rem 0;
+}
+
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.program-card {
+    background-color: var(--text-light);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+.program-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 80, 5, 0.15);
+}
+
+.program-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.program-card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.program-card p {
+    color: #555;
+}
+
+.programs-cta {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Admissions Process Section */
+.admissions-process {
+    background-color: var(--secondary);
+    padding: 5rem 0;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    counter-reset: step-counter;
+}
+
+.process-step {
+    background-color: var(--text-light);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    transition: all 0.4s ease;
+    position: relative;
+    counter-increment: step-counter;
+}
+
+.process-step::before {
+    content: counter(step-counter);
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--accent);
+    color: var(--text-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.process-step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 80, 5, 0.15);
+}
+
+.process-step h3 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+.process-step p {
+    color: #555;
+}
+
+/* Application Requirements Section */
+.application-requirements {
+    background-color: #e8f5e9;
+    padding: 5rem 0;
+}
+
+.requirements-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.requirements-list {
+    background-color: var(--text-light);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+.requirements-list h3 {
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-light);
+}
+
+.requirements-list ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.requirements-list ul li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.requirements-list p {
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--primary);
+    color: var(--text-light);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.download-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Tuition Section */
+.tuition {
+    background-color: var(--secondary);
+    padding: 5rem 0;
+}
+
+.tuition-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.tuition-table {
+    background-color: var(--text-light);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+.tuition-table h3 {
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-light);
+}
+
+.tuition-table table {
+    width: 100%;
+    border-collapse: colla
+}
+
+/* --- Styles for Inner Pages --- */
+/* General Section Styling */
+.virtual-tour.section {
+    padding: 60px 0;
+    background-color: #f9f9f9; /* Light background for the section */
+    text-align: center;
+}
+
+.virtual-tour .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.virtual-tour .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+.virtual-tour .virtual-tour-intro {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Tour Container Layout */
+.virtual-tour .virtual-tour-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 30px;
+    align-items: flex-start; /* Align items to the top */
+    text-align: left; /* Reset text alignment for content */
+}
+
+/* Image Container and Image */
+.virtual-tour .tour-image-container {
+    position: relative; /* Needed for absolute positioning of hotspots */
+    flex: 1 1 60%; /* Takes up more space initially */
+    min-width: 300px; /* Minimum width */
+    overflow: hidden; /* Ensure hotspots don't overflow weirdly */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.virtual-tour .tour-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Match container */
+}
+
+/* Hotspot Styling */
+.virtual-tour .tour-hotspot {
+    position: absolute;
+    transform: translate(-50%, -50%); /* Center the hotspot */
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent blue */
+    color: white;
+    border-radius: 50%;
+    padding: 10px; /* Increased padding */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    min-width: 30px; /* Minimum touch target size */
+    min-height: 30px; /* Minimum touch target size */
+    box-sizing: content-box; /* Ensure padding adds to size */
+}
+
+.virtual-tour .tour-hotspot:hover {
+    background-color: rgba(0, 86, 179, 0.9); /* Darker blue on hover */
+    transform: translate(-50%, -50%) scale(1.1); /* Slight zoom effect */
+}
+
+.virtual-tour .hotspot-icon {
+    display: inline-block;
+    font-size: 1rem; /* Adjust icon size if needed */
+    line-height: 1;
+    /* Ensure Font Awesome is linked in your HTML for the icon */
+}
+
+.virtual-tour .hotspot-label {
+    position: absolute;
+    bottom: 120%; /* Position label above the hotspot */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(51, 51, 51, 0.9); /* Dark background for label */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0; /* Hidden by default */
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none; /* Don't interfere with clicking hotspot */
+}
+
+.virtual-tour .tour-hotspot:hover .hotspot-label {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Area Info Panel Styling */
+.virtual-tour .tour-area-info {
+    flex: 1 1 35%; /* Takes up remaining space */
+    min-width: 280px; /* Minimum width */
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eee;
+    /* Initially hide all info panels except the default one (handled by JS) */
+}
+
+.virtual-tour .tour-area-info h3 {
+    font-size: 1.8rem;
+    color: #0056b3; /* Theme color */
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.virtual-tour .tour-area-info p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Multilingual Support (Basic - Relies on JS to toggle display) */
+/* No specific CSS needed if JS handles display:none/block */
+/* Example: JS would add/remove a 'hidden' class or toggle inline styles */
+/* .hidden { display: none; } */
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .virtual-tour .virtual-tour-container {
+        flex-direction: column; /* Stack image and info vertically */
+        align-items: center; /* Center items when stacked */
+    }
+
+    .virtual-tour .tour-image-container {
+        width: 100%; /* Take full width */
+        max-width: 600px; /* Optional: Limit max width on medium screens */
+        flex-basis: auto; /* Reset flex basis */
+        margin-bottom: 30px; /* Add space below image */
+    }
+
+    .virtual-tour .tour-area-info {
+        width: 100%; /* Take full width */
+        max-width: 600px; /* Match image container width */
+        flex-basis: auto; /* Reset flex basis */
+        text-align: left; /* Keep text left-aligned */
+    }
+
+    .virtual-tour .section-title {
+        font-size: 2.2rem;
+    }
+
+    .virtual-tour .virtual-tour-intro {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .virtual-tour.section {
+        padding: 40px 0;
+    }
+
+    .virtual-tour .section-title {
+        font-size: 1.8rem;
+    }
+
+    .virtual-tour .tour-hotspot {
+        padding: 12px; /* Further increase padding for small screens */
+        min-width: 35px;
+        min-height: 35px;
+    }
+
+    .virtual-tour .hotspot-icon {
+        font-size: 0.9rem;
+    }
+
+    .virtual-tour .hotspot-label {
+        font-size: 0.8rem;
+    }
+
+    .virtual-tour .tour-area-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .virtual-tour .tour-area-info p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Accessibility Considerations */
+/* Ensure sufficient color contrast (already considered in color choices) */
+/* Add focus styles for keyboard navigation (especially for hotspots if they become focusable via JS) */
+.virtual-tour .tour-hotspot:focus {
+    outline: 3px solid #007bff; /* Clearer focus indicator */
+    outline-offset: 3px;
+    background-color: rgba(0, 86, 179, 0.9); /* Darker background on focus */
+}
+
+/* Add styles for active hotspot if needed (e.g., change background when its info is displayed) */
+/* This class would likely be added/removed by JavaScript */
+.virtual-tour .tour-hotspot.active {
+    background-color: #004085; /* Darker, solid blue for active */
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Add a ring effect */
+}
+
+/* ====================================
+   General Section Styling (Shared)
+   ==================================== */
+
+.section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* ====================================
+   Facilities Section
+   ==================================== */
+
+.facilities.section {
+    background-color: #ffffff; /* White background for facilities */
+}
+
+.facilities .facilities-intro {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.facilities .facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    text-align: left; /* Align card content left */
+}
+
+.facilities .facility-card {
+    background-color: #f9f9f9; /* Light grey background for cards */
+    border-radius: 8px;
+    overflow: hidden; /* Ensure image corners match card radius */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Stack image and info */
+}
+
+.facilities .facility-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.facilities .facility-image img {
+    display: block;
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Cover the area, cropping if needed */
+}
+
+.facilities .facility-info {
+    padding: 20px;
+    flex-grow: 1; /* Allow info section to grow */
+}
+
+.facilities .facility-info h3 {
+    font-size: 1.4rem;
+    color: #0056b3; /* Theme color */
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.facilities .facility-info p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* ====================================
+   Testimonials Section
+   ==================================== */
+
+.testimonials.section {
+    background-color: #eef7ff; /* Light blue background for testimonials */
+    position: relative; /* For absolute positioning of controls if needed */
+}
+
+/* Slider Styling (Basic Structure - Requires JS for functionality) */
+.testimonials .testimonials-slider {
+    position: relative;
+    overflow: hidden; /* Hide non-active slides */
+    max-width: 800px; /* Limit width of the slider content */
+    margin: 0 auto 40px auto; /* Center slider and add space below */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    min-height: 250px; /* Ensure minimum height */
+}
+
+.testimonials .testimonial-slide {
+    display: none; /* Hide slides by default (JS will show active) */
+    padding: 40px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out; /* Simple fade-in animation */
+}
+
+.testimonials .testimonial-slide.active {
+    display: block; /* Show the active slide */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.testimonials .testimonial-content p:first-of-type {
+    font-size: 1.15rem;
+    font-style: italic;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    position: relative;
+    padding: 0 20px; /* Add padding for quotes */
+}
+
+/* Optional: Add quote marks */
+.testimonials .testimonial-content p:first-of-type::before,
+.testimonials .testimonial-content p:first-of-type::after {
+    content: '"';
+    font-size: 2.5rem;
+    color: #007bff;
+    position: absolute;
+    opacity: 0.5;
+}
+
+.testimonials .testimonial-content p:first-of-type::before {
+    top: -10px;
+    left: -5px;
+}
+
+.testimonials .testimonial-content p:first-of-type::after {
+    bottom: -10px;
+    right: -5px;
+}
+
+.testimonials .testimonial-author {
+    margin-top: 20px;
+}
+
+.testimonials .testimonial-author h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0056b3;
+    margin-bottom: 5px;
+}
+
+.testimonials .testimonial-author p {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Slider Controls Styling */
+.testimonials .testimonial-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px; /* Space above controls */
+}
+
+.testimonials .testimonial-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.testimonials .testimonial-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.testimonials .testimonial-btn:focus {
+    outline: 2px solid #0056b3;
+    outline-offset: 2px;
+}
+
+.testimonials .testimonial-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.testimonials .dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.testimonials .dot.active {
+    background-color: #007bff;
+}
+
+/* ====================================
+   Responsive Design
+   ==================================== */
+
+@media (max-width: 991px) {
+    .section .section-title {
+        font-size: 2.2rem;
+    }
+
+    .facilities .facilities-intro,
+    .testimonials .testimonial-content p:first-of-type {
+        font-size: 1rem;
+    }
+
+    .facilities .facility-info h3 {
+        font-size: 1.3rem;
+    }
+
+    .facilities .facility-info p {
+        font-size: 0.95rem;
+    }
+
+    .testimonials .testimonials-slider {
+        max-width: 90%; /* Allow slider to take more width */
+    }
+}
+
+@media (max-width: 767px) {
+    .section {
+        padding: 40px 0;
+    }
+
+    .section .section-title {
+        font-size: 1.8rem;
+    }
+
+    .facilities .facilities-grid {
+        grid-template-columns: 1fr; /* Stack cards on small screens */
+    }
+
+    .facilities .facility-image img {
+        height: 180px; /* Slightly smaller image height */
+    }
+
+    .testimonials .testimonial-slide {
+        padding: 30px 20px; /* Reduce padding */
+    }
+
+    .testimonials .testimonial-content p:first-of-type {
+        font-size: 1rem;
+    }
+
+     .testimonials .testimonial-content p:first-of-type::before,
+     .testimonials .testimonial-content p:first-of-type::after {
+        font-size: 2rem;
+     }
+
+    .testimonials .testimonial-author h4 {
+        font-size: 1rem;
+    }
+
+    .testimonials .testimonial-author p {
+        font-size: 0.85rem;
+    }
+
+    .testimonials .testimonial-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+
+    .testimonials .dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* ====================================
+   Multilingual Support (Visibility)
+   ==================================== */
+/* Basic - Relies on JS to toggle display: none/block on language-specific elements (e.g., .en, .fr, .ar) */
+/* No extra CSS needed if JS handles inline styles or adds/removes a 'hidden' class */
+
+
+/* Page Banner */
+.page-banner {
+    background: linear-gradient(rgba(46, 125, 50, 0.6), rgba(0, 80, 5, 0.6)), url('assets/mia.jpg') center/cover no-repeat;
+    color: var(--text-light);
+    padding: 6rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-banner .banner-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInDown 1s ease-out;
+}
+
+/* Common Content Section Styles */
+.about-overview-content,
+.academic-overview-content,
+.admissions-overview-content,
+.principal-profile-content,
+.islamic-studies-content,
+.arabic-language-content,
+.assessment-content,
+.requirements-content,
+.tuition-content,
+.faq-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+/* Adjust grid for specific sections if needed */
+.principal-profile-content { grid-template-columns: 1fr 2fr; }
+.islamic-studies-content { grid-template-columns: 1.5fr 1fr; }
+.arabic-language-content { grid-template-columns: 1fr 1.5fr; }
+.assessment-content { grid-template-columns: 1fr; } /* Single column */
+.faq-content { grid-template-columns: 1fr; } /* Single column */
+
+.about-overview-image,
+.academic-overview-image,
+.admissions-overview-image,
+.principal-profile-image,
+.arabic-language-image,
+.faq-image {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 80, 5, 0.15);
+    transition: all 0.4s ease;
+}
+
+.about-overview-image img,
+.academic-overview-image img,
+.admissions-overview-image img,
+.principal-profile-image img,
+.arabic-language-image img,
+.faq-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.about-overview-image:hover,
+.academic-overview-image:hover,
+.admissions-overview-image:hover,
+.principal-profile-image:hover,
+.arabic-language-image:hover,
+.faq-image:hover {
+    box-shadow: 0 15px 35px rgba(0, 80, 5, 0.2);
+    transform: translateY(-5px);
+}
+
+.about-overview-image:hover img,
+.academic-overview-image:hover img,
+.admissions-overview-image:hover img,
+.principal-profile-image:hover img,
+.arabic-language-image:hover img,
+.faq-image:hover img {
+    transform: scale(1.08);
+}
+
+.about-overview-text p,
+.academic-overview-text p,
+.admissions-overview-text p,
+.principal-profile-info p,
+.islamic-studies-text p,
+.arabic-language-text p,
+.assessment-text p,
+.tuition-intro p,
+.financial-aid p,
+.faq-intro p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    color: #555;
+}
+
+/* Specific Section Styles */
+
+/* About Page */
+.mission-vision { background-color: var(--secondary); }
+.core-values { background-color: #e8f5e9; }
+.principal-profile { background-color: var(--secondary); }
+.faculty { background-color: #e8f5e9; }
+
+.principal-profile-info h3 { color: var(--primary-dark); font-size: 1.8rem; margin-bottom: 1.5rem; }
+.principal-message { background-color: var(--text-light); border-radius: 15px; padding: 2rem; margin-top: 2rem; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07); position: relative; border-left: 5px solid var(--primary); }
+.principal-message::before { content: '\201C'; font-size: 5rem; color: var(--primary-light); opacity: 0.3; position: absolute; top: 10px; left: 20px; font-family: Georgia, serif; }
+.principal-message blockquote { font-style: italic; position: relative; z-index: 1; color: #555; margin: 0; padding: 0; }
+.principal-message h4 { color: var(--primary-dark); margin-bottom: 1rem; }
+
+.faculty-intro { text-align: center; max-width: 800px; margin: 0 auto 3rem auto; color: #555; font-size: 1.1rem; }
+.faculty-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.faculty-card { background-color: var(--text-light); border-radius: 15px; overflow: hidden; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07); transition: all 0.4s ease; }
+.faculty-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0, 80, 5, 0.15); }
+.faculty-image { height: 250px; overflow: hidden; }
+.faculty-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.faculty-card:hover .faculty-image img { transform: scale(1.1); }
+.faculty-info { padding: 1.5rem; }
+.faculty-info h3 { color: var(--primary-dark); margin-bottom: 0.5rem; }
+.faculty-position { color: #777; font-weight: 600; margin-bottom: 1rem; font-size: 1rem; }
+.faculty-bio { color: #555; font-size: 0.95rem; }
+
+/* Academics Page */
+.academic-overview { background-color: var(--secondary); }
+.elementary-program { background-color: #e8f5e9; }
+.core-subjects { background-color: var(--secondary); }
+.islamic-studies { background-color: #e8f5e9; }
+.arabic-language { background-color: var(--secondary); }
+.technology-integration { background-color: #e8f5e9; }
+.assessment { background-color: var(--secondary); }
+.cta { background-color: var(--primary-light); color: var(--text-light); text-align: center; }
+
+.program-intro { text-align: center; max-width: 800px; margin: 0 auto 3rem auto; color: #555; font-size: 1.1rem; }
+.grade-levels { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.grade-level { background-color: var(--text-light); border-radius: 15px; padding: 2rem; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07); transition: all 0.4s ease; }
+.grade-level:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0, 80, 5, 0.15); }
+.grade-level h3 { color: var(--primary-dark); margin-bottom: 1rem; }
+.grade-level p { color: #555; }
+
+.subjects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+.subject-card { background-color: var(--text-light); border-radius: 15px; padding: 2rem; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07); transition: all 0.4s ease; text-align: center; }
+.subject-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0, 80, 5, 0.15); }
+.subject-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem; }
+.subject-card h3 { color: var(--primary-dark); margin-bottom: 1rem; }
+.subject-card p { color: #555; }
+
+.islamic-studies-components { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.islamic-component { background-color: var(--text-light); border-radius: 10px; padding: 1.5rem; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border-left: 4px solid var(--primary-light); }
+.islamic-component h3 { color: var(--primary-dark); margin-bottom: 0.8rem; font-size: 1.1rem; }
+.islamic-component p { color: #555; font-size: 0.95rem; }
+
+.technology-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.technology-feature { display: flex; gap: 1.5rem; align-items: flex-start; background-color: var(--text-light); border-radius: 15px; padding: 2rem; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07); transition: all 0.4s ease; }
+.technology-feature:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0, 80, 5, 0.15); }
+.feature-icon { font-size: 2.5rem; color: var(--primary); flex-shrink: 0; margin-top: 5px; }
+.feature-content h3 { color: var(--primary-dark); margin-bottom: 0.8rem; }
+.feature-content p { color: #555; }
+
+.assessment-text h3 { color: var(--primary-dark); margin-top: 2rem; margin-bottom: 1rem; }
+
+.cta h2 { color: var(--text-light); font-size: 2.2rem; margin-bottom: 1rem; }
+.cta p { color: rgba(255, 255, 255, 0.9); max-width: 700px; margin: 0 auto 2rem auto; }
+.cta-buttons { display: flex; justify-content: center; gap: 1rem; }
+.cta .btn-outline { border-color: var(--text-light); color: var(--text-light); }
+.cta .btn-outline:hover { background-color: var(--text-light); color: var(--primary); }
+
+/* Admissions Page */
+.admissions-overview { background-color: var(--secondary); }
+.admissions-process { background-color: #e8f5e9; }
+.application-requirements { background-color: var(--secondary); }
+.tuition-fees { background-color: #e8f5e9; }
+.visit-us { background-color: var(--secondary); }
+.faq { background-color: #e8f5e9; }
+
+.process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; counter-reset: step-counter; }
+.process-step { background-color: var(--text-light); border-radius: 15px; padding: 2.5rem 2rem 2rem 2rem; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07); transition: all 0.4s ease; position: relative; counter-increment: step-counter; }
+.process-step::before { content: counter(step-counter); position: absolute; top: -20px; left: 20px; width: 40px; height: 40px; background-color: var(--accent); color: var(--text-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+.process-step:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0, 80, 5, 0.15); }
+.process-step h3 { color: var(--primary-dark); margin-bottom: 1rem; margin-top: 1rem; }
+.process-step p { color: #555; }
+
+.requirements-list, .application-form-info { background-color: var(--text-light); border-radius: 15px; padding: 2rem; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07); }
+.requirements-list h3, .application-form-info h3 { color: var(--primary-dark); margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary-light); }
+.requirements-list ul, .application-form-info ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+.requirements-list ul li, .application-form-info ul li { margin-bottom: 0.5rem; color: #555; }
+.requirements-list p, .application-form-info p { color: #555; margin-bottom: 1rem; }
+.application-form-info ul { list-style: none; padding-left: 0; }
+.application-form-info ul li { margin-bottom: 1rem; }
+.application-form-info ul li strong { color: var(--primary-dark); }
+.application-cta { margin-top: 2rem; }
+
+.tuition-table-container { background-color: var(--text-light); border-radius: 15px; padding: 2rem; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07); margin-bottom: 2rem; }
+.tuition-table-container h3 { color: var(--primary-dark); margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary-light); }
+.tuition-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+.table-header { background-color: var(--primary-light); color: var(--text-light); font-weight: 600; }
+.header-cell, .row-cell { padding: 0.8rem 1rem; text-align: left; border-bottom: 1px solid #eee; }
+.table-row:last-child .row-cell { border-bottom: none; }
+.table-row:nth-child(even) { background-color: #f9f9f9; }
+.row-cell:last-child { font-weight: 600; color: var(--primary-dark); }
+
+.payment-options, .financial-aid { background-color: var(--text-light); border-radius: 15px; padding: 2rem; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07); }
+.payment-options h3, .financial-aid h3 { color: var(--primary-dark); margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary-light); }
+.payment-options ul, .financial-aid ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+.payment-options ul li, .financial-aid ul li { margin-bottom: 0.5rem; color: #555; }
+.payment-options p, .financial-aid p { color: #555; margin-bottom: 1rem; }
+.financial-aid-cta { margin-top: 1.5rem; }
+
+.visit-us-content { text-align: center; }
+.visit-us-content p { max-width: 700px; margin: 0 auto 2rem auto; color: #555; font-size: 1.1rem; }
+
+.faq-item { background-color: var(--text-light); border-radius: 10px; margin-bottom: 1rem; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); }
+.faq-question { background-color: transparent; border: none; width: 100%; text-align: left; padding: 1.5rem; font-size: 1.1rem; font-weight: 600; color: var(--primary-dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.faq-question i { transition: transform 0.3s ease; }
+.faq-answer { padding: 0 1.5rem 1.5rem 1.5rem; color: #555; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
+.faq-item.active .faq-question i { transform: rotate(180deg); }
+.faq-item.active .faq-answer { max-height: 300px; /* Adjust as needed */ padding-top: 1rem; }
+
+/* Footer */
+footer { background-color: var(--primary-dark); color: rgba(255, 255, 255, 0.8); padding-top: 4rem; }
+.footer-top { border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 3rem; margin-bottom: 2rem; }
+.footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+.footer-col h3 { color: var(--text-light); margin-bottom: 1.5rem; font-size: 1.2rem; position: relative; padding-bottom: 0.5rem; }
+.footer-col h3::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 2px; background-color: var(--accent); }
+.footer-logo { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem; }
+.footer-logo img { height: 40px; width: auto; border-radius: 50%; }
+.footer-logo h3 { margin: 0; padding: 0; border: none; color: var(--text-light); font-size: 1.1rem; }
+.footer-col p { margin-bottom: 1.5rem; font-size: 0.95rem; }
+.social-links a { color: rgba(255, 255, 255, 0.8); margin-right: 1rem; font-size: 1.2rem; transition: color 0.3s ease; }
+.social-links a:hover { color: var(--accent); }
+.footer-links li { margin-bottom: 0.8rem; }
+.footer-links a { transition: color 0.3s ease; }
+.footer-links a:hover { color: var(--accent); }
+.contact-info-footer li { display: flex; align-items: flex-start; gap: 0.8rem; margin-bottom: 1rem; }
+.contact-info-footer i { margin-top: 4px; color: var(--accent); }
+.newsletter-form { display: flex; margin-top: 1rem; }
+.newsletter-form input { flex-grow: 1; padding: 0.8rem; border: none; border-radius: 5px 0 0 5px; background-color: rgba(255, 255, 255, 0.1); color: var(--text-light); }
+.newsletter-form input::placeholder { color: rgba(255, 255, 255, 0.5); }
+.newsletter-form button { background-color: var(--accent); border: none; padding: 0.8rem 1rem; border-radius: 0 5px 5px 0; cursor: pointer; color: var(--text-dark); transition: background-color 0.3s ease; }
+.newsletter-form button:hover { background-color: #e0a000; }
+.footer-bottom { text-align: center; padding: 1.5rem 0; font-size: 0.9rem; }
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary);
+    color: var(--text-light);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 998;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.1);
+}
+
+/* RTL Adjustments */
+body.rtl .top-bar-content { flex-direction: row-reverse; }
+body.rtl .contact-info { gap: 1rem; }
+body.rtl .language-selector { gap: 0.5rem; }
+body.rtl .header-content { flex-direction: row-reverse; }
+body.rtl .logo { flex-direction: row-reverse; gap: 0.7rem; }
+body.rtl .nav-links { flex-direction: row-reverse; gap: 1.5rem; }
+body.rtl .nav-link::after { left: auto; right: 0; }
+body.rtl .mobile-menu-btn { /* No change needed */ }
+body.rtl .mobile-nav { transform: translateX(100%); }
+body.rtl .mobile-nav.active { transform: translateX(0); }
+body.rtl .mobile-nav-links { /* No change needed */ }
+body.rtl .section-title::after { left: auto; right: 50%; transform: translateX(50%); }
+body.rtl .about-content { grid-template-columns: 1fr 1fr; /* Maintain order for visual flow */ }
+body.rtl .about-text { padding-right: 0; padding-left: 2rem; }
+body.rtl .mission-vision-cards { /* No change needed */ }
+body.rtl .values-grid { /* No change needed */ }
+body.rtl .principal-content { grid-template-columns: 2fr 1fr; /* Reverse grid */ }
+body.rtl .principal-message::before { left: auto; right: 20px; }
+body.rtl .faculty-grid { /* No change needed */ }
+body.rtl .faculty-info { text-align: right; }
+body.rtl .programs-grid { /* No change needed */ }
+body.rtl .process-step::before { left: auto; right: 20px; }
+body.rtl .requirements-content { grid-template-columns: 1fr 1fr; /* Maintain order */ }
+body.rtl .requirements-list ul { padding-left: 0; padding-right: 1.5rem; }
+body.rtl .application-form-info ul { padding-left: 0; padding-right: 0; }
+body.rtl .download-btn { /* No change needed */ }
+body.rtl .tuition-content { grid-template-columns: 1fr 1fr; /* Maintain order */ }
+body.rtl .header-cell, body.rtl .row-cell { text-align: right; }
+body.rtl .payment-options ul, body.rtl .financial-aid ul { padding-left: 0; padding-right: 1.5rem; }
+body.rtl .faq-question { text-align: right; }
+body.rtl .faq-question i { margin-left: auto; margin-right: 0; }
+body.rtl .footer-content { /* No change needed */ }
+body.rtl .footer-col h3::after { left: auto; right: 0; }
+body.rtl .footer-logo { flex-direction: row-reverse; }
+body.rtl .social-links a { margin-right: 0; margin-left: 1rem; }
+body.rtl .contact-info-footer li { flex-direction: row-reverse; gap: 0.8rem; }
+body.rtl .contact-info-footer i { /* No change needed */ }
+body.rtl .newsletter-form { flex-direction: row-reverse; }
+body.rtl .newsletter-form input { border-radius: 0 5px 5px 0; }
+body.rtl .newsletter-form button { border-radius: 5px 0 0 5px; }
+body.rtl #back-to-top { right: auto; left: 20px; }
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .container { padding: 0 1.5rem; }
+    .section { padding: 4rem 0; }
+    .section-title { font-size: 2.2rem; }
+    .hero h1 { font-size: 3rem; }
+    .hero p { font-size: 1.1rem; }
+    .desktop-nav { display: none; }
+    .mobile-menu-btn { display: block; }
+    .about-content, .principal-content, .requirements-content, .tuition-content, .islamic-studies-content, .arabic-language-content, .admissions-overview-content, .academic-overview-content { grid-template-columns: 1fr; gap: 2rem; }
+    .about-text { padding: 0; }
+    .about-image, .principal-image, .arabic-language-image, .admissions-overview-image, .academic-overview-image { order: -1; /* Move image above text */ margin-bottom: 2rem; }
+    .principal-content { grid-template-columns: 1fr; }
+    .principal-image { max-width: 300px; margin: 0 auto 2rem auto; }
+    .footer-content { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    body.rtl .about-text { padding: 0; }
+    body.rtl .principal-content { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .top-bar-content { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .contact-info { justify-content: center; flex-wrap: wrap; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero p { font-size: 1rem; }
+    .hero-btns { flex-direction: column; gap: 1rem; align-items: center; }
+    .announcements-list { gap: 1rem; }
+    .announcement-item { padding: 1.2rem; }
+    .mission-vision-cards, .values-grid, .faculty-grid, .programs-grid, .process-steps, .subjects-grid, .technology-features, .grade-levels { grid-template-columns: 1fr; }
+    .footer-content { grid-template-columns: 1fr; text-align: center; }
+    .footer-col h3::after { left: 50%; transform: translateX(-50%); }
+    .social-links { margin-bottom: 1rem; }
+    .contact-info-footer li { justify-content: center; }
+    .newsletter-form { justify-content: center; }
+    body.rtl .footer-col h3::after { right: 50%; transform: translateX(50%); }
+    body.rtl .contact-info-footer li { justify-content: center; }
+}
+
+@media (max-width: 576px) {
+    .logo-text { display: none; /* Hide text on very small screens */ }
+    .logo img { height: 40px; }
+    .header-content { padding: 0.8rem 0; }
+    .section { padding: 3rem 0; }
+    .section-title { font-size: 1.8rem; margin-bottom: 2.5rem; }
+    .page-banner { padding: 4rem 0; }
+    .page-banner .banner-content h1 { font-size: 2.2rem; }
+    .btn { padding: 0.7rem 1.4rem; font-size: 0.9rem; }
+    .hero .btn { padding: 0.8rem 1.6rem; }
+    #back-to-top { width: 40px; height: 40px; font-size: 1.2rem; bottom: 15px; right: 15px; }
+    body.rtl #back-to-top { right: auto; left: 15px; }
+}
+
+
+
+
+
+/* Language Selector Active State */
+.language-btn.active {
+    background-color: var(--accent); /* Use accent color for active */
+    color: var(--text-dark); /* Dark text on accent background */
+    border-color: var(--accent);
+    font-weight: 700; /* Make text bolder */
+}
+
+/* Ensure hover doesn't override active */
+.language-btn.active:hover {
+    background-color: #e0a000; /* Darker accent on hover */
+    border-color: #e0a000;
+}
+
+
+/* ====================================
+   General Section Styling (Shared)
+   ==================================== */
+
+.section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* ====================================
+   Virtual Tour Section
+   ==================================== */
+
+.virtual-tour.section {
+    background-color: #f8f9fa; /* Light background */
+}
+
+.virtual-tour .tour-intro {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.virtual-tour .virtual-tour-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.virtual-tour .tour-image-container {
+    position: relative;
+    flex: 1 1 60%;
+    min-width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.virtual-tour .tour-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Hotspot Styling */
+.virtual-tour .tour-hotspot {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.virtual-tour .hotspot-dot {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 123, 255, 0.8);
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.virtual-tour .tour-hotspot:hover .hotspot-dot {
+    transform: scale(1.2);
+    background-color: rgba(0, 86, 179, 0.9);
+}
+
+.virtual-tour .hotspot-label {
+    position: absolute;
+    bottom: 130%; /* Position label above the dot */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(51, 51, 51, 0.9);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+}
+
+.virtual-tour .tour-hotspot:hover .hotspot-label {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Tour Info Panel */
+.virtual-tour .tour-info {
+    flex: 1 1 35%;
+    min-width: 280px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eee;
+}
+
+.virtual-tour .tour-area-info {
+    /* Initially hidden by JS, except for the default one */
+}
+
+.virtual-tour .tour-area-info h3 {
+    font-size: 1.6rem;
+    color: #0056b3;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.virtual-tour .tour-area-info p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+.virtual-tour .tour-cta {
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* ====================================
+   News & Events Section
+   ==================================== */
+
+.news-events.section {
+    background-color: #ffffff;
+}
+
+.news-events .news-events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.news-events .news-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-events .news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.news-events .news-image {
+    position: relative;
+}
+
+.news-events .news-image img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.news-events .news-date {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 123, 255, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 1.1;
+}
+
+.news-events .news-date .day {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.news-events .news-date .month {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.news-events .news-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-events .news-content h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+    flex-grow: 1; /* Push link to bottom */
+}
+
+.news-events .news-content p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.news-events .read-more {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    align-self: flex-start; /* Align link to the left */
+    transition: color 0.3s ease;
+}
+
+.news-events .read-more:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.news-events .news-events-cta {
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* ====================================
+   Responsive Design
+   ==================================== */
+
+@media (max-width: 991px) {
+    .section .section-title {
+        font-size: 2.2rem;
+    }
+
+    .virtual-tour .virtual-tour-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .virtual-tour .tour-image-container {
+        width: 100%;
+        max-width: 600px;
+        flex-basis: auto;
+        margin-bottom: 30px;
+    }
+
+    .virtual-tour .tour-info {
+        width: 100%;
+        max-width: 600px;
+        flex-basis: auto;
+        text-align: left;
+    }
+
+    .news-events .news-content h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .section {
+        padding: 40px 0;
+    }
+
+    .section .section-title {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .virtual-tour .tour-intro {
+        font-size: 1rem;
+    }
+
+    .virtual-tour .tour-area-info h3 {
+        font-size: 1.4rem;
+    }
+
+    .virtual-tour .tour-area-info p {
+        font-size: 0.95rem;
+    }
+
+    .news-events .news-events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-events .news-image img {
+        height: 200px;
+    }
+
+    .news-events .news-content {
+        padding: 15px;
+    }
+
+    .news-events .news-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .news-events .news-content p {
+        font-size: 0.95rem;
+    }
+}
+
+/* ====================================
+   Multilingual Support (Visibility)
+   ==================================== */
+/* Basic - Relies on JS to toggle display: none/block on language-specific elements (e.g., .en, .fr, .ar) */
+/* No extra CSS needed if JS handles inline styles or adds/removes a 'hidden' class */
+

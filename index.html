@@ -1,216 +1,625 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manitoba Islamic Association (MIA)</title>
+    <title>MIA Institute of Knowledge</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="styles.css" rel="stylesheet">
+    <script src="scripts.js" defer></script>
 </head>
-<body>
 
+<body>
+    <!-- Top Bar -->
     <div class="top-bar">
         <div class="container top-bar-content">
-            <div class="quick-contact">
-                <span><i class="fas fa-phone"></i> +1 (204) 944-1560</span>
-                <span><i class="fas fa-envelope"></i> info@miaonline.org</span>
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> (204) 256-1347</span>
+                <span><i class="fas fa-envelope"></i> info@miaschool.org</span>
             </div>
             <div class="language-selector">
-                <button class="language-btn" data-lang="en">EN</button>
-                <button class="language-btn" data-lang="fr">FR</button>
-                <button class="language-btn" data-lang="ar">AR</button>
+                <button class="language-btn active" onclick="changeLanguage('en')">EN</button>
+                <button class="language-btn" onclick="changeLanguage('fr')">FR</button>
+                <button class="language-btn" onclick="changeLanguage('ar')">AR</button>
             </div>
         </div>
     </div>
 
-    <header class="main-header-nav">
+    <!-- Header -->
+    <header>
         <div class="container header-content">
-            <a href="index.html" class="logo">
-                <img src="logo.jpeg" alt="MIA Logo">
-                <span>MIA</span>
-            </a>
-            <nav class="nav-links">
-                <a href="index.html" class="nav-link active" data-translate-key="home">Home</a>
-                <a href="about.html" class="nav-link" data-translate-key="about">About</a>
-                <a href="services.html" class="nav-link" data-translate-key="services">Services</a>
-                <a href="religion.html" class="nav-link" data-translate-key="religion">Religion</a>
-                <a href="education.html" class="nav-link" data-translate-key="education">Education</a>
+            <div class="logo">
+                <img src="assets/logo.jpeg" alt="MIA Logo">
+                <span class="logo-text">MIA Institute of Knowledge</span>
+            </div>
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="academics.html" class="nav-link">Academics</a></li>
+                    <li><a href="admissions.html" class="nav-link">Admissions</a></li>
+                    <li><a href="student-life.html" class="nav-link">Student Life</a></li>
+                    <li><a href="parents.html" class="nav-link">Parents</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="donate.html" class="donate-btn">Donate</a></li>
+                </ul>
             </nav>
-            <a href="donate.html" class="donate-btn-header" data-translate-key="donate">Donate</a>
-            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <!-- Mobile Nav Structure -->
-        <nav class="mobile-nav">
-             <a href="index.html" class="nav-link active" data-translate-key="home">Home</a>
-             <a href="about.html" class="nav-link" data-translate-key="about">About</a>
-             <a href="services.html" class="nav-link" data-translate-key="services">Services</a>
-             <a href="religion.html" class="nav-link" data-translate-key="religion">Religion</a>
-             <a href="education.html" class="nav-link" data-translate-key="education">Education</a>
-             <a href="donate.html" class="donate-btn-header" data-translate-key="donate">Donate</a>
-        </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content animate__animated animate__fadeInDown">
-                <h1 data-translate-key="welcomeTitle">Welcome to the Manitoba Islamic Association</h1>
-                <p class="animate__animated animate__fadeInUp animate__delay-1s" data-translate-key="welcomeSubtitle">Serving the Muslim community in Manitoba through faith, education, and service.</p>
-                <div class="hero-btns animate__animated animate__fadeInUp animate__delay-2s">
-                    <a href="about.html" class="btn" data-translate-key="learnMore">Learn More About Us</a>
-                    <a href="services.html" class="btn btn-outline" data-translate-key="ourServices">Our Services</a>
-                </div>
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html" class="mobile-nav-link active">Home</a></li>
+            <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+            <li><a href="academics.html" class="mobile-nav-link">Academics</a></li>
+            <li><a href="admissions.html" class="mobile-nav-link">Admissions</a></li>
+            <li><a href="student-life.html" class="mobile-nav-link">Student Life</a></li>
+            <li><a href="parents.html" class="mobile-nav-link">Parents</a></li>
+            <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+            <li><a href="donate.html" class="mobile-nav-link donate">Donate</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="en">Excellence in Education Rooted in Islamic Values</h1>
+            <h1 class="fr" style="display: none;">Excellence en Éducation Ancrée dans les Valeurs Islamiques</h1>
+            <h1 class="ar" style="display: none;">التميز في التعليم المتجذر في القيم الإسلامية</h1>
+            
+            <p class="en">MIA Institute of Knowledge provides a nurturing environment where academic excellence and Islamic principles come together to develop well-rounded students.</p>
+            <p class="fr" style="display: none;">L'Institut MIA du Savoir offre un environnement enrichissant où l'excellence académique et les principes islamiques se rejoignent pour former des élèves équilibrés.</p>
+            <p class="ar" style="display: none;">يوفر معهد MIA للمعرفة بيئة تعليمية حاضنة حيث تجتمع التميز الأكاديمي والمبادئ الإسلامية لتطوير طلاب متكاملين.</p>
+            
+            <div class="hero-btns">
+                <a href="admissions.html" class="btn btn-accent en">Apply Now</a>
+                <a href="admissions.html" class="btn btn-accent fr" style="display: none;">Postuler Maintenant</a>
+                <a href="admissions.html" class="btn btn-accent ar" style="display: none;">قدم الآن</a>
+                
+                <a href="about.html" class="btn btn-outline en">Learn More</a>
+                <a href="about.html" class="btn btn-outline fr" style="display: none;">En Savoir Plus</a>
+                <a href="about.html" class="btn btn-outline ar" style="display: none;">اعرف المزيد</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section prayer-times-section">
-            <div class="container">
-                <h2 class="section-title" data-translate-key="prayerTimingsTitle">Today's Prayer Timings</h2>
-                <div class="prayer-times animate-on-scroll">
-                     <p style="text-align: center; margin-bottom: 1rem; font-weight: 500;" data-translate-key="prayerDate">May 4, 2025 / 6 Dhū al-Qa'da 1446</p>
-                     <table>
-                         <thead><tr><th data-translate-key="prayer">Prayer</th><th data-translate-key="athan">Athan</th><th data-translate-key="iqamah">Iqamah</th></tr></thead>
-                         <tbody>
-                             <tr><td data-translate-key="fajr">Fajr</td><td>4:05 am</td><td>5:00 am</td></tr>
-                             <tr><td data-translate-key="sunrise">Sunrise</td><td>5:59 am</td><td>-</td></tr>
-                             <tr class="current-prayer"><td data-translate-key="zuhr">Zuhr</td><td>1:26 pm</td><td>2:00 pm</td></tr>
-                             <tr><td data-translate-key="asr">Asr</td><td>5:30 pm</td><td>6:00 pm</td></tr>
-                             <tr><td data-translate-key="maghrib">Maghrib</td><td>8:55 pm</td><td>9:05 pm</td></tr>
-                             <tr><td data-translate-key="isha">Isha</td><td>10:47 pm</td><td>10:52 pm</td></tr>
-                         </tbody>
-                     </table>
-                     <p style="text-align: center; margin-top: 1rem;" data-translate-key="jumuahTimings"><strong>Jumuah:</strong> 1:45 pm | 3:45 pm</p>
-                     <p style="text-align: center; margin-top: 0.5rem;"><a href="religion.html#prayer-timings" class="btn btn-outline btn-sm" data-translate-key="viewMonthlyTimings">View Monthly Timings</a></p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section quick-links-section bg-light">
-            <div class="container">
-                <h2 class="section-title" data-translate-key="quickLinksTitle">Quick Links</h2>
-                <div class="quick-links-grid">
-                    <a href="#" class="icon-card animate-on-scroll">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span data-translate-key="qlEvents">Events</span>
-                    </a>
-                    <a href="education.html#mia-school" class="icon-card animate-on-scroll">
-                        <i class="fas fa-school"></i>
-                       <span data-translate-key="qlMiaInstitute">MIA Institute</span>
-                    </a>
-                     <a href="education.html" class="icon-card animate-on-scroll">
-                         <i class="fas fa-book-open"></i>
-                       <span data-translate-key="qlEducation">Education</span>
-                    </a>
-                     <a href="services.html#takaful" class="icon-card animate-on-scroll">
-                         <i class="fas fa-hands-helping"></i>
-                       <span data-translate-key="qlFinancialAssistance">Financial Assistance</span>
-                    </a>
-                     <a href="#" class="icon-card animate-on-scroll">
-                         <i class="fas fa-mosque"></i>
-                       <span data-translate-key="qlMiaWakf">MIA Wakf</span>
-                    </a>
-                     <a href="services.html#new-muslims" class="icon-card animate-on-scroll">
-                         <i class="fas fa-user-plus"></i>
-                       <span data-translate-key="qlNewMuslims">New Muslims</span>
-                    </a>
-                     <a href="services.html#mental-health" class="icon-card animate-on-scroll">
-                         <i class="fas fa-brain"></i>
-                       <span data-translate-key="qlMentalHealth">Mental Health</span>
-                    </a>
-                     <a href="#" class="icon-card animate-on-scroll">
-                         <i class="fas fa-users"></i>
-                       <span data-translate-key="qlMemberPortal">Member Portal</span>
-                    </a>
-                     <a href="about.html#volunteer" class="icon-card animate-on-scroll">
-                         <i class="fas fa-handshake-angle"></i>
-                       <span data-translate-key="qlVolunteer">Volunteer</span>
-                    </a>
-                     <a href="services.html#janazah" class="icon-card animate-on-scroll">
-                         <i class="fas fa-person-praying"></i>
-                       <span data-translate-key="qlFuneralServices">Funeral Services</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section news-events-section">
-            <div class="container">
-                <h2 class="section-title" data-translate-key="newsTitle">Latest News & Announcements</h2>
-                <div class="card-grid">
-                    <!-- Placeholder News Items -->
-                    <div class="card animate-on-scroll">
-                        <h3 data-translate-key="news1Title">Community Iftar Next Saturday</h3>
-                        <p class="date" style="font-size: 0.9em; color: #6c757d; margin-bottom: 0.5rem;" data-translate-key="news1Date">May 3, 2025</p>
-                        <p data-translate-key="news1Desc">Join us for a community gathering and break your fast together. All are welcome!</p>
-                        <a href="#" class="btn btn-sm btn-outline" data-translate-key="readMore">Read More</a>
-                    </div>
-                    <div class="card animate-on-scroll">
-                        <h3 data-translate-key="news2Title">MIA School Enrollment Open</h3>
-                        <p class="date" style="font-size: 0.9em; color: #6c757d; margin-bottom: 0.5rem;" data-translate-key="news2Date">May 1, 2025</p>
-                        <p data-translate-key="news2Desc">Enrollment for the upcoming academic year at the MIA Institute of Knowledge is now open. Secure your child's place.</p>
-                        <a href="education.html#mia-school" class="btn btn-sm btn-outline" data-translate-key="learnMore">Learn More</a>
-                    </div>
-                     <div class="card animate-on-scroll">
-                        <h3 data-translate-key="news3Title">Volunteer Call: Eid Festival</h3>
-                        <p class="date" style="font-size: 0.9em; color: #6c757d; margin-bottom: 0.5rem;" data-translate-key="news3Date">April 28, 2025</p>
-                        <p data-translate-key="news3Desc">We need volunteers to help make our upcoming Eid festival a success. Sign up today!</p>
-                        <a href="about.html#volunteer" class="btn btn-sm btn-outline" data-translate-key="volunteer">Volunteer</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-         <section class="section cta-section">
-             <div class="container text-center">
-                 <h2 class="animate__animated animate__pulse animate__infinite" data-translate-key="supportTitle">Support Your Community Center</h2>
-                 <p style="color: var(--text-light); max-width: 600px; margin: 0 auto 2rem auto;" data-translate-key="supportText">Your generous donations help us maintain our facilities, run essential programs, and serve the community.</p>
-                 <a href="donate.html" class="btn btn-accent btn-lg" data-translate-key="donateNow">Donate Now</a>
-             </div>
-         </section>
-
-    </main>
-
-    <footer>
+    <!-- Announcements Section -->
+    <section class="announcements">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <h3 data-translate-key="about">About MIA</h3>
-                    <p data-translate-key="aboutMIAFooter">The Manitoba Islamic Association (MIA) is dedicated to serving the diverse Muslim community in Manitoba through religious guidance, education, social services, and community building.</p>
-                    <div class="social-links">
-                        <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
+            <h2 class="announcements-title en">Latest Announcements</h2>
+            <h2 class="announcements-title fr" style="display: none;">Dernières Annonces</h2>
+            <h2 class="announcements-title ar" style="display: none;">أحدث الإعلانات</h2>
+            
+            <div class="announcements-list">
+                <div class="announcement-item">
+                    <p class="en">Registration for the 2025-2026 academic year is now open. Early registration discounts available until June 30th.</p>
+                    <p class="fr" style="display: none;">Les inscriptions pour l'année académique 2025-2026 sont maintenant ouvertes. Réductions pour inscription anticipée disponibles jusqu'au 30 juin.</p>
+                    <p class="ar" style="display: none;">التسجيل للعام الدراسي 2025-2026 مفتوح الآن. خصومات التسجيل المبكر متاحة حتى 30 يونيو.</p>
                 </div>
-                <div class="footer-col">
-                    <h3 data-translate-key="quickLinksFooter">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="about.html" data-translate-key="about">About Us</a></li>
-                        <li><a href="services.html" data-translate-key="services">Services</a></li>
-                        <li><a href="religion.html" data-translate-key="prayerTimingsTitle">Prayer Timings</a></li>
-                        <li><a href="education.html" data-translate-key="qlMiaInstitute">MIA School</a></li>
-                        <li><a href="#" data-translate-key="qlEvents">Events</a></li>
-                        <li><a href="donate.html" data-translate-key="donate">Donate</a></li>
-                    </ul>
+                <div class="announcement-item">
+                    <p class="en">Join us for our Annual End-of-Year Celebration on June 15th. Students will showcase their achievements and projects.</p>
+                    <p class="fr" style="display: none;">Rejoignez-nous pour notre célébration annuelle de fin d'année le 15 juin. Les élèves présenteront leurs réalisations et projets.</p>
+                    <p class="ar" style="display: none;">انضم إلينا في احتفال نهاية العام السنوي في 15 يونيو. سيعرض الطلاب إنجازاتهم ومشاريعهم.</p>
                 </div>
-                <div class="footer-col">
-                    <h3 data-translate-key="contactUsFooter">Contact Us</h3>
-                    <ul class="contact-info-footer">
-                        <li><i class="fas fa-map-marker-alt"></i> 2445 Waverley St, Winnipeg, MB R3Y 1S3</li>
-                        <li><i class="fas fa-phone"></i> +1 (204) 944-1560</li>
-                        <li><i class="fas fa-envelope"></i> info@miaonline.org</li>
-                        <li data-translate-key="officeHours">Office Hours: Mon-Fri, 9am - 5pm</li>
-                    </ul>
+                <div class="announcement-item">
+                    <p class="en">Summer enrichment programs will be offered throughout July. Registration opens May 25th.</p>
+                    <p class="fr" style="display: none;">Des programmes d'enrichissement d'été seront proposés tout au long du mois de juillet. Les inscriptions ouvrent le 25 mai.</p>
+                    <p class="ar" style="display: none;">سيتم تقديم برامج الإثراء الصيفية طوال شهر يوليو. يفتح التسجيل في 25 مايو.</p>
                 </div>
             </div>
-            <div class="copyright" data-translate-key="copyrightFooter">
-                Copyright &copy; 2024 Manitoba Islamic Association. All Rights Reserved.
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section">
+        <div class="container about-content">
+            <div class="about-text">
+                <h2 class="section-title en">About MIA Institute of Knowledge</h2>
+                <h2 class="section-title fr" style="display: none;">À Propos de l'Institut MIA du Savoir</h2>
+                <h2 class="section-title ar" style="display: none;">نبذة عن معهد MIA للمعرفة</h2>
+                
+                <p class="en">MIA Institute of Knowledge is an Islamic elementary school serving students from Kindergarten to Grade 6. Founded with a vision to provide excellence in education rooted in Islamic values, our school offers a unique learning environment where students can thrive academically, spiritually, and socially.</p>
+                <p class="fr" style="display: none;">L'Institut MIA du Savoir est une école élémentaire islamique accueillant des élèves de la maternelle à la 6e année. Fondée avec la vision d'offrir une excellence en éducation ancrée dans les valeurs islamiques, notre école offre un environnement d'apprentissage unique où les élèves peuvent s'épanouir académiquement, spirituellement et socialement.</p>
+                <p class="ar" style="display: none;">معهد MIA للمعرفة هو مدرسة ابتدائية إسلامية تخدم الطلاب من الروضة إلى الصف السادس. تأسست برؤية لتوفير التميز في التعليم المتجذر في القيم الإسلامية، توفر مدرستنا بيئة تعليمية فريدة حيث يمكن للطلاب الازدهار أكاديميًا وروحيًا واجتماعيًا.</p>
+                
+                <p class="en">Our curriculum integrates Manitoba provincial requirements with Islamic education, providing students with a well-rounded learning experience. Our dedicated teachers are committed to nurturing each student's potential and fostering a love for learning in a supportive and inclusive environment.</p>
+                <p class="fr" style="display: none;">Notre programme intègre les exigences provinciales du Manitoba à l'éducation islamique, offrant aux élèves une expérience d'apprentissage complète. Nos enseignants dévoués s'engagent à cultiver le potentiel de chaque élève et à favoriser l'amour de l'apprentissage dans un environnement solidaire et inclusif.</p>
+                <p class="ar" style="display: none;">يدمج منهجنا متطلبات مقاطعة مانيتوبا مع التعليم الإسلامي، مما يوفر للطلاب تجربة تعليمية متكاملة. يلتزم معلمونا المتفانون بتنمية إمكانات كل طالب وتعزيز حب التعلم في بيئة داعمة وشاملة.</p>
+                
+                <a href="about.html" class="btn en">Discover More</a>
+                <a href="about.html" class="btn fr" style="display: none;">Découvrir Plus</a>
+                <a href="about.html" class="btn ar" style="display: none;">اكتشف المزيد</a>
+            </div>
+            <div class="about-image">
+                <img src="assets/student.avif" alt="Students at MIA">
+            </div>
+        </div>
+    </section>
+
+    <!-- Principal Section -->
+    <section class="principal section">
+        <div class="container principal-content">
+            <div class="principal-image">
+                <img src="assets/cheikh.jpeg" alt="Dr. Cheikh Ould Moulaye">
+            </div>
+            <div class="principal-info">
+                <h2 class="section-title en">Meet Our Principal</h2>
+                <h2 class="section-title fr" style="display: none;">Rencontrez Notre Directeur</h2>
+                <h2 class="section-title ar" style="display: none;">تعرف على مديرنا</h2>
+                
+                <h3 class="en">Dr. Cheikh Ould Moulaye</h3>
+                <h3 class="fr" style="display: none;">Dr. Cheikh Ould Moulaye</h3>
+                <h3 class="ar" style="display: none;">د. شيخ ولد مولاي</h3>
+                
+                <p class="en">Dr. Cheikh Ould Moulaye holds a Ph.D. degree in Physical Chemistry, a Bachelor of Education degree, and a Post-Baccalaureate Certificate in Instructional Design. He has been working as an educator since 1998, in both France and Canada.</p>
+                <p class="fr" style="display: none;">Dr. Cheikh Ould Moulaye est titulaire d'un doctorat en chimie physique, d'un baccalauréat en éducation et d'un certificat post-baccalauréat en conception pédagogique. Il travaille comme éducateur depuis 1998, tant en France qu'au Canada.</p>
+                <p class="ar" style="display: none;">يحمل الدكتور شيخ ولد مولاي درجة الدكتوراه في الكيمياء الفيزيائية، وبكالوريوس في التربية، وشهادة ما بعد البكالوريا في التصميم التعليمي. وقد عمل كمعلم منذ عام 1998، في كل من فرنسا وكندا.</p>
+                
+                <p class="en">His recent experiences include being the Associate Director of Distance and Online Education at the University of Manitoba, where he was responsible for course delivery systems and operations including quality assurance, pedagogical support and examination administration.</p>
+                <p class="fr" style="display: none;">Ses expériences récentes comprennent le poste de directeur associé de l'éducation à distance et en ligne à l'Université du Manitoba, où il était responsable des systèmes de prestation de cours et des opérations, y compris l'assurance qualité, le soutien pédagogique et l'administration des examens.</p>
+                <p class="ar" style="display: none;">تشمل خبراته الأخيرة منصب المدير المشارك للتعليم عن بعد والتعليم عبر الإنترنت في جامعة مانيتوبا، حيث كان مسؤولاً عن أنظمة تقديم الدورات والعمليات بما في ذلك ضمان الجودة والدعم التربوي وإدارة الامتحانات.</p>
+                
+                <a href="about.html#principal" class="btn en">Read Full Bio</a>
+                <a href="about.html#principal" class="btn fr" style="display: none;">Lire la Biographie Complète</a>
+                <a href="about.html#principal" class="btn ar" style="display: none;">اقرأ السيرة الذاتية الكاملة</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Highlights -->
+    <section class="programs section">
+        <div class="container">
+            <h2 class="section-title en">Academic Excellence</h2>
+            <h2 class="section-title fr" style="display: none;">Excellence Académique</h2>
+            <h2 class="section-title ar" style="display: none;">التميز الأكاديمي</h2>
+            
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="en">Core Curriculum</h3>
+                    <h3 class="fr" style="display: none;">Programme de Base</h3>
+                    <h3 class="ar" style="display: none;">المنهج الأساسي</h3>
+                    
+                    <p class="en">Our curriculum follows Manitoba Education standards while integrating Islamic perspectives across all subject areas.</p>
+                    <p class="fr" style="display: none;">Notre programme suit les normes d'Éducation Manitoba tout en intégrant des perspectives islamiques dans tous les domaines.</p>
+                    <p class="ar" style="display: none;">يتبع منهجنا معايير التعليم في مانيتوبا مع دمج المنظورات الإسلامية في جميع المواد الدراسية.</p>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-pray"></i>
+                    </div>
+                    <h3 class="en">Islamic Studies</h3>
+                    <h3 class="fr" style="display: none;">Études Islamiques</h3>
+                    <h3 class="ar" style="display: none;">الدراسات الإسلامية</h3>
+                    
+                    <p class="en">Students learn Qur'an, Islamic history, and practice Islamic values in a supportive environment.</p>
+                    <p class="fr" style="display: none;">Les élèves apprennent le Coran, l'histoire islamique et pratiquent les valeurs islamiques dans un environnement favorable.</p>
+                    <p class="ar" style="display: none;">يتعلم الطلاب القرآن والتاريخ الإسلامي ويمارسون القيم الإسلامية في بيئة داعمة.</p>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3 class="en">Arabic Language</h3>
+                    <h3 class="fr" style="display: none;">Langue Arabe</h3>
+                    <h3 class="ar" style="display: none;">اللغة العربية</h3>
+                    
+                    <p class="en">Our Arabic language program develops reading, writing, and speaking skills from Kindergarten through Grade 6.</p>
+                    <p class="fr" style="display: none;">Notre programme de langue arabe développe les compétences en lecture, écriture et expression orale de la maternelle à la 6e année.</p>
+                    <p class="ar" style="display: none;">يطور برنامج اللغة العربية لدينا مهارات القراءة والكتابة والتحدث من الروضة حتى الصف السادس.</p>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 class="en">Technology Integration</h3>
+                    <h3 class="fr" style="display: none;">Intégration Technologique</h3>
+                    <h3 class="ar" style="display: none;">دمج التكنولوجيا</h3>
+                    
+                    <p class="en">Students develop digital literacy skills through technology integrated across the curriculum.</p>
+                    <p class="fr" style="display: none;">Les élèves développent des compétences en littératie numérique grâce à la technologie intégrée dans tout le programme.</p>
+                    <p class="ar" style="display: none;">يطور الطلاب مهارات محو الأمية الرقمية من خلال التكنولوجيا المدمجة في جميع أنحاء المناهج الدراسية.</p>
+                </div>
+            </div>
+            
+            <div class="programs-cta">
+                <a href="academics.html" class="btn btn-accent en">Explore Our Programs</a>
+                <a href="academics.html" class="btn btn-accent fr" style="display: none;">Explorez Nos Programmes</a>
+                <a href="academics.html" class="btn btn-accent ar" style="display: none;">استكشف برامجنا</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section">
+        <div class="container">
+            <h2 class="section-title en">What Parents Say</h2>
+            <h2 class="section-title fr" style="display: none;">Ce Que Disent les Parents</h2>
+            <h2 class="section-title ar" style="display: none;">ما يقوله الآباء</h2>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <p class="en">"MIA Institute of Knowledge has been a blessing for our family. The teachers are dedicated and caring, and our children are thriving academically while growing in their Islamic identity."</p>
+                        <p class="fr" style="display: none;">"L'Institut MIA du Savoir a été une bénédiction pour notre famille. Les enseignants sont dévoués et attentionnés, et nos enfants s'épanouissent académiquement tout en développant leur identité islamique."</p>
+                        <p class="ar" style="display: none;">"كان معهد MIA للمعرفة نعمة لعائلتنا. المعلمون متفانون ومهتمون، وأطفالنا يزدهرون أكاديميًا بينما ينمون في هويتهم الإسلامية."</p>
+                        
+                        <div class="testimonial-author">
+                            <h4 class="en">Ahmed & Fatima Hassan</h4>
+                            <h4 class="fr" style="display: none;">Ahmed & Fatima Hassan</h4>
+                            <h4 class="ar" style="display: none;">أحمد وفاطمة حسن</h4>
+                            
+                            <p class="en">Parents of Zahra (Grade 3) and Yusuf (Grade 1)</p>
+                            <p class="fr" style="display: none;">Parents de Zahra (3e année) et Yusuf (1ère année)</p>
+                            <p class="ar" style="display: none;">والدا زهراء (الصف الثالث) ويوسف (الصف الأول)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p class="en">"The balance between academic excellence and Islamic education at MIA is exceptional. My daughter has developed strong character values while excelling in her studies."</p>
+                        <p class="fr" style="display: none;">"L'équilibre entre l'excellence académique et l'éducation islamique à MIA est exceptionnel. Ma fille a développé de solides valeurs de caractère tout en excellant dans ses études."</p>
+                        <p class="ar" style="display: none;">"التوازن بين التميز الأكاديمي والتعليم الإسلامي في MIA استثنائي. طورت ابنتي قيم شخصية قوية مع التفوق في دراستها."</p>
+                        
+                        <div class="testimonial-author">
+                            <h4 class="en">Samira Malik</h4>
+                            <h4 class="fr" style="display: none;">Samira Malik</h4>
+                            <h4 class="ar" style="display: none;">سميرة مالك</h4>
+                            
+                            <p class="en">Mother of Aisha (Grade 5)</p>
+                            <p class="fr" style="display: none;">Mère d'Aisha (5e année)</p>
+                            <p class="ar" style="display: none;">والدة عائشة (الصف الخامس)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p class="en">"We chose MIA for its strong academic program and Islamic environment. The small class sizes ensure our son receives personalized attention, and we've seen tremendous growth in his confidence and abilities."</p>
+                        <p class="fr" style="display: none;">"Nous avons choisi MIA pour son programme académique solide et son environnement islamique. Les petites classes garantissent que notre fils reçoit une attention personnalisée, et nous avons constaté une croissance considérable de sa confiance et de ses capacités."</p>
+                        <p class="ar" style="display: none;">"اخترنا MIA لبرنامجها الأكاديمي القوي والبيئة الإسلامية. تضمن الفصول الدراسية الصغيرة حصول ابننا على اهتمام شخصي، وقد شهدنا نموًا هائلاً في ثقته وقدراته."</p>
+                        
+                        <div class="testimonial-author">
+                            <h4 class="en">Omar & Layla Rahman</h4>
+                            <h4 class="fr" style="display: none;">Omar & Layla Rahman</h4>
+                            <h4 class="ar" style="display: none;">عمر وليلى رحمن</h4>
+                            
+                            <p class="en">Parents of Ibrahim (Grade 2)</p>
+                            <p class="fr" style="display: none;">Parents d'Ibrahim (2e année)</p>
+                            <p class="ar" style="display: none;">والدا إبراهيم (الصف الثاني)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-controls">
+                <button class="testimonial-btn prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="testimonial-btn next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="en">Join the MIA Family</h2>
+                <h2 class="fr" style="display: none;">Rejoignez la Famille MIA</h2>
+                <h2 class="ar" style="display: none;">انضم إلى عائلة MIA</h2>
+                
+                <p class="en">Experience the difference of an education that nurtures academic excellence and Islamic values. Applications for the upcoming school year are now open.</p>
+                <p class="fr" style="display: none;">Découvrez la différence d'une éducation qui favorise l'excellence académique et les valeurs islamiques. Les candidatures pour la prochaine année scolaire sont maintenant ouvertes.</p>
+                <p class="ar" style="display: none;">اختبر الفرق في التعليم الذي يعزز التميز الأكاديمي والقيم الإسلامية. طلبات التقديم للعام الدراسي القادم مفتوحة الآن.</p>
+                
+                <div class="cta-buttons">
+                    <a href="admissions.html" class="btn btn-accent en">Apply Now</a>
+                    <a href="admissions.html" class="btn btn-accent fr" style="display: none;">Postuler Maintenant</a>
+                    <a href="admissions.html" class="btn btn-accent ar" style="display: none;">قدم الآن</a>
+                    
+                    <a href="contact.html" class="btn btn-outline en">Contact Us</a>
+                    <a href="contact.html" class="btn btn-outline fr" style="display: none;">Contactez-Nous</a>
+                    <a href="contact.html" class="btn btn-outline ar" style="display: none;">اتصل بنا</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Tour -->
+    <section class="virtual-tour section">
+        <div class="container">
+            <h2 class="section-title en">Take a Virtual Tour</h2>
+            <h2 class="section-title fr" style="display: none;">Faites une Visite Virtuelle</h2>
+            <h2 class="section-title ar" style="display: none;">قم بجولة افتراضية</h2>
+            
+            <p class="tour-intro en">Explore our facilities and see what makes MIA Institute of Knowledge special. Click on the hotspots to navigate through different areas of our school.</p>
+            <p class="tour-intro fr" style="display: none;">Explorez nos installations et découvrez ce qui rend l'Institut MIA du Savoir spécial. Cliquez sur les points d'intérêt pour naviguer à travers différentes zones de notre école.</p>
+            <p class="tour-intro ar" style="display: none;">استكشف مرافقنا وشاهد ما يجعل معهد MIA للمعرفة مميزًا. انقر على النقاط الساخنة للتنقل عبر المناطق المختلفة من مدرستنا.</p>
+            
+            <div class="virtual-tour-container">
+                <div class="tour-image-container">
+                    <img src="assets/mia.jpg" alt="MIA School Building" class="tour-image">
+                    <div class="tour-hotspot" style="top: 40%; left: 30%;" data-area="classroom">
+                        <span class="hotspot-dot"></span>
+                        <div class="hotspot-label en">Classrooms</div>
+                        <div class="hotspot-label fr" style="display: none;">Salles de Classe</div>
+                        <div class="hotspot-label ar" style="display: none;">الفصول الدراسية</div>
+                    </div>
+                    <div class="tour-hotspot" style="top: 60%; left: 50%;" data-area="prayer">
+                        <span class="hotspot-dot"></span>
+                        <div class="hotspot-label en">Prayer Area</div>
+                        <div class="hotspot-label fr" style="display: none;">Espace de Prière</div>
+                        <div class="hotspot-label ar" style="display: none;">منطقة الصلاة</div>
+                    </div>
+                    <div class="tour-hotspot" style="top: 30%; left: 70%;" data-area="library">
+                        <span class="hotspot-dot"></span>
+                        <div class="hotspot-label en">Library</div>
+                        <div class="hotspot-label fr" style="display: none;">Bibliothèque</div>
+                        <div class="hotspot-label ar" style="display: none;">المكتبة</div>
+                    </div>
+                </div>
+                
+                <div class="tour-info">
+                    <div class="tour-area-info" id="classroom-info">
+                        <h3 class="en">Modern Classrooms</h3>
+                        <h3 class="fr" style="display: none;">Salles de Classe Modernes</h3>
+                        <h3 class="ar" style="display: none;">فصول دراسية حديثة</h3>
+                        
+                        <p class="en">Our bright, spacious classrooms are equipped with the latest educational technology to enhance learning experiences. Small class sizes ensure personalized attention for each student.</p>
+                        <p class="fr" style="display: none;">Nos salles de classe lumineuses et spacieuses sont équipées des dernières technologies éducatives pour améliorer les expériences d'apprentissage. Les petites classes garantissent une attention personnalisée pour chaque élève.</p>
+                        <p class="ar" style="display: none;">فصولنا الدراسية المشرقة والواسعة مجهزة بأحدث التقنيات التعليمية لتعزيز تجارب التعلم. تضمن الفصول الصغيرة اهتمامًا شخصيًا لكل طالب.</p>
+                    </div>
+                    
+                    <div class="tour-area-info" id="prayer-info" style="display: none;">
+                        <h3 class="en">Prayer Area</h3>
+                        <h3 class="fr" style="display: none;">Espace de Prière</h3>
+                        <h3 class="ar" style="display: none;">منطقة الصلاة</h3>
+                        
+                        <p class="en">Our dedicated prayer area provides a peaceful space for daily prayers, allowing students to practice their faith throughout the school day in a respectful environment.</p>
+                        <p class="fr" style="display: none;">Notre espace de prière dédié offre un espace paisible pour les prières quotidiennes, permettant aux élèves de pratiquer leur foi tout au long de la journée scolaire dans un environnement respectueux.</p>
+                        <p class="ar" style="display: none;">توفر منطقة الصلاة المخصصة لدينا مساحة هادئة للصلوات اليومية، مما يتيح للطلاب ممارسة إيمانهم طوال اليوم الدراسي في بيئة محترمة.</p>
+                    </div>
+                    
+                    <div class="tour-area-info" id="library-info" style="display: none;">
+                        <h3 class="en">Resource-Rich Library</h3>
+                        <h3 class="fr" style="display: none;">Bibliothèque Riche en Ressources</h3>
+                        <h3 class="ar" style="display: none;">مكتبة غنية بالموارد</h3>
+                        
+                        <p class="en">Our library features a diverse collection of books, including Islamic literature, educational resources, and age-appropriate fiction. Students visit the library regularly to develop research skills and foster a love of reading.</p>
+                        <p class="fr" style="display: none;">Notre bibliothèque présente une collection diversifiée de livres, y compris de la littérature islamique, des ressources éducatives et de la fiction adaptée à l'âge. Les élèves visitent régulièrement la bibliothèque pour développer des compétences de recherche et favoriser l'amour de la lecture.</p>
+                        <p class="ar" style="display: none;">تضم مكتبتنا مجموعة متنوعة من الكتب، بما في ذلك الأدب الإسلامي والموارد التعليمية والقصص المناسبة للعمر. يزور الطلاب المكتبة بانتظام لتطوير مهارات البحث وتعزيز حب القراءة.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tour-cta">
+                <a href="contact.html#visit" class="btn en">Schedule an In-Person Tour</a>
+                <a href="contact.html#visit" class="btn fr" style="display: none;">Planifier une Visite en Personne</a>
+                <a href="contact.html#visit" class="btn ar" style="display: none;">جدولة جولة شخصية</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Events -->
+    <section class="news-events section">
+        <div class="container">
+            <h2 class="section-title en">News & Upcoming Events</h2>
+            <h2 class="section-title fr" style="display: none;">Nouvelles et Événements à Venir</h2>
+            <h2 class="section-title ar" style="display: none;">الأخبار والفعاليات القادمة</h2>
+            
+            <div class="news-events-grid">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="assets/student.avif" alt="Science Fair">
+                        <div class="news-date">
+                            <span class="day">15</span>
+                            <span class="month">May</span>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="en">Annual Science Fair Showcases Student Innovation</h3>
+                        <h3 class="fr" style="display: none;">La Foire Scientifique Annuelle Met en Valeur l'Innovation des Élèves</h3>
+                        <h3 class="ar" style="display: none;">معرض العلوم السنوي يعرض ابتكارات الطلاب</h3>
+                        
+                        <p class="en">Students presented impressive projects at our annual Science Fair, demonstrating creativity and scientific inquiry across various topics.</p>
+                        <p class="fr" style="display: none;">Les élèves ont présenté des projets impressionnants lors de notre foire scientifique annuelle, démontrant créativité et recherche scientifique sur divers sujets.</p>
+                        <p class="ar" style="display: none;">قدم الطلاب مشاريع مثيرة للإعجاب في معرض العلوم السنوي، مما يدل على الإبداع والاستفسار العلمي عبر مواضيع مختلفة.</p>
+                        
+                        <a href="#" class="read-more en">Read More</a>
+                        <a href="#" class="read-more fr" style="display: none;">Lire Plus</a>
+                        <a href="#" class="read-more ar" style="display: none;">اقرأ المزيد</a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="assets/student.avif" alt="Quran Competition">
+                        <div class="news-date">
+                            <span class="day">10</span>
+                            <span class="month">Jun</span>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="en">Qur'an Recitation Competition</h3>
+                        <h3 class="fr" style="display: none;">Concours de Récitation du Coran</h3>
+                        <h3 class="ar" style="display: none;">مسابقة تلاوة القرآن</h3>
+                        
+                        <p class="en">Join us for our annual Qur'an Recitation Competition where students will showcase their memorization and tajweed skills.</p>
+                        <p class="fr" style="display: none;">Rejoignez-nous pour notre concours annuel de récitation du Coran où les élèves démontreront leurs compétences en mémorisation et en tajweed.</p>
+                        <p class="ar" style="display: none;">انضم إلينا في مسابقة تلاوة القرآن السنوية حيث سيعرض الطلاب مهاراتهم في الحفظ والتجويد.</p>
+                        
+                        <a href="#" class="read-more en">Event Details</a>
+                        <a href="#" class="read-more fr" style="display: none;">Détails de l'Événement</a>
+                        <a href="#" class="read-more ar" style="display: none;">تفاصيل الحدث</a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="assets/student.avif" alt="Parent Workshop">
+                        <div class="news-date">
+                            <span class="day">22</span>
+                            <span class="month">May</span>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="en">Parent Workshop: Supporting Islamic Education at Home</h3>
+                        <h3 class="fr" style="display: none;">Atelier pour Parents: Soutenir l'Éducation Islamique à la Maison</h3>
+                        <h3 class="ar" style="display: none;">ورشة عمل للوالدين: دعم التعليم الإسلامي في المنزل</h3>
+                        
+                        <p class="en">This workshop will provide practical strategies for parents to reinforce Islamic values and learning at home.</p>
+                        <p class="fr" style="display: none;">Cet atelier fournira des stratégies pratiques pour que les parents renforcent les valeurs islamiques et l'apprentissage à la maison.</p>
+                        <p class="ar" style="display: none;">ستوفر ورشة العمل هذه استراتيجيات عملية للوالدين لتعزيز القيم الإسلامية والتعلم في المنزل.</p>
+                        
+                        <a href="#" class="read-more en">Register Now</a>
+                        <a href="#" class="read-more fr" style="display: none;">S'inscrire Maintenant</a>
+                        <a href="#" class="read-more ar" style="display: none;">سجل الآن</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="news-events-cta">
+                <a href="student-life.html#events" class="btn en">View All Events</a>
+                <a href="student-life.html#events" class="btn fr" style="display: none;">Voir Tous les Événements</a>
+                <a href="student-life.html#events" class="btn ar" style="display: none;">عرض جميع الأحداث</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="assets/logo.jpeg" alt="MIA Logo">
+                        <h3 class="en">MIA Institute of Knowledge</h3>
+                        <h3 class="fr" style="display: none;">Institut MIA du Savoir</h3>
+                        <h3 class="ar" style="display: none;">معهد MIA للمعرفة</h3>
+                    </div>
+                    <p class="en">Providing excellence in education rooted in Islamic values since 2010.</p>
+                    <p class="fr" style="display: none;">Offrant l'excellence en éducation ancrée dans les valeurs islamiques depuis 2010.</p>
+                    <p class="ar" style="display: none;">تقديم التميز في التعليم المتجذر في القيم الإسلامية منذ عام 2010.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="en">Quick Links</h3>
+                    <h3 class="fr" style="display: none;">Liens Rapides</h3>
+                    <h3 class="ar" style="display: none;">روابط سريعة</h3>
+                    
+                    <ul class="footer-links">
+                        <li>
+                            <a href="about.html" class="en">About Us</a>
+                            <a href="about.html" class="fr" style="display: none;">À Propos de Nous</a>
+                            <a href="about.html" class="ar" style="display: none;">معلومات عنا</a>
+                        </li>
+                        <li>
+                            <a href="academics.html" class="en">Academics</a>
+                            <a href="academics.html" class="fr" style="display: none;">Académiques</a>
+                            <a href="academics.html" class="ar" style="display: none;">الأكاديميات</a>
+                        </li>
+                        <li>
+                            <a href="admissions.html" class="en">Admissions</a>
+                            <a href="admissions.html" class="fr" style="display: none;">Admissions</a>
+                            <a href="admissions.html" class="ar" style="display: none;">القبول</a>
+                        </li>
+                        <li>
+                            <a href="student-life.html" class="en">Student Life</a>
+                            <a href="student-life.html" class="fr" style="display: none;">Vie Étudiante</a>
+                            <a href="student-life.html" class="ar" style="display: none;">حياة الطالب</a>
+                        </li>
+                        <li>
+                            <a href="parents.html" class="en">Parents</a>
+                            <a href="parents.html" class="fr" style="display: none;">Parents</a>
+                            <a href="parents.html" class="ar" style="display: none;">الوالدين</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="en">Contact Us</h3>
+                    <h3 class="fr" style="display: none;">Contactez-Nous</h3>
+                    <h3 class="ar" style="display: none;">اتصل بنا</h3>
+                    
+                    <ul class="contact-info-footer">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="en">2445 Waverley St, Winnipeg, MB R3Y 1S3</span>
+                            <span class="fr" style="display: none;">2445 rue Waverley, Winnipeg, MB R3Y 1S3</span>
+                            <span class="ar" style="display: none;">2445 شارع ويفرلي، وينيبيغ، مانيتوبا R3Y 1S3</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>(204) 256-1347</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@miaschool.org</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span class="en">Monday-Friday: 8:00 AM - 4:00 PM</span>
+                            <span class="fr" style="display: none;">Lundi-Vendredi: 8h00 - 16h00</span>
+                            <span class="ar" style="display: none;">الاثنين-الجمعة: 8:00 صباحًا - 4:00 مساءً</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="en">Newsletter</h3>
+                    <h3 class="fr" style="display: none;">Bulletin d'Information</h3>
+                    <h3 class="ar" style="display: none;">النشرة الإخبارية</h3>
+                    
+                    <p class="en">Subscribe to receive updates about school events and news.</p>
+                    <p class="fr" style="display: none;">Abonnez-vous pour recevoir des mises à jour sur les événements et les nouvelles de l'école.</p>
+                    <p class="ar" style="display: none;">اشترك لتلقي تحديثات حول فعاليات المدرسة والأخبار.</p>
+                    
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email Address" required>
+                        <button type="submit" class="btn btn-accent">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="en">&copy; 2025 MIA Institute of Knowledge. All Rights Reserved.</p>
+                <p class="fr" style="display: none;">&copy; 2025 Institut MIA du Savoir. Tous Droits Réservés.</p>
+                <p class="ar" style="display: none;">&copy; 2025 معهد MIA للمعرفة. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
 
-    <script src="lang_switcher.js"></script>
-
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 </body>
+
 </html>

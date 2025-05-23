@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - MIA Institute of Knowledge</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="scripts.js" defer></script>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> (204) 256-1347</span>
+                <span><i class="fas fa-envelope"></i> info@miaschool.org</span>
+            </div>
+            <div class="language-selector">
+                <button class="language-btn active" onclick="changeLanguage('en')">EN</button>
+                <button class="language-btn" onclick="changeLanguage('fr')">FR</button>
+                <button class="language-btn" onclick="changeLanguage('ar')">AR</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="assets/logo.jpeg" alt="MIA Logo">
+                <span class="logo-text">MIA Institute of Knowledge</span>
+            </div>
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="academics.html" class="nav-link">Academics</a></li>
+                    <li><a href="admissions.html" class="nav-link active">Admissions</a></li>
+                    <li><a href="student-life.html" class="nav-link">Student Life</a></li>
+                    <li><a href="parents.html" class="nav-link">Parents</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="donate.html" class="donate-btn">Donate</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+            <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+            <li><a href="academics.html" class="mobile-nav-link">Academics</a></li>
+            <li><a href="admissions.html" class="mobile-nav-link active">Admissions</a></li>
+            <li><a href="student-life.html" class="mobile-nav-link">Student Life</a></li>
+            <li><a href="parents.html" class="mobile-nav-link">Parents</a></li>
+            <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+            <li><a href="donate.html" class="mobile-nav-link donate">Donate</a></li>
+        </ul>
+    </div>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="banner-content">
+            <h1 class="en">Join Our Community</h1>
+            <h1 class="fr" style="display: none;">Rejoignez Notre Communauté</h1>
+            <h1 class="ar" style="display: none;">انضم إلى مجتمعنا</h1>
+        </div>
+    </section>
+
+    <!-- Admissions Overview Section -->
+    <section class="admissions-overview section">
+        <div class="container">
+            <h2 class="section-title en">Welcome to MIA Admissions</h2>
+            <h2 class="section-title fr" style="display: none;">Bienvenue aux Admissions de MIA</h2>
+            <h2 class="section-title ar" style="display: none;">مرحبًا بكم في قبول MIA</h2>
+            
+            <div class="admissions-overview-content">
+                <div class="admissions-overview-text">
+                    <p class="en">Thank you for your interest in MIA Institute of Knowledge. We are dedicated to providing an exceptional education that integrates academic excellence with Islamic values. Our admissions process is designed to ensure that we can meet the educational needs of each student and that families understand and support our school's mission and values.</p>
+                    <p class="fr" style="display: none;">Merci de votre intérêt pour l'Institut MIA du Savoir. Nous nous consacrons à fournir une éducation exceptionnelle qui intègre l'excellence académique avec les valeurs islamiques. Notre processus d'admission est conçu pour garantir que nous pouvons répondre aux besoins éducatifs de chaque élève et que les familles comprennent et soutiennent la mission et les valeurs de notre école.</p>
+                    <p class="ar" style="display: none;">شكرًا لاهتمامك بمعهد MIA للمعرفة. نحن مكرسون لتوفير تعليم استثنائي يدمج التميز الأكاديمي مع القيم الإسلامية. تم تصميم عملية القبول لدينا للتأكد من أننا يمكن أن نلبي الاحتياجات التعليمية لكل طالب وأن العائلات تفهم وتدعم مهمة وقيم مدرستنا.</p>
+                    
+                    <p class="en">We welcome applications from families of all backgrounds who share our commitment to academic excellence and Islamic values. Our school community is enriched by diversity, and we strive to create an inclusive environment where all students feel valued and respected.</p>
+                    <p class="fr" style="display: none;">Nous accueillons les candidatures de familles de tous horizons qui partagent notre engagement envers l'excellence académique et les valeurs islamiques. Notre communauté scolaire est enrichie par la diversité, et nous nous efforçons de créer un environnement inclusif où tous les élèves se sentent valorisés et respectés.</p>
+                    <p class="ar" style="display: none;">نرحب بطلبات العائلات من جميع الخلفيات التي تشاركنا التزامنا بالتميز الأكاديمي والقيم الإسلامية. يتم إثراء مجتمع مدرستنا بالتنوع، ونسعى جاهدين لخلق بيئة شاملة حيث يشعر جميع الطلاب بالتقدير والاحترام.</p>
+                    
+                    <p class="en">We invite you to explore our website to learn more about our programs and community. If you have any questions about the admissions process, please don't hesitate to contact our Admissions Office at (204) 256-1347 or email admissions@miaschool.org.</p>
+                    <p class="fr" style="display: none;">Nous vous invitons à explorer notre site Web pour en savoir plus sur nos programmes et notre communauté. Si vous avez des questions sur le processus d'admission, n'hésitez pas à contacter notre Bureau des admissions au (204) 256-1347 ou par courriel à admissions@miaschool.org.</p>
+                    <p class="ar" style="display: none;">ندعوك لاستكشاف موقعنا الإلكتروني لمعرفة المزيد عن برامجنا ومجتمعنا. إذا كانت لديك أي أسئلة حول عملية القبول، فلا تتردد في الاتصال بمكتب القبول لدينا على الرقم (204) 256-1347 أو البريد الإلكتروني admissions@miaschool.org.</p>
+                </div>
+                <div class="admissions-overview-image">
+                    <img src="assets/student.avif" alt="Students at MIA">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admissions Process Section -->
+    <section class="admissions-process section">
+        <div class="container">
+            <h2 class="section-title en">Admissions Process</h2>
+            <h2 class="section-title fr" style="display: none;">Processus d'Admission</h2>
+            <h2 class="section-title ar" style="display: none;">عملية القبول</h2>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="en">Inquiry</h3>
+                        <h3 class="fr" style="display: none;">Renseignement</h3>
+                        <h3 class="ar" style="display: none;">الاستفسار</h3>
+                        
+                        <p class="en">Contact our Admissions Office to learn more about our school and request an information package. We encourage you to schedule a tour to visit our campus and see our programs in action.</p>
+                        <p class="fr" style="display: none;">Contactez notre Bureau des admissions pour en savoir plus sur notre école et demander une trousse d'information. Nous vous encourageons à planifier une visite pour visiter notre campus et voir nos programmes en action.</p>
+                        <p class="ar" style="display: none;">اتصل بمكتب القبول لدينا لمعرفة المزيد عن مدرستنا وطلب حزمة معلومات. نشجعك على جدولة جولة لزيارة حرمنا ورؤية برامجنا قيد التنفيذ.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="en">Application</h3>
+                        <h3 class="fr" style="display: none;">Candidature</h3>
+                        <h3 class="ar" style="display: none;">التقديم</h3>
+                        
+                        <p class="en">Complete and submit the application form along with all required documentation, including previous school records, birth certificate, and health information. A non-refundable application fee of $50 is required.</p>
+                        <p class="fr" style="display: none;">Remplissez et soumettez le formulaire de candidature avec tous les documents requis, y compris les dossiers scolaires précédents, le certificat de naissance et les informations de santé. Des frais de candidature non remboursables de 50 $ sont requis.</p>
+                        <p class="ar" style="display: none;">أكمل وقدم نموذج الطلب مع جميع الوثائق المطلوبة، بما في ذلك السجلات المدرسية السابقة، وشهادة الميلاد، ومعلومات الصحة. مطلوب رسوم طلب غير قابلة للاسترداد قدرها 50 دولارًا.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="en">Assessment</h3>
+                        <h3 class="fr" style="display: none;">Évaluation</h3>
+                        <h3 class="ar" style="display: none;">التقييم</h3>
+                        
+                        <p class="en">Students applying for Grades 1-6 will be scheduled for an academic assessment to determine their current level of achievement in core subjects. Kindergarten applicants participate in a readiness assessment.</p>
+                        <p class="fr" style="display: none;">Les élèves postulant pour les classes 1 à 6 seront programmés pour une évaluation académique afin de déterminer leur niveau actuel de réussite dans les matières principales. Les candidats à la maternelle participent à une évaluation de préparation.</p>
+                        <p class="ar" style="display: none;">سيتم جدولة الطلاب المتقدمين للصفوف 1-6 لتقييم أكاديمي لتحديد مستوى تحصيلهم الحالي في المواد الأساسية. يشارك المتقدمون لرياض الأطفال في تقييم الاستعداد.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="en">Family Interview</h3>
+                        <h3 class="fr" style="display: none;">Entretien Familial</h3>
+                        <h3 class="ar" style="display: none;">المقابلة العائلية</h3>
+                        
+                        <p class="en">Parents and students meet with the Principal or Admissions Director to discuss educational goals, expectations, and the school's mission and values. This is an opportunity for both the family and the school to determine if MIA is the right fit.</p>
+                        <p class="fr" style="display: none;">Les parents et les élèves rencontrent le Directeur ou le Directeur des admissions pour discuter des objectifs éducatifs, des attentes et de la mission et des valeurs de l'école. C'est une opportunité pour la famille et l'école de déterminer si MIA convient.</p>
+                        <p class="ar" style="display: none;">يلتقي الآباء والطلاب مع المدير أو مدير القبول لمناقشة الأهداف التعليمية والتوقعات ومهمة المدرسة وقيمها. هذه فرصة لكل من العائلة والمدرسة لتحديد ما إذا كانت MIA مناسبة.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3 class="en">Admission Decision</h3>
+                        <h3 class="fr" style="display: none;">Décision d'Admission</h3>
+                        <h3 class="ar" style="display: none;">قرار القبول</h3>
+                        
+                        <p class="en">Families are notified of the admission decision within two weeks of completing all application requirements. If accepted, an enrollment package will be provided with registration forms and information about tuition and fees.</p>
+                        <p class="fr" style="display: none;">Les familles sont informées de la décision d'admission dans les deux semaines suivant l'achèvement de toutes les exigences de candidature. Si accepté, un dossier d'inscription sera fourni avec les formulaires d'inscription et des informations sur les frais de scolarité et les frais.</p>
+                        <p class="ar" style="display: none;">يتم إخطار العائلات بقرار القبول في غضون أسبوعين من استكمال جميع متطلبات الطلب. في حالة القبول، سيتم توفير حزمة تسجيل مع نماذج التسجيل ومعلومات حول الرسوم الدراسية والرسوم.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3 class="en">Enrollment</h3>
+                        <h3 class="fr" style="display: none;">Inscription</h3>
+                        <h3 class="ar" style="display: none;">التسجيل</h3>
+                        
+                        <p class="en">To secure your child's place, complete and return all enrollment forms along with the required deposit. Families are also invited to attend an orientation session before the start of the school year.</p>
+                        <p class="fr" style="display: none;">Pour garantir la place de votre enfant, remplissez et retournez tous les formulaires d'inscription avec le dépôt requis. Les familles sont également invitées à assister à une séance d'orientation avant le début de l'année scolaire.</p>
+                        <p class="ar" style="display: none;">لتأمين مكان طفلك، أكمل وأعد جميع نماذج التسجيل مع الإيداع المطلوب. تتم دعوة العائلات أيضًا لحضور جلسة توجيهية قبل بداية العام الدراسي.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Requirements Section -->
+    <section class="application-requirements section">
+        <div class="container">
+            <h2 class="section-title en">Application Requirements</h2>
+            <h2 class="section-title fr" style="display: none;">Exigences de Candidature</h2>
+            <h2 class="section-title ar" style="display: none;">متطلبات التقديم</h2>
+            
+            <div class="requirements-content">
+                <div class="requirements-list">
+                    <h3 class="en">Required Documents</h3>
+                    <h3 class="fr" style="display: none;">Documents Requis</h3>
+                    <h3 class="ar" style="display: none;">الوثائق المطلوبة</h3>
+                    
+                    <ul class="en">
+                        <li>Completed application form</li>
+                        <li>Copy of birth certificate or passport</li>
+                        <li>Immunization records</li>
+                        <li>Previous school records (for Grades 1-6)</li>
+                        <li>Recent photograph of the student</li>
+                        <li>$50 non-refundable application fee</li>
+                    </ul>
+                    
+                    <ul class="fr" style="display: none;">
+                        <li>Formulaire de candidature rempli</li>
+                        <li>Copie du certificat de naissance ou du passeport</li>
+                        <li>Dossiers de vaccination</li>
+                        <li>Dossiers scolaires précédents (pour les classes 1 à 6)</li>
+                        <li>Photographie récente de l'élève</li>
+                        <li>Frais de candidature non remboursables de 50 $</li>
+                    </ul>
+                    
+                    <ul class="ar" style="display: none;">
+                        <li>نموذج طلب مكتمل</li>
+                        <li>نسخة من شهادة الميلاد أو جواز السفر</li>
+                        <li>سجلات التطعيم</li>
+                        <li>السجلات المدرسية السابقة (للصفوف 1-6)</li>
+                        <li>صورة حديثة للطالب</li>
+                        <li>رسوم طلب غير قابلة للاسترداد قدرها 50 دولارًا</li>
+                    </ul>
+                    
+                    <h3 class="en">Age Requirements</h3>
+                    <h3 class="fr" style="display: none;">Exigences d'Âge</h3>
+                    <h3 class="ar" style="display: none;">متطلبات العمر</h3>
+                    
+                    <p class="en">Kindergarten: Children must be 5 years old by December 31 of the enrollment year.</p>
+                    <p class="fr" style="display: none;">Maternelle: Les enfants doivent avoir 5 ans au 31 décembre de l'année d'inscription.</p>
+                    <p class="ar" style="display: none;">الروضة: يجب أن يكون عمر الأطفال 5 سنوات بحلول 31 ديسمبر من سنة التسجيل.</p>
+                    
+                    <p class="en">Grade 1: Children must be 6 years old by December 31 of the enrollment year.</p>
+                    <p class="fr" style="display: none;">1ère année: Les enfants doivent avoir 6 ans au 31 décembre de l'année d'inscription.</p>
+                    <p class="ar" style="display: none;">الصف الأول: يجب أن يكون عمر الأطفال 6 سنوات بحلول 31 ديسمبر من سنة التسجيل.</p>
+                </div>
+                
+                <div class="application-form-info">
+                    <h3 class="en">How to Apply</h3>
+                    <h3 class="fr" style="display: none;">Comment Postuler</h3>
+                    <h3 class="ar" style="display: none;">كيفية التقديم</h3>
+                    
+                    <p class="en">Applications can be submitted in the following ways:</p>
+                    <p class="fr" style="display: none;">Les candidatures peuvent être soumises des manières suivantes:</p>
+                    <p class="ar" style="display: none;">يمكن تقديم الطلبات بالطرق التالية:</p>
+                    
+                    <ul class="en">
+                        <li><strong>Online:</strong> Complete our online application form (available on our website)</li>
+                        <li><strong>In Person:</strong> Visit our Admissions Office to pick up and submit an application</li>
+                        <li><strong>By Mail:</strong> Download the application form from our website and mail it to:
+                            <br>MIA Institute of Knowledge
+                            <br>Admissions Office
+                            <br>2445 Waverley St
+                            <br>Winnipeg, MB R3Y 1S3
+                        </li>
+                    </ul>
+                    
+                    <ul class="fr" style="display: none;">
+                        <li><strong>En ligne:</strong> Remplissez notre formulaire de candidature en ligne (disponible sur notre site Web)</li>
+                        <li><strong>En personne:</strong> Visitez notre Bureau des admissions pour récupérer et soumettre une candidature</li>
+                        <li><strong>Par courrier:</strong> Téléchargez le formulaire de candidature depuis notre site Web et envoyez-le à:
+                            <br>Institut MIA du Savoir
+                            <br>Bureau des Admissions
+                            <br>2445 rue Waverley
+                            <br>Winnipeg, MB R3Y 1S3
+                        </li>
+                    </ul>
+                    
+                    <ul class="ar" style="display: none;">
+                        <li><strong>عبر الإنترنت:</strong> أكمل نموذج الطلب عبر الإنترنت (متاح على موقعنا)</li>
+                        <li><strong>شخصيًا:</strong> قم بزيارة مكتب القبول لدينا لاستلام وتقديم طلب</li>
+                        <li><strong>بالبريد:</strong> قم بتنزيل نموذج الطلب من موقعنا وإرساله بالبريد إلى:
+                            <br>معهد MIA للمعرفة
+                            <br>مكتب القبول
+                            <br>2445 شارع ويفرلي
+                            <br>وينيبيغ، مانيتوبا R3Y 1S3
+                        </li>
+                    </ul>
+                    
+                    <div class="application-cta">
+                        <a href="#" class="btn btn-accent en">Download Application Form</a>
+                        <a href="#" class="btn btn-accent fr" style="display: none;">Télécharger le Formulaire</a>
+                        <a href="#" class="btn btn-accent ar" style="display: none;">تنزيل نموذج الطلب</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tuition & Fees Section -->
+    <section class="tuition-fees section">
+        <div class="container">
+            <h2 class="section-title en">Tuition & Fees</h2>
+            <h2 class="section-title fr" style="display: none;">Frais de Scolarité</h2>
+            <h2 class="section-title ar" style="display: none;">الرسوم الدراسية</h2>
+            
+            <p class="tuition-intro en">MIA Institute of Knowledge strives to provide an exceptional education at an affordable cost. We are committed to making our school accessible to families from diverse economic backgrounds through our financial aid program.</p>
+            <p class="tuition-intro fr" style="display: none;">L'Institut MIA du Savoir s'efforce de fournir une éducation exceptionnelle à un coût abordable. Nous nous engageons à rendre notre école accessible aux familles de divers milieux économiques grâce à notre programme d'aide financière.</p>
+            <p class="tuition-intro ar" style="display: none;">يسعى معهد MIA للمعرفة جاهدًا لتوفير تعليم استثنائي بتكلفة معقولة. نحن ملتزمون بجعل مدرستنا في متناول العائلات من خلفيات اقتصادية متنوعة من خلال برنامج المساعدة المالية لدينا.</p>
+            
+            <div class="tuition-table-container">
+                <h3 class="en">2025-2026 Academic Year</h3>
+                <h3 class="fr" style="display: none;">Année Académique 2025-2026</h3>
+                <h3 class="ar" style="display: none;">العام الدراسي 2025-2026</h3>
+                
+                <div class="tuition-table">
+                    <div class="table-header">
+                        <div class="header-cell en">Grade Level</div>
+                        <div class="header-cell fr" style="display: none;">Niveau Scolaire</div>
+                        <div class="header-cell ar" style="display: none;">المستوى الدراسي</div>
+                        
+                        <div class="header-cell en">Annual Tuition</div>
+                        <div class="header-cell fr" style="display: none;">Frais Annuels</div>
+                        <div class="header-cell ar" style="display: none;">الرسوم السنوية</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="row-cell en">Kindergarten</div>
+                        <div class="row-cell fr" style="display: none;">Maternelle</div>
+                        <div class="row-cell ar" style="display: none;">الروضة</div>
+                        
+                        <div class="row-cell">$4,200</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="row-cell en">Grades 1-3</div>
+                        <div class="row-cell fr" style="display: none;">1ère à 3e Année</div>
+                        <div class="row-cell ar" style="display: none;">الصفوف 1-3</div>
+                        
+                        <div class="row-cell">$4,500</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="row-cell en">Grades 4-6</div>
+                        <div class="row-cell fr" style="display: none;">4e à 6e Année</div>
+                        <div class="row-cell ar" style="display: none;">الصفوف 4-6</div>
+                        
+                        <div class="row-cell">$4,800</div>
+                    </div>
+                </div>
+                
+                <h3 class="en">Additional Fees</h3>
+                <h3 class="fr" style="display: none;">Frais Supplémentaires</h3>
+                <h3 class="ar" style="display: none;">رسوم إضافية</h3>
+                
+                <div class="tuition-table">
+                    <div class="table-header">
+                        <div class="header-cell en">Fee Type</div>
+                        <div class="header-cell fr" style="display: none;">Type de Frais</div>
+                        <div class="header-cell ar" style="display: none;">نوع الرسوم</div>
+                        
+                        <div class="header-cell en">Amount</div>
+                        <div class="header-cell fr" style="display: none;">Montant</div>
+                        <div class="header-cell ar" style="display: none;">المبلغ</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="row-cell en">Application Fee (one-time, non-refundable)</div>
+                        <div class="row-cell fr" style="display: none;">Frais de Candidature (unique, non remboursable)</div>
+                        <div class="row-cell ar" style="display: none;">رسوم التقديم (مرة واحدة، غير قابلة للاسترداد)</div>
+                        
+                        <div class="row-cell">$50</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="row-cell en">Registration Fee (annual)</div>
+                        <div class="row-cell fr" style="display: none;">Frais d'Inscription (annuel)</div>
+                        <div class="row-cell ar" style="display: none;">رسوم التسجيل (سنوي)</div>
+                        
+                        <div class="row-cell">$200</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="row-cell en">Materials & Technology Fee (annual)</div>
+                        <div class="row-cell fr" style="display: none;">Frais de Matériel et Technologie (annuel)</div>
+                        <div class="row-cell ar" style="display: none;">رسوم المواد والتكنولوجيا (سنوي)</div>
+                        
+                        <div class="row-cell">$250</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="payment-options">
+                <h3 class="en">Payment Options</h3>
+                <h3 class="fr" style="display: none;">Options de Paiement</h3>
+                <h3 class="ar" style="display: none;">خيارات الدفع</h3>
+                
+                <p class="en">We offer several payment plans to accommodate family budgets:</p>
+                <p class="fr" style="display: none;">Nous offrons plusieurs plans de paiement pour accommoder les budgets familiaux:</p>
+                <p class="ar" style="display: none;">نقدم العديد من خطط الدفع لاستيعاب ميزانيات الأسرة:</p>
+                
+                <ul class="en">
+                    <li><strong>Annual Payment:</strong> Full tuition paid by August 1 (3% discount)</li>
+                    <li><strong>Semi-Annual Payment:</strong> Two equal payments (August 1 and January 1)</li>
+                    <li><strong>Monthly Payment:</strong> Ten equal payments (August through May)</li>
+                </ul>
+                
+                <ul class="fr" style="display: none;">
+                    <li><strong>Paiement Annuel:</strong> Frais de scolarité complets payés avant le 1er août (remise de 3%)</li>
+                    <li><strong>Paiement Semi-Annuel:</strong> Deux paiements égaux (1er août et 1er janvier)</li>
+                    <li><strong>Paiement Mensuel:</strong> Dix paiements égaux (août à mai)</li>
+                </ul>
+                
+                <ul class="ar" style="display: none;">
+                    <li><strong>الدفع السنوي:</strong> الرسوم الدراسية الكاملة المدفوعة بحلول 1 أغسطس (خصم 3٪)</li>
+                    <li><strong>الدفع نصف السنوي:</strong> دفعتان متساويتان (1 أغسطس و 1 يناير)</li>
+                    <li><strong>الدفع الشهري:</strong> عشر دفعات متساوية (أغسطس حتى مايو)</li>
+                </ul>
+            </div>
+            
+            <div class="financial-aid">
+                <h3 class="en">Financial Aid</h3>
+                <h3 class="fr" style="display: none;">Aide Financière</h3>
+                <h3 class="ar" style="display: none;">المساعدة المالية</h3>
+                
+                <p class="en">MIA Institute of Knowledge is committed to making quality Islamic education accessible to all families. Financial aid is available based on demonstrated need. Families interested in financial aid should request a Financial Aid Application from the Admissions Office.</p>
+                <p class="fr" style="display: none;">L'Institut MIA du Savoir s'engage à rendre l'éducation islamique de qualité accessible à toutes les familles. L'aide financière est disponible en fonction des besoins démontrés. Les familles intéressées par l'aide financière devraient demander un formulaire de demande d'aide financière au Bureau des admissions.</p>
+                <p class="ar" style="display: none;">يلتزم معهد MIA للمعرفة بجعل التعليم الإسلامي عالي الجودة في متناول جميع العائلات. المساعدة المالية متاحة بناءً على الحاجة المثبتة. يجب على العائلات المهتمة بالمساعدة المالية طلب طلب المساعدة المالية من مكتب القبول.</p>
+                
+                <p class="en">Financial aid applications must be submitted by April 15 for the following academic year. All financial information is kept strictly confidential.</p>
+                <p class="fr" style="display: none;">Les demandes d'aide financière doivent être soumises avant le 15 avril pour l'année académique suivante. Toutes les informations financières sont gardées strictement confidentielles.</p>
+                <p class="ar" style="display: none;">يجب تقديم طلبات المساعدة المالية بحلول 15 أبريل للعام الدراسي التالي. يتم الاحتفاظ بجميع المعلومات المالية بسرية تامة.</p>
+                
+                <div class="financial-aid-cta">
+                    <a href="#" class="btn btn-outline en">Financial Aid Information</a>
+                    <a href="#" class="btn btn-outline fr" style="display: none;">Informations sur l'Aide Financière</a>
+                    <a href="#" class="btn btn-outline ar" style="display: none;">معلومات المساعدة المالية</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section">
+        <div class="container">
+            <h2 class="section-title en">Frequently Asked Questions</h2>
+            <h2 class="section-title fr" style="display: none;">Questions Fréquemment Posées</h2>
+            <h2 class="section-title ar" style="display: none;">الأسئلة المتداولة</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 class="en">What is the student-to-teacher ratio at MIA?</h3>
+                        <h3 class="fr" style="display: none;">Quel est le ratio élèves-enseignant à MIA?</h3>
+                        <h3 class="ar" style="display: none;">ما هي نسبة الطلاب إلى المعلمين في MIA؟</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="en">Our average class size is 18-20 students, with a student-to-teacher ratio of approximately 15:1. This allows our teachers to provide personalized attention to each student and create a supportive learning environment.</p>
+                        <p class="fr" style="display: none;">La taille moyenne de nos classes est de 18 à 20 élèves, avec un ratio élèves-enseignant d'environ 15:1. Cela permet à nos enseignants de fournir une attention personnalisée à chaque élève et de créer un environnement d'apprentissage favorable.</p>
+                        <p class="ar" style="display: none;">متوسط حجم فصلنا هو 18-20 طالبًا، مع نسبة طلاب إلى معلم تبلغ حوالي 15:1. هذا يسمح لمعلمينا بتقديم اهتمام شخصي لكل طالب وخلق بيئة تعليمية داعمة.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 class="en">Do you accept mid-year applications?</h3>
+                        <h3 class="fr" style="display: none;">Acceptez-vous les candidatures en milieu d'année?</h3>
+                        <h3 class="ar" style="display: none;">هل تقبلون طلبات منتصف العام؟</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="en">Yes, we accept applications throughout the year, subject to space availability. However, we encourage families to apply during the regular admissions cycle (January-April) for the best chance of securing a place for the following academic year.</p>
+                        <p class="fr" style="display: none;">Oui, nous acceptons les candidatures tout au long de l'année, sous réserve de disponibilité des places. Cependant, nous encourageons les familles à postuler pendant le cycle d'admission régulier (janvier-avril) pour avoir les meilleures chances d'obtenir une place pour l'année académique suivante.</p>
+                        <p class="ar" style="display: none;">نعم، نقبل الطلبات على مدار العام، وفقًا لتوفر المساحة. ومع ذلك، نشجع العائلات على التقديم خلال دورة القبول العادية (يناير-أبريل) للحصول على أفضل فرصة لتأمين مكان للعام الدراسي التالي.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 class="en">Is transportation provided for students?</h3>
+                        <h3 class="fr" style="display: none;">Le transport est-il fourni pour les élèves?</h3>
+                        <h3 class="ar" style="display: none;">هل يتم توفير وسائل النقل للطلاب؟</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="en">MIA does not currently provide transportation services. Families are responsible for arranging transportation to and from school. Many families organize carpools, which the school can help facilitate by connecting interested families.</p>
+                        <p class="fr" style="display: none;">MIA ne fournit pas actuellement de services de transport. Les familles sont responsables de l'organisation du transport vers et depuis l'école. De nombreuses familles organisent du covoiturage, que l'école peut aider à faciliter en connectant les familles intéressées.</p>
+                        <p class="ar" style="display: none;">لا توفر MIA حاليًا خدمات النقل. العائلات مسؤولة عن ترتيب النقل من وإلى المدرسة. تنظم العديد من العائلات مشاركة السيارات، والتي يمكن للمدرسة المساعدة في تسهيلها من خلال ربط العائلات المهتمة.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 class="en">What is your approach to Islamic education?</h3>
+                        <h3 class="fr" style="display: none;">Quelle est votre approche de l'éducation islamique?</h3>
+                        <h3 class="ar" style="display: none;">ما هو نهجكم في التعليم الإسلامي؟</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="en">Our approach to Islamic education is comprehensive and integrated. Islamic values and teachings are woven throughout the curriculum, not just taught as a separate subject. We focus on developing a strong Islamic identity, character (akhlaq), and understanding of Islamic principles while fostering respect for diversity and other faith traditions.</p>
+                        <p class="fr" style="display: none;">Notre approche de l'éducation islamique est complète et intégrée. Les valeurs et les enseignements islamiques sont tissés dans tout le programme, pas seulement enseignés comme un sujet séparé. Nous nous concentrons sur le développement d'une forte identité islamique, du caractère (akhlaq) et de la compréhension des principes islamiques tout en favorisant le respect de la diversité et des autres traditions religieuses.</p>
+                        <p class="ar" style="display: none;">نهجنا في التعليم الإسلامي شامل ومتكامل. القيم والتعاليم الإسلامية منسوجة في جميع أنحاء المنهج، وليس فقط تدريسها كموضوع منفصل. نركز على تطوير هوية إسلامية قوية، والشخصية (الأخلاق)، وفهم المبادئ الإسلامية مع تعزيز احترام التنوع والتقاليد الدينية الأخرى.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 class="en">Do you offer before and after-school care?</h3>
+                        <h3 class="fr" style="display: none;">Offrez-vous des services de garde avant et après l'école?</h3>
+                        <h3 class="ar" style="display: none;">هل تقدمون رعاية ما قبل وبعد المدرسة؟</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="en">Yes, we offer both before and after-school care programs to accommodate working parents. Before-school care is available from 7:30 AM to 8:30 AM, and after-school care is available from 3:30 PM to 5:30 PM. These programs provide a safe, supervised environment with opportunities for homework completion, recreational activities, and enrichment programs. Additional fees apply for these services.</p>
+                        <p class="fr" style="display: none;">Oui, nous offrons des programmes de garde avant et après l'école pour accommoder les parents qui travaillent. La garde avant l'école est disponible de 7h30 à 8h30, et la garde après l'école est disponible de 15h30 à 17h30. Ces programmes offrent un environnement sûr et supervisé avec des opportunités pour terminer les devoirs, des activités récréatives et des programmes d'enrichissement. Des frais supplémentaires s'appliquent pour ces services.</p>
+                        <p class="ar" style="display: none;">نعم، نقدم برامج رعاية ما قبل وبعد المدرسة لاستيعاب الآباء العاملين. تتوفر رعاية ما قبل المدرسة من الساعة 7:30 صباحًا حتى 8:30 صباحًا، وتتوفر رعاية ما بعد المدرسة من الساعة 3:30 مساءً حتى 5:30 مساءً. توفر هذه البرامج بيئة آمنة وخاضعة للإشراف مع فرص لإكمال الواجبات المنزلية والأنشطة الترفيهية وبرامج الإثراء. تنطبق رسوم إضافية على هذه الخدمات.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 class="en">What extracurricular activities do you offer?</h3>
+                        <h3 class="fr" style="display: none;">Quelles activités parascolaires proposez-vous?</h3>
+                        <h3 class="ar" style="display: none;">ما هي الأنشطة اللامنهجية التي تقدمونها؟</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="en">We offer a variety of extracurricular activities that enrich our students' educational experience. These include Qur'an Club, Arabic Calligraphy, Science Club, Art Club, Sports Teams, Nasheed Choir, and Community Service Club. Activities vary by grade level and may change from year to year based on student interest and staff availability.</p>
+                        <p class="fr" style="display: none;">Nous offrons une variété d'activités parascolaires qui enrichissent l'expérience éducative de nos élèves. Celles-ci comprennent le Club du Coran, la Calligraphie Arabe, le Club de Sciences, le Club d'Art, les Équipes Sportives, la Chorale de Nasheed et le Club de Service Communautaire. Les activités varient selon le niveau scolaire et peuvent changer d'une année à l'autre en fonction de l'intérêt des élèves et de la disponibilité du personnel.</p>
+                        <p class="ar" style="display: none;">نقدم مجموعة متنوعة من الأنشطة اللامنهجية التي تثري تجربة طلابنا التعليمية. وتشمل هذه نادي القرآن، والخط العربي، ونادي العلوم، ونادي الفنون، والفرق الرياضية، وجوقة النشيد، ونادي خدمة المجتمع. تختلف الأنشطة حسب المستوى الدراسي وقد تتغير من سنة إلى أخرى بناءً على اهتمام الطلاب وتوفر الموظفين.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Tour Section -->
+    <section class="virtual-tour section">
+        <div class="container">
+            <h2 class="section-title en">Virtual Tour</h2>
+            <h2 class="section-title fr" style="display: none;">Visite Virtuelle</h2>
+            <h2 class="section-title ar" style="display: none;">جولة افتراضية</h2>
+            
+            <p class="virtual-tour-intro en">Can't visit us in person? Take a virtual tour of our campus to see our facilities and learning spaces. Click on the hotspots to explore different areas of our school.</p>
+            <p class="virtual-tour-intro fr" style="display: none;">Vous ne pouvez pas nous rendre visite en personne? Faites une visite virtuelle de notre campus pour voir nos installations et nos espaces d'apprentissage. Cliquez sur les points d'accès pour explorer différentes zones de notre école.</p>
+            <p class="virtual-tour-intro ar" style="display: none;">لا يمكنك زيارتنا شخصيًا؟ قم بجولة افتراضية في حرمنا لرؤية مرافقنا ومساحات التعلم. انقر على النقاط الساخنة لاستكشاف مناطق مختلفة من مدرستنا.</p>
+            
+            <div class="virtual-tour-container">
+                <div class="tour-image-container">
+                    <img src="assets/student.avif" alt="School Campus" class="tour-image">
+                    
+                    <div class="tour-hotspot" data-area="classroom" style="top: 30%; left: 25%;">
+                        <span class="hotspot-icon"><i class="fas fa-plus"></i></span>
+                        <span class="hotspot-label en">Classroom</span>
+                        <span class="hotspot-label fr" style="display: none;">Salle de Classe</span>
+                        <span class="hotspot-label ar" style="display: none;">الفصل الدراسي</span>
+                    </div>
+                    
+                    <div class="tour-hotspot" data-area="library" style="top: 45%; left: 60%;">
+                        <span class="hotspot-icon"><i class="fas fa-plus"></i></span>
+                        <span class="hotspot-label en">Library</span>
+                        <span class="hotspot-label fr" style="display: none;">Bibliothèque</span>
+                        <span class="hotspot-label ar" style="display: none;">المكتبة</span>
+                    </div>
+                    
+                    <div class="tour-hotspot" data-area="prayer" style="top: 70%; left: 40%;">
+                        <span class="hotspot-icon"><i class="fas fa-plus"></i></span>
+                        <span class="hotspot-label en">Prayer Space</span>
+                        <span class="hotspot-label fr" style="display: none;">Espace de Prière</span>
+                        <span class="hotspot-label ar" style="display: none;">مساحة الصلاة</span>
+                    </div>
+                </div>
+                
+                <div class="tour-area-info" id="classroom-info">
+                    <h3 class="en">Classrooms</h3>
+                    <h3 class="fr" style="display: none;">Salles de Classe</h3>
+                    <h3 class="ar" style="display: none;">الفصول الدراسية</h3>
+                    
+                    <p class="en">Our bright, spacious classrooms are designed to create an optimal learning environment. Each classroom is equipped with interactive technology, flexible seating arrangements, and learning centers that support different learning styles and activities.</p>
+                    <p class="fr" style="display: none;">Nos salles de classe lumineuses et spacieuses sont conçues pour créer un environnement d'apprentissage optimal. Chaque salle de classe est équipée de technologies interactives, d'arrangements de sièges flexibles et de centres d'apprentissage qui soutiennent différents styles d'apprentissage et activités.</p>
+                    <p class="ar" style="display: none;">تم تصميم فصولنا الدراسية المشرقة والواسعة لخلق بيئة تعليمية مثالية. كل فصل دراسي مجهز بتكنولوجيا تفاعلية، وترتيبات جلوس مرنة، ومراكز تعلم تدعم أساليب وأنشطة التعلم المختلفة.</p>
+                </div>
+                
+                <div class="tour-area-info" id="library-info" style="display: none;">
+                    <h3 class="en">Library & Resource Center</h3>
+                    <h3 class="fr" style="display: none;">Bibliothèque et Centre de Ressources</h3>
+                    <h3 class="ar" style="display: none;">المكتبة ومركز الموارد</h3>
+                    
+                    <p class="en">Our library houses a diverse collection of books, including Islamic literature, fiction, non-fiction, and reference materials. The space includes comfortable reading areas, research stations, and a multimedia section. Our librarian works with teachers to support curriculum goals and foster a love of reading.</p>
+                    <p class="fr" style="display: none;">Notre bibliothèque abrite une collection diverse de livres, y compris de la littérature islamique, de la fiction, de la non-fiction et des documents de référence. L'espace comprend des zones de lecture confortables, des stations de recherche et une section multimédia. Notre bibliothécaire travaille avec les enseignants pour soutenir les objectifs du programme et favoriser l'amour de la lecture.</p>
+                    <p class="ar" style="display: none;">تضم مكتبتنا مجموعة متنوعة من الكتب، بما في ذلك الأدب الإسلامي، والخيال، وغير الخيال، والمواد المرجعية. تشمل المساحة مناطق قراءة مريحة، ومحطات بحث، وقسم وسائط متعددة. يعمل أمين المكتبة لدينا مع المعلمين لدعم أهداف المناهج وتعزيز حب القراءة.</p>
+                </div>
+                
+                <div class="tour-area-info" id="prayer-info" style="display: none;">
+                    <h3 class="en">Prayer Space</h3>
+                    <h3 class="fr" style="display: none;">Espace de Prière</h3>
+                    <h3 class="ar" style="display: none;">مساحة الصلاة</h3>
+                    
+                    <p class="en">Our dedicated prayer space provides a peaceful environment for daily prayers. Students and staff gather for Dhuhr prayer during the school day, fostering a sense of community and spiritual connection. The space is also used for Islamic Studies classes and Qur'an recitation.</p>
+                    <p class="fr" style="display: none;">Notre espace de prière dédié offre un environnement paisible pour les prières quotidiennes. Les élèves et le personnel se rassemblent pour la prière de Dhuhr pendant la journée scolaire, favorisant un sentiment de communauté et de connexion spirituelle. L'espace est également utilisé pour les cours d'études islamiques et la récitation du Coran.</p>
+                    <p class="ar" style="display: none;">توفر مساحة الصلاة المخصصة لدينا بيئة هادئة للصلوات اليومية. يجتمع الطلاب والموظفون لصلاة الظهر خلال اليوم الدراسي، مما يعزز الشعور بالمجتمع والاتصال الروحي. تستخدم المساحة أيضًا لدروس الدراسات الإسلامية وتلاوة القرآن.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="en">Ready to Apply?</h2>
+                <h2 class="fr" style="display: none;">Prêt à Postuler?</h2>
+                <h2 class="ar" style="display: none;">مستعد للتقديم؟</h2>
+                
+                <p class="en">We invite you to join our vibrant school community. Start your application today or schedule a tour to learn more about MIA Institute of Knowledge.</p>
+                <p class="fr" style="display: none;">Nous vous invitons à rejoindre notre communauté scolaire dynamique. Commencez votre candidature aujourd'hui ou planifiez une visite pour en savoir plus sur l'Institut MIA du Savoir.</p>
+                <p class="ar" style="display: none;">ندعوك للانضمام إلى مجتمع مدرستنا النابض بالحياة. ابدأ طلبك اليوم أو جدول جولة لمعرفة المزيد عن معهد MIA للمعرفة.</p>
+                
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-accent en">Apply Now</a>
+                    <a href="#" class="btn btn-accent fr" style="display: none;">Postuler Maintenant</a>
+                    <a href="#" class="btn btn-accent ar" style="display: none;">قدم الآن</a>
+                    
+                    <a href="contact.html#visit" class="btn btn-outline en">Schedule a Tour</a>
+                    <a href="contact.html#visit" class="btn btn-outline fr" style="display: none;">Planifier une Visite</a>
+                    <a href="contact.html#visit" class="btn btn-outline ar" style="display: none;">جدولة جولة</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="assets/logo.jpeg" alt="MIA Logo">
+                        <h3 class="en">MIA Institute of Knowledge</h3>
+                        <h3 class="fr" style="display: none;">Institut MIA du Savoir</h3>
+                        <h3 class="ar" style="display: none;">معهد MIA للمعرفة</h3>
+                    </div>
+                    <p class="en">Providing excellence in education rooted in Islamic values since 2010.</p>
+                    <p class="fr" style="display: none;">Offrant l'excellence en éducation ancrée dans les valeurs islamiques depuis 2010.</p>
+                    <p class="ar" style="display: none;">تقديم التميز في التعليم المتجذر في القيم الإسلامية منذ عام 2010.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="en">Quick Links</h3>
+                    <h3 class="fr" style="display: none;">Liens Rapides</h3>
+                    <h3 class="ar" style="display: none;">روابط سريعة</h3>
+                    
+                    <ul class="footer-links">
+                        <li>
+                            <a href="about.html" class="en">About Us</a>
+                            <a href="about.html" class="fr" style="display: none;">À Propos de Nous</a>
+                            <a href="about.html" class="ar" style="display: none;">معلومات عنا</a>
+                        </li>
+                        <li>
+                            <a href="academics.html" class="en">Academics</a>
+                            <a href="academics.html" class="fr" style="display: none;">Académiques</a>
+                            <a href="academics.html" class="ar" style="display: none;">الأكاديميات</a>
+                        </li>
+                        <li>
+                            <a href="admissions.html" class="en">Admissions</a>
+                            <a href="admissions.html" class="fr" style="display: none;">Admissions</a>
+                            <a href="admissions.html" class="ar" style="display: none;">القبول</a>
+                        </li>
+                        <li>
+                            <a href="student-life.html" class="en">Student Life</a>
+                            <a href="student-life.html" class="fr" style="display: none;">Vie Étudiante</a>
+                            <a href="student-life.html" class="ar" style="display: none;">حياة الطالب</a>
+                        </li>
+                        <li>
+                            <a href="parents.html" class="en">Parents</a>
+                            <a href="parents.html" class="fr" style="display: none;">Parents</a>
+                            <a href="parents.html" class="ar" style="display: none;">الوالدين</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="en">Contact Us</h3>
+                    <h3 class="fr" style="display: none;">Contactez-Nous</h3>
+                    <h3 class="ar" style="display: none;">اتصل بنا</h3>
+                    
+                    <ul class="contact-info-footer">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="en">2445 Waverley St, Winnipeg, MB R3Y 1S3</span>
+                            <span class="fr" style="display: none;">2445 rue Waverley, Winnipeg, MB R3Y 1S3</span>
+                            <span class="ar" style="display: none;">2445 شارع ويفرلي، وينيبيغ، مانيتوبا R3Y 1S3</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>(204) 256-1347</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@miaschool.org</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span class="en">Monday-Friday: 8:00 AM - 4:00 PM</span>
+                            <span class="fr" style="display: none;">Lundi-Vendredi: 8h00 - 16h00</span>
+                            <span class="ar" style="display: none;">الاثنين-الجمعة: 8:00 صباحًا - 4:00 مساءً</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="en">Newsletter</h3>
+                    <h3 class="fr" style="display: none;">Bulletin d'Information</h3>
+                    <h3 class="ar" style="display: none;">النشرة الإخبارية</h3>
+                    
+                    <p class="en">Subscribe to receive updates about school events and news.</p>
+                    <p class="fr" style="display: none;">Abonnez-vous pour recevoir des mises à jour sur les événements et les nouvelles de l'école.</p>
+                    <p class="ar" style="display: none;">اشترك لتلقي تحديثات حول فعاليات المدرسة والأخبار.</p>
+                    
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email Address" required>
+                        <button type="submit" class="btn btn-accent">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="en">&copy; 2025 MIA Institute of Knowledge. All Rights Reserved.</p>
+                <p class="fr" style="display: none;">&copy; 2025 Institut MIA du Savoir. Tous Droits Réservés.</p>
+                <p class="ar" style="display: none;">&copy; 2025 معهد MIA للمعرفة. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</body>
+
+</html>
