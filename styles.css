@@ -303,7 +303,7 @@ header {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(46, 125, 50, 0.5), rgba(0, 80, 5, 0.5)), url('assets/mia.jpg') center/cover no-repeat fixed;
+    background: linear-gradient(rgba(46, 125, 50, 0.5), rgba(0, 80, 5, 0.5)), url('assets/mia2.jpg') center/cover no-repeat fixed;
     color: var(--text-light);
     min-height: 85vh;
     display: flex;
